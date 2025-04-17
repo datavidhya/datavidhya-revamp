@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// generator client {
+//   provider = "prisma-client-js"
+//   output   = "../src/generated/prisma"
+// }
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = "postgresql://postgres:$di+e&ya+HfS._6@db.kuhzxoehkdpfuztvmzso.supabase.co:5432/postgres"
+// }
+
+// model user {
+//   id String @id @default(uuid())
+//   name String
+// }
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model projectFeedback {
+   id String @id @default(uuid())
+   name String
+   profileImg String
+   projectImgUrl String
+   userReview String
+   userProjectUrl String
+}
+
+model project {
+    id String @id @default(uuid())
+    name String
+    description String
+    projectImgUrl String
+    topic String
+    courseName String
+}
+
+model Course {
+  id               String  @id @default(uuid())
+  name             String
+  description      String
+  courseImgUrl     String
+  language        String
+  instructorName   String
+  instructorImgUrl String
+  listingPrice     Float
+  discountPrice    Float
+}
+
+model testimonial {
+  id String @id @default(uuid())
+  name String
+  profileImg String
+  userReview String
+  linkedinUrl String
+  starRating Int
+} 
