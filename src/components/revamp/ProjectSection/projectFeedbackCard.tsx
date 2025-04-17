@@ -1,4 +1,4 @@
-import { ProjectFeedbackCardProps } from "@/types";
+import { ProjectFeedbackCardProps } from "@/context/types";
 import { Inter, Roboto } from "next/font/google";
 import React from "react";
 

@@ -1,4 +1,5 @@
-import { ProjectCardProps, ProjectFeedbackCardProps } from "@/types";
+import { ProjectCardProps, ProjectFeedbackCardProps } from "../types";
+
 export const projectFeedbackCards: ProjectFeedbackCardProps[] = [
   {
     id: "1",
