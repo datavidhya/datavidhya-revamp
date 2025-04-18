@@ -63,7 +63,7 @@ export const courseCovered = [
     instructor: "Darshil Parmar",
   },
   {
-    img: "/course.png",
+    img: "/revamp/course2.png",
     courseLink:
       "https://datavidhya.com/all-course:SQL%20for%20Data%20Engineering",
     name: "SQL for Data Engineering",

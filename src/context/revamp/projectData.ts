@@ -75,7 +75,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "Smart Expense Tracker",
     description:
       "A mobile app to track daily expenses with category-wise breakdown. It allows users to add income and expenses, set monthly budgets, and visualize their spending habits using intuitive charts. The app also supports export to CSV, dark mode, and personalized notifications. Built using React Native and Firebase, it demonstrates clean architecture and modular code practices.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "Finance",
     courseName: "React Native Bootcamp",
   },
@@ -84,7 +84,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "AI Study Buddy",
     description:
       "A chatbot that helps students understand tough concepts using AI. It includes support for math, science, and programming-related questions, providing detailed step-by-step solutions. The bot also recommends videos, articles, and exercises for deeper understanding. Built using GPT API, it’s integrated with a friendly UI that mimics real-time chat.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "Artificial Intelligence",
     courseName: "AI for Beginners",
   },
@@ -93,7 +93,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "Portfolio Website",
     description:
       "A personal portfolio built with animations and dark mode support. It features sections for projects, blogs, skills, contact forms, and a resume download option. The site is fully responsive, optimized for SEO, and includes subtle transitions using Framer Motion. It's deployed using Vercel and connected to a CMS for blog content.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "Web Development",
     courseName: "Frontend Masters",
   },
@@ -102,7 +102,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "Weather App",
     description:
       "Get live weather updates and weekly forecasts based on location. Uses OpenWeatherMap API for fetching real-time data. The app supports multiple themes, location search, and geolocation-based suggestions. Designed with performance and minimalism in mind, it works well across mobile and desktop devices. Also includes animated icons for weather states.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "API Integration",
     courseName: "JavaScript Projects",
   },
@@ -111,7 +111,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "E-commerce Dashboard",
     description:
       "An admin dashboard for managing products, orders, and revenue. Includes authentication, dynamic charts, inventory management, and sales reports. Admins can update products, analyze sales trends, and monitor user activity in real-time. Built with React, Chart.js, and Tailwind CSS, it connects to a secure backend and integrates Stripe for transactions.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "Data Viz",
     courseName: "Full Stack Development",
   },
@@ -120,7 +120,7 @@ export const projectCards: ProjectCardProps[] = [
     name: "Portfolio Website",
     description:
       "A personal portfolio built with animations and dark mode support. It features sections for projects, blogs, skills, contact forms, and a resume download option. The site is fully responsive, optimized for SEO, and includes subtle transitions using Framer Motion. It's deployed using Vercel and connected to a CMS for blog content.",
-    projectImgUrl: "/courseImg.svg",
+    projectImgUrl: "/revamp/courseImg.svg",
     topic: "Web Development",
     courseName: "Frontend Masters",
   },

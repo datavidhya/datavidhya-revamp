@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <div className="relative h-12 w-12">
               <Image
-                src="/logo.svg"
+                src="/revamp/logo.svg"
                 alt="Data Vidhya Logo"
                 fill
                 className="object-contain"

@@ -14,25 +14,25 @@ const platformCards = [
       "Postgre SQL ",
       "Python",
     ],
-    imgSrc: "/images/first.png",
+    imgSrc: "/revamp/first.png",
   },
   {
     title: "Solve Questions",
     description:
       "Engage in real-world coding challenges and get instant feedback to enhance your skills.",
-    imgSrc: "/images/second.png",
+    imgSrc: "/revamp/second.png",
   },
   {
     title: "AI Review✨",
     description:
       "Engage in real-world coding challenges and get instant feedback to enhance your skills.",
-    imgSrc: "/images/third.png",
+    imgSrc: "/revamp/third.png",
   },
   {
     title: "Gamified Learning",
     description:
       "Level up skills through challenges, rewards and competition making learning addictive & effective",
-    imgSrc: ["/img2.png", "/image.png"],
+    imgSrc: ["/revamp/img2.png", "/revamp/image.png"],
   },
 ];
 
