@@ -32,7 +32,7 @@ const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
         </span>
         <Image
           alt="linkedIn"
-          src={"/linkedin.png"}
+          src={"/revamp/linkedin.png"}
           height={56}
           width={56}
           className="rounded-full"

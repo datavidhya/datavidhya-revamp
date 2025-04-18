@@ -48,7 +48,7 @@ const PlatformSection = () => {
       id="platform"
       className="mt-16 px-4 max-w-7xl mx-auto text-center"
     >
-      <div className="flex flex-col md:flex-row justify-center overflow-x-auto px-4 overflow-hidden">
+      <div className="flex flex-row justify-center overflow-x-auto px-4 overflow-hidden">
         {platformCards.map((card, index) => {
           const isFirst = index === 0;
           const isLast = index === platformCards.length - 1;

@@ -86,7 +86,7 @@ export default function HeroSection() {
                 Data Engineering{" "}
               </span>
               potential today{" "}
-            </h1>{" "}  
+            </h1>{" "}
             {/* <img
               src="/revamp/image28.svg"
               alt="emoji"
@@ -141,7 +141,10 @@ export default function HeroSection() {
                     className={`${inter.className} text-lg font-semibold text-[#333333] md:text-xl`}
                   >
                     Data Vidhya{" "}
-                    <span className="font-bold text-[#1455BE]">Courses</span>
+                    <Link href={"/courses"}>
+                      {" "}
+                      <span className="font-bold text-[#1455BE]">Courses</span>
+                    </Link>
                   </h3>
                   <p
                     className={`mt-1 font-medium text-[#333333B2]/70 md:text-base ${inter.className}`}
@@ -163,7 +166,10 @@ export default function HeroSection() {
                     className={`${inter.className} text-lg font-semibold text-[#333333] md:text-xl`}
                   >
                     Data Vidhya{" "}
-                    <span className="font-bold text-[#1455BE]">Platform</span>
+                    <Link href={"/platform"}>
+                      {" "}
+                      <span className="font-bold text-[#1455BE]">Platform</span>
+                    </Link>
                   </h3>
                   <p
                     className={`mt-1 font-medium text-[#333333B2]/70 md:text-base ${inter.className}`}

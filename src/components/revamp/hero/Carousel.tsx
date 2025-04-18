@@ -18,7 +18,7 @@ const Carousel = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-64 w-full mx-auto overflow-hidden rounded-xl shadow-md">
+    <div className="relative h-56 md:h-64 w-full mx-auto overflow-hidden rounded-xl shadow-md">
       <div
         className="flex transition-transform duration-1000 ease-in-out"
         style={{
@@ -42,7 +42,7 @@ const Carousel = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-2 h-2 rounded-full  ${
               currentIndex === index ? "bg-white" : "bg-gray-600"
             }`}
             aria-label={`Go to slide ${index + 1}`}

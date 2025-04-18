@@ -26,7 +26,7 @@ const Testimony = () => {
             Name="Name SurName"
             position="AI Engineer"
             companyName="Google"
-            pfp=""
+            pfp="/revamp/author.svg"
           />
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
@@ -35,7 +35,7 @@ const Testimony = () => {
             Name="Name Surname"
             position="Data Engineer"
             companyName=""
-            pfp=""
+            pfp="/revamp/author.svg"
           />
         </span>
         <span>
@@ -48,7 +48,7 @@ const Testimony = () => {
             Name="Name SurName"
             position="AI Engineer"
             companyName="Google"
-            pfp=""
+            pfp="/revamp/author.svg"
           />
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
@@ -57,7 +57,7 @@ const Testimony = () => {
             Name="Name Surname"
             position="Data Engineer"
             companyName=""
-            pfp=""
+            pfp="/revamp/author.svg"
           />
         </span>
         <span className=" hidden md:flex flex-col">
@@ -69,7 +69,7 @@ const Testimony = () => {
             Name="Name SurName"
             position="AI Engineer"
             companyName="Google"
-            pfp=""
+            pfp="/revamp/author.svg"
           />
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
@@ -78,7 +78,7 @@ const Testimony = () => {
             Name="Name Surname"
             position="Data Engineer"
             companyName=""
-            pfp=""
+            pfp="/revamp/author.svg"
           />
         </span>
       </div>
