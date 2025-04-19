@@ -54,7 +54,7 @@ export default function HeroSection() {
       <div className="absolute left-0 top-0 flex h-full w-screen max-w-none overflow-hidden bg-white">
         <img
           src="/revamp/tiltgrid.jpg"
-          className="absolute bottom-0 h-[40%] w-full min-w-full object-cover opacity-75"
+          className="absolute bottom-0 h-[40%] w-full min-w-full object-cover opacity-25"
           alt="Grid background"
         />
       </div>

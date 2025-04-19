@@ -10,7 +10,10 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
   return (
     <Link href={href}>
       <span className="flex items-center">
-        <img src="/revamp/checkbox.svg" className="block md:hidden h-5 w-auto mr-1"></img>
+        <img
+          src="/revamp/checkbox.svg"
+          className="block md:hidden h-5 w-auto mr-1"
+        ></img>
         <p
           className={`text-[16px] leading-[1.5rem] font-medium text-[#5751E1] hover:text-purple-400 ${inter.className}`}
         >
@@ -59,8 +62,8 @@ const UltimateCourse = () => {
           <p
             className={`text-center text-[18px] text-[#000000] ${inter.className}`}
           >
-            Go from data novice to engineering pro, faster than you thought
-            possible
+            Go from data novice to engineering pro, faster than{" "}
+            <br className="hidden md:block" /> you thought possible
           </p>
         </div>
       </div>
@@ -71,7 +74,7 @@ const UltimateCourse = () => {
             <div>
               <img src="/revamp/ultimatecourse.png" alt="" />
             </div>
-            <div className=" flex flex-col justify-between items-center py-[10px]">
+            <div className=" flex flex-col  justify-between items-center py-[5px]">
               <h2 className="w-full text-[24px] text-center md:text-[28px] leading-[24px] font-semibold tracking-[-1.5%] text-[#333333]">
                 Data Engineering Simplified
               </h2>{" "}
@@ -87,9 +90,10 @@ const UltimateCourse = () => {
                   </p>
                 </span>{" "}
                 <span
-                  className={`text-sm font-medium text-[#9EA1AE] ${inter.className}`}
+                  className={`flex items-center gap-1 text-sm leading-5 font-medium text-[#9EA1AE] ${inter.className}`}
                 >
-                  5 (800+ Reviews)
+                  <img src={"/revamp/star.svg"} className="size-4"></img>
+                  <span className="text-black">5</span> (800+ Reviews)
                 </span>
               </div>{" "}
               <div className="w-full flex items-center justify-start gap-2">
@@ -135,6 +139,11 @@ const UltimateCourse = () => {
           </div>
         </div>
       </div>
+      <Link href={"/courses"}><button
+        className={`w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
+      >
+        View All
+      </button></Link>
     </div>
   );
 };

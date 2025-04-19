@@ -13,7 +13,7 @@ const Page = () => {
     <div className="bg-white">
       <HeroSection />
       <UltimateCourse />
-      <CoursesSection />
+      {/* <CoursesSection /> */}
       <ProjectSection />
       <LeetcodeProblem />
       <Testimony />

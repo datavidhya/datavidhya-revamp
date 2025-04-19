@@ -2,7 +2,7 @@ import React from "react";
 import { Inter } from "next/font/google";
 import CourseCard from "./courseCard";
 // import { courseCovered } from "@/context/GlobalData";
-import Link from "next/link";
+// import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 export const courseCovered = [
@@ -92,8 +92,8 @@ const CoursesSection = () => {
             className={`mb-2 text-3xl md:text-5xl font-bold leading-[120%] text-[#000000] ${inter.className}`}
           >
             Explore Our Data Engineering
-            <br />
-            <span className="relative inline-block">
+            <br className="hidden md:block"/>
+            <span className="ml-2 relative inline-block">
               Courses
               <svg
                 className="absolute -bottom-5 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
@@ -129,12 +129,12 @@ const CoursesSection = () => {
         </div>
       </div>
       <div className="w-full text-center mt-9 md:mt-12">
-        <Link href={"/"}>
+        {/* <Link href={"/"}>
           {" "}
           <button className="px-7 py-3 bg-[#282828] rounded-xl text-white font-normal md:font-medium">
             View All
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

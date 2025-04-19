@@ -44,11 +44,8 @@ const PlatformSection = () => {
   };
 
   return (
-    <section
-      id="platform"
-      className="mt-16 px-4 max-w-7xl mx-auto text-center"
-    >
-      <div className="flex flex-row justify-center overflow-x-auto px-4 overflow-hidden">
+    <section id="platform" className="mt-16 px-4 max-w-7xl mx-auto text-center">
+      <div className="flex flex-row justify-center overflow-hidden">
         {platformCards.map((card, index) => {
           const isFirst = index === 0;
           const isLast = index === platformCards.length - 1;
@@ -63,10 +60,17 @@ const PlatformSection = () => {
             <button
               key={index}
               onClick={() => handleArrowClick(index)}
-              className={`relative w-[100%] md:w-1/4 h-20 md:h-14 px-12 text-xs md:text-lg text-center flex items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
+              // className={`relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center flex items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
+              //   activeIndex === index
+              //     ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
+              //     : "bg-white text-[#333333]/50"
+              // }`}
+              className={`relative w-[100%] md:w-1/4 h-20 md:h-14 text-xs md:text-lg text-center flex items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
                 activeIndex === index
                   ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
-                  : "bg-white text-gray-800"
+                  : "bg-white text-[#333333]/50"
+              } ${isFirst ? "rounded-l-xl" : ""} ${
+                isLast ? "rounded-r-xl" : ""
               }`}
               style={{
                 clipPath,
@@ -145,7 +149,7 @@ const PlatformSection = () => {
       </div>
 
       <div className="mt-20 flex justify-center">
-        <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-md font-medium transition-all hover:bg-violet-700 mb-[112px]">
+        <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-[112px]">
           Try Platform
         </button>
       </div>
