@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Carousel from "../hero/Carousel";
+import PlatformCarousel from "./PlatformCarousel";
+// import Carousel from "../hero/Carousel";
 
 const platformCards = [
   {
@@ -16,24 +17,28 @@ const platformCards = [
       "Python",
     ],
     imgSrc: "/revamp/first.png",
+    carousel: false,
   },
   {
     title: "Solve Questions",
     description:
       "Engage in real-world coding challenges and get instant feedback to enhance your skills.",
     imgSrc: "/revamp/second.png",
+    carousel: false,
   },
   {
     title: "AI Review✨",
     description:
       "Engage in real-world coding challenges and get instant feedback to enhance your skills.",
     imgSrc: "/revamp/third.png",
+    carousel: true,
   },
   {
     title: "Gamified Learning",
     description:
       "Level up skills through challenges, rewards and competition making learning addictive & effective",
     imgSrc: ["/revamp/img2.png", "/revamp/image.png"],
+    carousel: false,
   },
 ];
 
@@ -113,7 +118,6 @@ const PlatformSection = () => {
                   1/4{" "}
                 </span>
                 AI Review✨
-                {/* <Carousel /> */}
               </>
             ) : (
               platformCards[activeIndex].title
@@ -136,12 +140,12 @@ const PlatformSection = () => {
           ) : (
             <div className="text-gray-600 text-lg leading-relaxed">
               {platformCards[activeIndex].description}
-              {activeIndex === 2 ? <Carousel /> : ""}
+              {/* {activeIndex === 2 ? <Carousel /> : ""} */}
             </div>
           )}
         </div>
 
-        <div className="w-full md:w-[90%] bg-red-900 flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
+        <div className="w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
           {Array.isArray(platformCards[activeIndex].imgSrc) ? (
             platformCards[activeIndex].imgSrc.map((src, i) => (
               <Image
@@ -153,6 +157,10 @@ const PlatformSection = () => {
                 className="w-full sm:w-[45%] h-auto max-w-md rounded-xl shadow-lg object-cover"
               />
             ))
+          ) : platformCards[activeIndex].carousel ? (
+            <div className="">
+              <PlatformCarousel />
+            </div>
           ) : (
             <Image
               src={`${platformCards[activeIndex].imgSrc}`}

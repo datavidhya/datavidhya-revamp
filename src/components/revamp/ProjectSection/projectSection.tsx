@@ -7,12 +7,19 @@ import { Inter } from "next/font/google";
 import React, { useState } from "react";
 import ProjectFeedbackCard from "./projectFeedbackCard";
 import ProjectCard from "./projectCards";
+import Link from "next/link";
+// import {pathname} from usePathname
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const ProjectSection = () => {
   const [activeTab, setActiveTab] = useState("projects");
-
+  const pathName = usePathname();
+  console.log(pathName);
+  const projectArray =
+    pathName === "/projects" ? projectCards : projectCards.slice(0, 3);
+  console.log(projectArray);
   return (
     <div className="w-full bg-[#FFFFFF]">
       <p
@@ -88,28 +95,31 @@ const ProjectSection = () => {
       <div className="mx-auto my-10 max-w-7xl px-4">
         {activeTab === "projects" ? (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center */}
-            {projectCards.map((project, index) => (
-              <div
-                key={project.id}
-                className={index >= 2 ? "hidden md:flex" : ""}
-              >
+            {projectArray.map((project, index) => (
+              <div key={project.id}>
                 <ProjectCard {...project} />{" "}
               </div>
             ))}
           </div>
         ) : (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {projectFeedbackCards.map((review, index) => (
-              <div
-                key={review.id}
-                className={index >= 2 ? "hidden md:flex" : ""}
-              >
+            {projectFeedbackCards.slice(0, 3).map((review, index) => (
+              <div key={review.id}>
                 <ProjectFeedbackCard {...review} />
               </div>
             ))}
           </div>
         )}
+      </div>
+      <div className="w-full flex items-center justify-center">
+        {" "}
+        <Link href={"/projects"}>
+          <button
+            className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer mb-8`}
+          >
+            View All 
+          </button>
+        </Link>
       </div>
     </div>
   );

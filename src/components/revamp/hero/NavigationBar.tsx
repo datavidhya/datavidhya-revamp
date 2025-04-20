@@ -24,7 +24,7 @@ const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8">
+    <nav className="sticky top-1 md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8">
       <div className="flex justify-between md:justify-around">
         <Link href="/" className="flex items-center gap-2">
           <img
@@ -46,7 +46,7 @@ const NavigationBar = () => {
         >
           <NavItems href="/" text="Home" />
           <NavItems href="/courses" text="Courses" />
-          <NavItems href="/platform" text="Platform" />
+          <NavItems href="https://code.datavidhya.com/dashboard" text="Platform" />
           <NavItems href="/" text="Resourses" />
         </div>
 
