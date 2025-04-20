@@ -83,11 +83,11 @@ const CoursesSection = () => {
     <div className="bg-[#FAFAFA] py-3 md:py-12 text-center">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-2 md:mb-12 text-center">
-          <p
+          {/* <p
             className={`mb-1 font-bold uppercase tracking-wider text-[#8B90A1] ${inter.className}`}
           >
             COURSES
-          </p>
+          </p> */}
           <h2
             className={`mb-2 text-3xl md:text-5xl font-bold leading-[120%] text-[#000000] ${inter.className}`}
           >

@@ -125,7 +125,7 @@ export default function HeroSection() {
               </button>
             </div>
             <div className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row md:gap-8 lg:gap-16">
-              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-8">
+              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6">
                 <div className="w-full mb-4">
                   <div className="grid grid-cols-3 gap-2">
                     <CourseImg href="/" src="/revamp/course1.jpeg" />
@@ -155,7 +155,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-8">
+              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6">
                 <div className="flex w-full justify-center mb-4">
                   <div className="w-full max-w-[520px] overflow-hidden rounded-lg shadow-lg">
                     <Carousel />

@@ -92,7 +92,7 @@ const ProjectSection = () => {
             {projectCards.map((project, index) => (
               <div
                 key={project.id}
-                className={index >= 3 ? "hidden md:flex" : ""}
+                className={index >= 2 ? "hidden md:flex" : ""}
               >
                 <ProjectCard {...project} />{" "}
               </div>
@@ -103,7 +103,7 @@ const ProjectSection = () => {
             {projectFeedbackCards.map((review, index) => (
               <div
                 key={review.id}
-                className={index >= 3 ? "hidden md:flex" : ""}
+                className={index >= 2 ? "hidden md:flex" : ""}
               >
                 <ProjectFeedbackCard {...review} />
               </div>

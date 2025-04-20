@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Carousel from "../hero/Carousel";
 
 const platformCards = [
   {
@@ -44,8 +45,8 @@ const PlatformSection = () => {
   };
 
   return (
-    <section id="platform" className="mt-16 px-4 max-w-7xl mx-auto text-center">
-      <div className="flex flex-row justify-center overflow-hidden">
+    <section id="platform" className="mt-6 md:mt-14 px-4 max-w-7xl mx-auto text-center">
+      <div className="flex flex-col md:flex-row justify-center overflow-hidden bg-transparent border border-neutral-200 md:border-0 rounded-2xl mt-1 ">
         {platformCards.map((card, index) => {
           const isFirst = index === 0;
           const isLast = index === platformCards.length - 1;
@@ -57,34 +58,45 @@ const PlatformSection = () => {
             : "polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%)";
 
           return (
-            <button
-              key={index}
-              onClick={() => handleArrowClick(index)}
-              // className={`relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center flex items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
-              //   activeIndex === index
-              //     ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
-              //     : "bg-white text-[#333333]/50"
-              // }`}
-              className={`relative w-[100%] md:w-1/4 h-20 md:h-14 text-xs md:text-lg text-center flex items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
-                activeIndex === index
-                  ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
-                  : "bg-white text-[#333333]/50"
-              } ${isFirst ? "rounded-l-xl" : ""} ${
-                isLast ? "rounded-r-xl" : ""
-              }`}
-              style={{
-                clipPath,
-                marginLeft: index !== 0 ? "-30px" : "0",
-                zIndex: platformCards.length - index,
-                border: "1px solid #ccc ",
-                boxShadow:
+            <>
+              <button
+                key={index}
+                onClick={() => handleArrowClick(index)}
+                className={`hidden md:flex  relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center  items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
                   activeIndex === index
-                    ? "0 0 10px rgba(0,0,0,0.5)"
-                    : "0 0 5px rgba(0,0,0,0.1)",
-              }}
-            >
-              <span className="font-normal">{card.title}</span>
-            </button>
+                    ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
+                    : "bg-white text-[#333333]/50"
+                }  ${isFirst ? "rounded-l-xl" : ""} ${
+                  isLast ? "rounded-r-xl" : ""
+                }`}
+                style={{
+                  clipPath,
+                  marginLeft: index !== 0 ? "-30px" : "0",
+                  zIndex: platformCards.length - index,
+                  border: "1px solid #ccc ",
+                  boxShadow:
+                    activeIndex === index
+                      ? "0 0 10px rgba(0,0,0,0.5)"
+                      : "0 0 5px rgba(0,0,0,0.1)",
+                }}
+              >
+                <span className="font-light text-lg">{card.title}</span>
+              </button>
+              <button
+                key={index}
+                onClick={() => handleArrowClick(index)}
+                className={`flex md:hidden items-center justify-center w-full h-11  ${
+                  activeIndex === index
+                    ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
+                    : "bg-white text-[#333333]/50"
+                }  ${isFirst ? "rounded-t-xl" : ""} ${
+                  isLast ? "rounded-b-xl" : ""
+                } `}
+              >
+                {" "}
+                <span className="font-medium text-sm">{card.title}</span>
+              </button>
+            </>
           );
         })}
       </div>
@@ -98,6 +110,7 @@ const PlatformSection = () => {
                   1/4{" "}
                 </span>
                 AI Review✨
+                {/* <Carousel /> */}
               </>
             ) : (
               platformCards[activeIndex].title
@@ -106,10 +119,10 @@ const PlatformSection = () => {
 
           {Array.isArray(platformCards[activeIndex].description) ? (
             <div className="text-gray-600 text-lg leading-relaxed">
-              <p className="mb-3">
+              <p className="mb-2 md:mb-3">
                 {platformCards[activeIndex].description[0]}
               </p>
-              <ol className="list-decimal ml-6">
+              <ol className="list-decimal text-[16px] md:text-lg ml-6">
                 {platformCards[activeIndex].description
                   .slice(1)
                   .map((point, idx) => (
@@ -118,13 +131,14 @@ const PlatformSection = () => {
               </ol>
             </div>
           ) : (
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <div className="text-gray-600 text-lg leading-relaxed">
               {platformCards[activeIndex].description}
-            </p>
+              {activeIndex === 2 ? <Carousel /> : ""}
+            </div>
           )}
         </div>
 
-        <div className="w-full md:w-[90%] p-4 flex justify-center items-center gap-6 flex-wrap border-[1px] shadow-lg border-neutral-300 rounded-lg">
+        <div className="w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
           {Array.isArray(platformCards[activeIndex].imgSrc) ? (
             platformCards[activeIndex].imgSrc.map((src, i) => (
               <Image
@@ -133,7 +147,7 @@ const PlatformSection = () => {
                 alt={`Platform Feature ${i + 1}`}
                 width={500}
                 height={300}
-                className="w-full sm:w-[45%] h-auto max-w-md rounded-md shadow-lg object-cover"
+                className="w-full sm:w-[45%] h-auto max-w-md rounded-xl shadow-lg object-cover"
               />
             ))
           ) : (
@@ -142,7 +156,7 @@ const PlatformSection = () => {
               alt="Platform Feature"
               width={600}
               height={400}
-              className="w-full h-auto max-w-5xl rounded-md object-cover"
+              className="w-full h-auto max-w-5xl rounded-xl object-cover"
             />
           )}
         </div>

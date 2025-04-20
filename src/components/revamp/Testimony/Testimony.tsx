@@ -10,11 +10,35 @@ const Testimony = () => {
   return (
     // ${roboto.className}
     <div className={` w-full flex flex-col items-center justify-center `}>
-      <h1 className="text-3xl md:text-5xl text-black text-center  font-bold leading-[120%] mt-12 md:mt-28">
-        Customer Testimonials
+      <h1 className="text-4xl md:text-5xl text-black text-center  font-bold leading-[120%] mt-12 md:mt-28">
+        Customer <br className="block md:hidden" />{" "}
+        <span className="relative inline-block">
+          Testimonials
+          <svg
+            className="absolute -bottom-5 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
+            height="35"
+            viewBox="0 0 200 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path
+              d="M10,25 Q100,10 190,25"
+              stroke="#a855f7"
+              strokeWidth="3"
+              fill="transparent"
+            />
+            <path
+              d="M10,30 Q100,15 190,30"
+              stroke="#a855f7"
+              strokeWidth="3"
+              fill="transparent"
+            />
+          </svg>
+        </span>
       </h1>
-      <p className="text-lg font-normal leading-[150%] text-center text-black mt-6 mb-6 md:mb-20">
-        This platform transformed my data engineering skills!
+      <p className="text-lg md:text-xl font-normal leading-[150%] text-center text-black mt-6 mb-6 md:mb-20">
+        What our customers say about us!
       </p>
       <div className="w-[85%] flex flex-col md:flex-row  justify-center gap-0 md:gap-5 mb-6 md:mb-28">
         <span className="gap-5">
@@ -38,7 +62,7 @@ const Testimony = () => {
             pfp="/revamp/author.svg"
           />
         </span>
-        <span>
+        <span className=" hidden md:flex flex-col">
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
           mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
@@ -144,7 +168,7 @@ export default Testimony;
 //               key={t.id}
 //               text={t.userReview}
 //               Name={t.name}
-//               position="Engineer" 
+//               position="Engineer"
 //               companyName="x"
 //               pfp={t.profileImg}
 //             />
@@ -156,4 +180,3 @@ export default Testimony;
 // };
 
 // export default Testimony;
-

@@ -31,7 +31,7 @@ const UltimateCourse = () => {
           <h2
             className={`mt-5 w-full max-w-xs text-center text-3xl font-bold leading-[120%] text-[#000000] sm:max-w-md md:max-w-lg md:text-5xl lg:max-w-xl lg:text-[48px] xl:max-w-2xl ${inter.className}`}
           >
-            The Ulimate <br /> Data Engineering
+            The Ultimate <br /> Data Engineering
             <span className="relative inline-block ml-2">
               Course
               <svg
@@ -140,9 +140,9 @@ const UltimateCourse = () => {
         </div>
       </div>
       <Link href={"/courses"}><button
-        className={`w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
+        className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
       >
-        View All
+        View All Courses
       </button></Link>
     </div>
   );
