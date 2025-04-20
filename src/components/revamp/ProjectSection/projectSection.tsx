@@ -19,11 +19,19 @@ const ProjectSection = () => {
   console.log(pathName);
   const projectArray =
     pathName === "/projects" ? projectCards : projectCards.slice(0, 3);
+
+  const projectReview =
+    pathName === "/projects"
+      ? projectFeedbackCards
+      : projectFeedbackCards.slice(0, 3);
+
+
+
   console.log(projectArray);
   return (
-    <div className="w-full bg-[#FFFFFF]">
+    <div className={`w-full bg-[#FFFFFF] ${pathName === "/projects" ? "" : "pt-8"}`}>
       <p
-        className={`text-center ${inter.className} mt-4 md:mt-28 font-bold text-[#8B90A1]`}
+        className={`text-center ${inter.className} mt-4 md:mt-20 font-bold text-[#8B90A1]`}
       >
         PROJECTS
       </p>
@@ -103,7 +111,7 @@ const ProjectSection = () => {
           </div>
         ) : (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {projectFeedbackCards.slice(0, 3).map((review, index) => (
+            {projectReview.map((review, index) => (
               <div key={review.id}>
                 <ProjectFeedbackCard {...review} />
               </div>
@@ -111,13 +119,13 @@ const ProjectSection = () => {
           </div>
         )}
       </div>
-      <div className="w-full flex items-center justify-center">
+      <div className={`w-full  ${pathName === "/projects" ? "hidden" : "flex items-center justify-center"}`}>
         {" "}
         <Link href={"/projects"}>
           <button
-            className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer mb-8`}
+            className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-10 cursor-pointer mb-10`}
           >
-            View All 
+            View All
           </button>
         </Link>
       </div>
