@@ -45,7 +45,10 @@ const PlatformSection = () => {
   };
 
   return (
-    <section id="platform" className="mt-6 md:mt-14 px-4 max-w-7xl mx-auto text-center">
+    <section
+      id="platform"
+      className="mt-6 md:mt-14 px-4 max-w-7xl mx-auto text-center"
+    >
       <div className="flex flex-col md:flex-row justify-center overflow-hidden bg-transparent border border-neutral-200 md:border-0 rounded-2xl mt-1 ">
         {platformCards.map((card, index) => {
           const isFirst = index === 0;
@@ -138,7 +141,7 @@ const PlatformSection = () => {
           )}
         </div>
 
-        <div className="w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
+        <div className="w-full md:w-[90%] bg-red-900 flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
           {Array.isArray(platformCards[activeIndex].imgSrc) ? (
             platformCards[activeIndex].imgSrc.map((src, i) => (
               <Image

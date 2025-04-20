@@ -4,6 +4,7 @@ import Footer from "@/components/revamp/Footer/Footer";
 import HeroSection from "@/components/revamp/hero/HeroSection";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
 import LeetcodeProblem from "@/components/revamp/LeetcodeSection/LeetcodeProblem";
+import TopicCovered from "@/components/revamp/marquee/TopicCovered";
 import ProjectSection from "@/components/revamp/ProjectSection/projectSection";
 import ViewCounter from "@/components/revamp/socialMediaCounter/ViewCounter";
 import Testimony from "@/components/revamp/Testimony/Testimony";
@@ -16,12 +17,15 @@ const Page = () => {
       <NavigationBar />
       <HeroSection />
       <UltimateCourse />
-      {/* <CoursesSection /> */}
       <ProjectSection />
       <LeetcodeProblem />
       <Testimony />
       <FAQsSection />
+      <TopicCovered />
       <ViewCounter />
+      <div className="hidden md:flex justify-center my-8">
+        <img src="/revamp/bottomimage.png" alt="" />
+      </div>
       <Footer />
     </div>
   );

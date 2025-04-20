@@ -31,7 +31,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
 
 const ViewCounter: React.FC = () => {
   return (
-    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full max-sm:mt-16 max-sm:rounded-none my-8">
+    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full  max-sm:rounded-none ">
       <h3 className="mb-2 text-center text-[40px] font-bold text-white dark:text-black max-md:text-[30px]">
         Join our community...
       </h3>
