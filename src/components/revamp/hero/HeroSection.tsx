@@ -76,7 +76,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative w-full">
-        <NavigationBar />
+        {/* <NavigationBar /> */}
 
         {isMounted && (
           <div className="mx-auto  max-w-full px-4 py-6 sm:px-6 md:px-8 lg:w-[80rem] lg:px-5">

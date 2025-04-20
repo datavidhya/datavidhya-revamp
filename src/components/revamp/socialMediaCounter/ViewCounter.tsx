@@ -16,10 +16,10 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   link,
   icon,
 }) => (
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center ">
     <Counter number={number} />
     <div className="flex items-center gap-2">
-      <p className="text-center text-[1rem] font-semibold text-white dark:text-black">
+      <p className="text-center text-[1rem] font-semibold text-white dark:text-black ">
         {name}
       </p>
       <Link href={link}>
@@ -31,7 +31,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
 
 const ViewCounter: React.FC = () => {
   return (
-    <div className="mx-auto mb-10 w-4/5 rounded-[20px] bg-neutral-900 py-4 dark:bg-gray-100 max-md:w-full max-sm:-mt-16 max-sm:rounded-none my-8">
+    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full max-sm:mt-16 max-sm:rounded-none my-8">
       <h3 className="mb-2 text-center text-[40px] font-bold text-white dark:text-black max-md:text-[30px]">
         Join our community...
       </h3>
@@ -40,7 +40,7 @@ const ViewCounter: React.FC = () => {
           name="Youtube"
           number={160}
           link="https://www.youtube.com/@DarshilParmar"
-          icon="/Footer/youtubeIcon.svg"
+          icon="/revamp/youtubeIcon.svg"
         />
         <SocialMediaLink
           name="LinkedIn"
@@ -52,7 +52,7 @@ const ViewCounter: React.FC = () => {
           name="Twitter"
           number={25}
           link="https://x.com/parmardarshil07"
-          icon="/Footer/twitterIcon.svg"
+          icon="/revamp/twitterIcon.svg"
         />
       </div>
     </div>
