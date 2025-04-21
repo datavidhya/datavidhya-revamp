@@ -1,5 +1,6 @@
 import React from "react";
 import { Inter } from "next/font/google";
+// import { motion } from "framer-motion";
 import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 interface LinkitemProp {
@@ -69,7 +70,7 @@ const UltimateCourse = () => {
       </div>
       <div className="max-w-[845px] p-6 bg-white flex flex-col border border-[#d7d7d7] rounded-[28px] mt-[46px]">
         <div className="flex flex-col">
-          <span className="flex flex-col md:flex-row gap-[24px]">
+          <div className="flex flex-col md:flex-row gap-[24px]">
             {" "}
             <div>
               <img src="/revamp/ultimatecourse.png" alt="" />
@@ -92,7 +93,7 @@ const UltimateCourse = () => {
                 <span
                   className={`flex items-center gap-1 text-sm leading-5 font-medium text-[#9EA1AE] ${inter.className}`}
                 >
-                  <img src={"/revamp/star.svg"} className="size-4"></img>
+                  <img src={"/revamp/star.svg"} className="size-4" />
                   <span className="text-black">5</span> (800+ Reviews)
                 </span>
               </div>{" "}
@@ -126,24 +127,26 @@ const UltimateCourse = () => {
                 </Link>
               </div>
             </div>
-          </span>
+          </div>
           <hr className="my-[14px]" />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0">
-            <Linkitems text="230+ Videos" href="" />
+            <Linkitems text="230+ Videos" href="/" />
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="15+ Project" href="" />{" "}
+            <Linkitems text="15+ Project" href="/" />{" "}
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="Downloadable Resources" href="" />{" "}
+            <Linkitems text="Downloadable Resources" href="/" />{" "}
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="Resume + Interview Prep EBooks" href="" />
+            <Linkitems text="Resume + Interview Prep EBooks" href="/" />
           </div>
         </div>
       </div>
-      <Link href={"/courses"}><button
-        className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
-      >
-        View All Courses
-      </button></Link>
+      <Link href={"/courses"}>
+        <button
+          className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
+        >
+          View All Courses
+        </button>
+      </Link>
     </div>
   );
 };

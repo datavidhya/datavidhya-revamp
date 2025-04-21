@@ -1,14 +1,10 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
 import { Inter } from "next/font/google";
-// import { courseCovered } from "@/context/GlobalData";
 import { useEffect, useState } from "react";
-import NavigationBar from "./NavigationBar";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Carousel from "./Carousel";
-// import Navbar from "../shared components/home page components/Navbar/NavigationBar";
-// import { courseCovered } from "@/context/faqData";
 const inter = Inter({ subsets: ["latin"] });
 interface prop {
   src: string;
@@ -48,7 +44,28 @@ export default function HeroSection() {
     hidden: { y: 20, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
   };
+  const cardContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.5,
+      },
+    },
+  };
 
+  const cardItem = {
+    hidden: { y: 30, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
       <div className="absolute left-0 top-0 flex h-full w-screen max-w-none overflow-hidden bg-white">
@@ -79,20 +96,31 @@ export default function HeroSection() {
         {/* <NavigationBar /> */}
 
         {isMounted && (
-          <div className="mx-auto  max-w-full px-4 py-6 sm:px-6 md:px-8 lg:w-[80rem] lg:px-5">
-            <h1 className="relative max-w-full text-3xl font-bold leading-[1.2] text-[#333333] sm:text-4xl md:text-5xl md:leading-[100%] lg:text-[61px] my-0  md:my-6">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={container}
+            className="mx-auto  max-w-full px-4 py-6 sm:px-6 md:px-8 lg:w-[80rem] lg:px-5"
+          >
+            <motion.h1
+              variants={item}
+              className="relative max-w-full text-3xl font-bold leading-[1.2] text-[#333333] sm:text-4xl md:text-5xl md:leading-[100%] lg:text-[61px] my-0  md:my-6"
+            >
               Unlock your <br className="block md:hidden" />
               <span className="bg-gradient-to-r from-[#2D3BF2] to-[#B832E9] bg-clip-text text-transparent">
                 Data Engineering{" "}
               </span>
               potential today{" "}
-            </h1>{" "}
+            </motion.h1>{" "}
             {/* <img
               src="/revamp/image28.svg"
               alt="emoji"
               className="absolute bottom-0 right-0"
             /> */}
-            <div className="my-4 flex flex-col flex-wrap gap-3 sm:flex-row md:my-6 md:gap-8">
+            <motion.div
+              variants={item}
+              className="my-4 flex flex-col flex-wrap gap-3 sm:flex-row md:my-6 md:gap-8"
+            >
               <p
                 className={`flex items-center gap-1.5 text-sm font-light text-[#3D3D3D] md:text-base ${inter.className}`}
               >
@@ -111,8 +139,11 @@ export default function HeroSection() {
                 <FaCheckCircle className="size-4 text-[#1DBA0C] md:size-5" />
                 Learn latest trends from our courses
               </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            </motion.div>
+            <motion.div
+              variants={item}
+              className="flex flex-col gap-3 sm:flex-row sm:gap-4"
+            >
               <button
                 className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:px-8 sm:py-3 ${inter.className}`}
               >
@@ -123,9 +154,17 @@ export default function HeroSection() {
               >
                 Solve Questions
               </button>
-            </div>
-            <div className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row md:gap-8 lg:gap-16">
-              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6">
+            </motion.div>
+            <motion.div
+              variants={cardContainer}
+              initial="hidden"
+              animate="show"
+              className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row md:gap-8 lg:gap-16"
+            >
+              <motion.div
+                variants={cardItem}
+                className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6"
+              >
                 <div className="w-full mb-4">
                   <div className="grid grid-cols-3 gap-2">
                     <CourseImg href="/" src="/revamp/course1.jpeg" />
@@ -153,9 +192,12 @@ export default function HeroSection() {
                     Engineering
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6">
+              <motion.div
+                variants={cardItem}
+                className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 md:rounded-[28px] md:p-6"
+              >
                 <div className="flex w-full justify-center mb-4">
                   <div className="w-full max-w-[520px] overflow-hidden rounded-lg shadow-lg">
                     <Carousel />
@@ -178,9 +220,9 @@ export default function HeroSection() {
                     Engineering
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         )}
       </div>
     </main>

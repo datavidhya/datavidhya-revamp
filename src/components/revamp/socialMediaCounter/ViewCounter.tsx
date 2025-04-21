@@ -52,7 +52,7 @@ const ViewCounter: React.FC = () => {
           name="Twitter"
           number={25}
           link="https://x.com/parmardarshil07"
-          icon="/revamp/twitterIcon.svg"
+          icon="/revamp/twittericon.svg"
         />
       </div>
     </div>

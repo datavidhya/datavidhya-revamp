@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Inter, Manrope } from "next/font/google";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -24,7 +25,12 @@ const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-1 md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sticky top-1 md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8"
+    >
       <div className="flex justify-between md:justify-around">
         <Link href="/" className="flex items-center gap-2">
           <img
@@ -46,7 +52,10 @@ const NavigationBar = () => {
         >
           <NavItems href="/" text="Home" />
           <NavItems href="/courses" text="Courses" />
-          <NavItems href="https://code.datavidhya.com/dashboard" text="Platform" />
+          <NavItems
+            href="https://code.datavidhya.com/dashboard"
+            text="Platform"
+          />
           <NavItems href="/" text="Resourses" />
         </div>
 
@@ -89,7 +98,10 @@ const NavigationBar = () => {
       </div>
 
       {isMenuOpen && (
-        <div
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          transition={{ duration: 0.3 }}
           className={`mt-4 bg-gray-100 shadow-sm  border-[1px] border-neutral-400 backdrop-blur-xl rounded-xl space-y-3 py-2 md:hidden ${inter.className}`}
         >
           <Link
@@ -116,9 +128,9 @@ const NavigationBar = () => {
           >
             Resources
           </Link>
-        </div>
+        </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 
