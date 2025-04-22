@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import PlatformCarousel from "./PlatformCarousel";
 // import Carousel from "../hero/Carousel";
 
@@ -110,7 +111,12 @@ const PlatformSection = () => {
       </div>
 
       <div className="mt-6 md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center">
-        <div className="w-full md:w-[45%] text-left ml-6 p-6">
+        <motion.div
+          initial={{ x: -70, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="w-full md:w-[45%] text-left ml-6 p-6"
+        >
           <h3 className="text-2xl font-bold mb-4 text-black ">
             {activeIndex === 2 ? (
               <>
@@ -143,9 +149,13 @@ const PlatformSection = () => {
               {/* {activeIndex === 2 ? <Carousel /> : ""} */}
             </div>
           )}
-        </div>
-
-        <div className="w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl">
+        </motion.div>
+        <motion.div
+          initial={{ x: 70, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className=" w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl "
+        >
           {Array.isArray(platformCards[activeIndex].imgSrc) ? (
             platformCards[activeIndex].imgSrc.map((src, i) => (
               <Image
@@ -170,7 +180,7 @@ const PlatformSection = () => {
               className="w-full h-auto max-w-5xl rounded-xl object-cover"
             />
           )}
-        </div>
+        </motion.div>{" "}
       </div>
 
       <div className="mt-20 flex justify-center">

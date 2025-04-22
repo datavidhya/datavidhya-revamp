@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import ProjectFeedbackCard from "./projectFeedbackCard";
 import ProjectCard from "./projectCards";
 import Link from "next/link";
+import { motion } from "framer-motion";
 // import {pathname} from usePathname
 import { usePathname } from "next/navigation";
 
@@ -25,11 +26,13 @@ const ProjectSection = () => {
       ? projectFeedbackCards
       : projectFeedbackCards.slice(0, 3);
 
-
-
   console.log(projectArray);
   return (
-    <div className={`w-full bg-[#FFFFFF] ${pathName === "/projects" ? "" : "pt-8"}`}>
+    <div
+      className={`w-full bg-[#FFFFFF] ${
+        pathName === "/projects" ? "" : "pt-8"
+      }`}
+    >
       <p
         className={`text-center ${inter.className} mt-4 md:mt-20 font-bold text-[#8B90A1]`}
       >
@@ -99,14 +102,19 @@ const ProjectSection = () => {
           </button>
         </div>
       </div>
-
       <div className="mx-auto my-10 max-w-7xl px-4">
         {activeTab === "projects" ? (
           <div className="flex flex-wrap items-center justify-center gap-4">
             {projectArray.map((project, index) => (
-              <div key={project.id}>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                // viewport={{ 0.5 }}
+                transition={{ duration: 0.5 }}
+                key={project.id}
+              >
                 <ProjectCard {...project} />{" "}
-              </div>
+              </motion.div>
             ))}
           </div>
         ) : (
@@ -119,7 +127,13 @@ const ProjectSection = () => {
           </div>
         )}
       </div>
-      <div className={`w-full  ${pathName === "/projects" ? "hidden" : "flex items-center justify-center"}`}>
+      <div
+        className={`w-full  ${
+          pathName === "/projects"
+            ? "hidden"
+            : "flex items-center justify-center"
+        }`}
+      >
         {" "}
         <Link href={"/projects"}>
           <button
