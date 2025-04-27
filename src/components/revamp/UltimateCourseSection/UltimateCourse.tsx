@@ -28,7 +28,7 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
 const UltimateCourse = () => {
   // console.log(Linkitems);
   return (
-    <div className="flex flex-col items-center py-[60px] md:py-28 bg-[#F7F7FB]">
+    <div className="flex flex-col items-center py-[40px] md:py-28 bg-[#F7F7FB]">
       <div>
         <div className="flex justify-center">
           <h2

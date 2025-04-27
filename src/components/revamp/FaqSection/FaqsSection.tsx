@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-// import FaqsAccordion from "./faqsAccordion";
 // import { courseCovered, FAQsData } from "../../../../context/faqData";
 import { Roboto, Inter } from "next/font/google";
 import FaqsAccordion from "./faqsAccordion";

@@ -16,7 +16,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   link,
   icon,
 }) => (
-  <div className="flex flex-col items-center ">
+  <div className="flex flex-row md:flex-col justify-center max-sm:gap-4 items-center ">
     <Counter number={number} />
     <div className="flex items-center gap-2">
       <p className="text-center text-[1rem] font-semibold text-white dark:text-black ">

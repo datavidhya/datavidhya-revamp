@@ -1,4 +1,3 @@
-// import CoursesSection from "@/components/revamp/CourseSection/CoursesSection";
 import FAQsSection from "@/components/revamp/FaqSection/FaqsSection";
 import Footer from "@/components/revamp/Footer/Footer";
 import HeroSection from "@/components/revamp/hero/HeroSection";
@@ -13,7 +12,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="bg-white pt-4">
+    <div className=" pt-4 overflow-x-hidden">
       <NavigationBar />
       <HeroSection />
       <UltimateCourse />

@@ -68,7 +68,7 @@ export default function HeroSection() {
   };
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
-      <div className="absolute left-0 top-0 flex h-full w-screen max-w-none overflow-hidden bg-white">
+      <div className="absolute left-0 top-0 flex h-full inset-0 overflow-hidden bg-white">
         <img
           src="/revamp/tiltgrid.jpg"
           className="absolute bottom-0 h-[40%] w-full min-w-full object-cover opacity-25"

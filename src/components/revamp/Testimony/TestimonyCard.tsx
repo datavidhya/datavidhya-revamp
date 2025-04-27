@@ -9,34 +9,37 @@ interface prop {
 }
 const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
   return (
-    <div className="w-[20rem] md:w-[25rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between">
+    <div className="w-[19rem] md:w-[25rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-md">
       <div className="w-full  text-black text-left">
         {/* <p className="text-xl mb-8">⭐⭐⭐⭐⭐</p> */}
-       <span className="flex gap-1"> <img
-          src="/revamp/star.svg"
-          className="size-5 md:size-6 mb-6 md:mb-8"
-          alt="star"
-        />{" "}
-        <img
-          src="/revamp/star.svg"
-          className=" size-5 md:size-6  mb-6 md:mb-8"
-          alt="star"
-        />{" "}
-        <img
-          src="/revamp/star.svg"
-          className="size-5 md:size-6 mb-6 md:mb-8"
-          alt="star"
-        />{" "}
-        <img
-          src="/revamp/star.svg"
-          className="size-5 md:size-6 mb-6 md:mb-8"
-          alt="star"
-        />{" "}
-        <img
-          src="/revamp/star.svg"
-          className="size-5 md:size-6 mb-6 md:mb-8"
-          alt="star"
-        /></span>
+        <span className="flex gap-1">
+          {" "}
+          <img
+            src="/revamp/star.svg"
+            className="size-5 md:size-6 mb-6 md:mb-8"
+            alt="star"
+          />{" "}
+          <img
+            src="/revamp/star.svg"
+            className=" size-5 md:size-6  mb-6 md:mb-8"
+            alt="star"
+          />{" "}
+          <img
+            src="/revamp/star.svg"
+            className="size-5 md:size-6 mb-6 md:mb-8"
+            alt="star"
+          />{" "}
+          <img
+            src="/revamp/star.svg"
+            className="size-5 md:size-6 mb-6 md:mb-8"
+            alt="star"
+          />{" "}
+          <img
+            src="/revamp/star.svg"
+            className="size-5 md:size-6 mb-6 md:mb-8"
+            alt="star"
+          />
+        </span>
         <p className="text-[16px] md:text-xl font-400 leading-[150%]">
           "{text}"
         </p>
