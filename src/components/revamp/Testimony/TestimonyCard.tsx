@@ -9,7 +9,7 @@ interface prop {
 }
 const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
   return (
-    <div className="w-[19rem] md:w-[25rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-md">
+    <div className="w-[19rem] md:w-[21rem] lg:w-[25rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-md">
       <div className="w-full  text-black text-left">
         {/* <p className="text-xl mb-8">⭐⭐⭐⭐⭐</p> */}
         <span className="flex gap-1">
@@ -40,7 +40,7 @@ const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
             alt="star"
           />
         </span>
-        <p className="text-[16px] md:text-xl font-400 leading-[150%]">
+        <p className="text-[16px] md:text-lg lg:text-xl font-400 leading-[150%]">
           "{text}"
         </p>
       </div>

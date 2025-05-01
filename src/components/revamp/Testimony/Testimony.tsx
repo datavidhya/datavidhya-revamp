@@ -40,7 +40,7 @@ const Testimony = () => {
       <p className="text-lg md:text-xl font-normal leading-[150%] text-center text-black my-6 md:mb-20">
         What our customers say about us!
       </p>
-      <div className="w-[85%] flex flex-col md:flex-row items-center md:items-start justify-center gap-0 md:gap-5 mb-6 md:mb-28">
+      <div className="max-w-[85vh] flex flex-col md:flex-row items-center md:items-start justify-center gap-0 md:gap-5 mb-6 md:mb-28">
         <span className="md:flex flex-col">
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
@@ -84,7 +84,7 @@ const Testimony = () => {
             pfp="/revamp/author.svg"
           />
         </span>
-        <span className=" hidden md:flex flex-col">
+        <span className=" hidden xl:flex flex-col">
           <TestimonyCard
             text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
           mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed

@@ -48,7 +48,7 @@ const NavigationBar = () => {
         </Link>
 
         <div
-          className={`hidden items-center space-x-10 md:flex ${inter.className}`}
+          className={`hidden items-center ml-10 space-x-10 md:flex ${inter.className}`}
         >
           <NavItems href="/" text="Home" />
           <NavItems href="/courses" text="Courses" />
@@ -56,7 +56,7 @@ const NavigationBar = () => {
             href="https://code.datavidhya.com/dashboard"
             text="Platform"
           />
-          <NavItems href="/" text="Resourses" />
+          <NavItems href="/" text="Resources" />
         </div>
 
         <button

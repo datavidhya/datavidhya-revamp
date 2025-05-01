@@ -42,7 +42,7 @@ const FaqsAccordion: React.FC<AccordionProps> = ({
           {title}
         </h5>
         <div>
-          <motion.div 
+          <motion.div
             className="text-[28px] text-[#7C7C7C]"
             animate={{ rotate: isOpen ? 0 : 180 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -53,14 +53,14 @@ const FaqsAccordion: React.FC<AccordionProps> = ({
       </div>
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="w-full rounded-b-[20px] px-4 pb-3 text-[16px] leading-8 text-[#7C7C7C] shadow-md dark:bg-gray-100">
+            <div className="w-full rounded-b-[20px] px-4 pb-3 text-[14px] md:text-[16px] leading-6 md:leading-8 text-[#7C7C7C] shadow-md dark:bg-gray-100">
               {content}
             </div>
           </motion.div>
