@@ -151,7 +151,7 @@ const UltimateCourse = () => {
       </motion.div>
       <Link href={"/courses"}>
         <button
-          className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
+          className={`w-40 rounded-[12px] bg-[#2E2E2E] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}
         >
           View All Courses
         </button>

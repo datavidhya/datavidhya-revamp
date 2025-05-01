@@ -33,7 +33,7 @@ const Header = () => {
           </svg>
         </span>
       </h1>
-      <h6 className="text-[16px] md:text-lg text-black font-normal leading-[150%] w-[80%] md:w-[55%] text-center">
+      <h6 className="text-[16px] md:text-lg text-black font-normal leading-[150%] w-[80%] md:w-[80%] text-center">
         Our platform empowers you to advance your career with practical skills
         and real-world applications.{" "}
         <span className="hidden md:block">

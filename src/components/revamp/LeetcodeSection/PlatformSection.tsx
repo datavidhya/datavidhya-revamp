@@ -55,7 +55,7 @@ const PlatformSection = () => {
       id="platform"
       className="mt-6 md:mt-14 px-4 max-w-7xl mx-auto text-center"
     >
-      <div className="flex flex-col md:flex-row justify-center overflow-hidden bg-transparent border border-neutral-200 md:border-0 rounded-2xl mt-1 ">
+      <div className="flex flex-col md:flex-row justify-center overflow-hidden  border border-neutral-200 md:border-0 rounded-2xl mt-1 ">
         {platformCards.map((card, index) => {
           const isFirst = index === 0;
           const isLast = index === platformCards.length - 1;
@@ -71,7 +71,7 @@ const PlatformSection = () => {
               <button
                 key={index}
                 onClick={() => handleArrowClick(index)}
-                className={`hidden md:flex  relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center  items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
+                className={`hidden md:flex  relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center overflow-hidden items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
                   activeIndex === index
                     ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
                     : "bg-white text-[#333333]/50"
@@ -82,7 +82,7 @@ const PlatformSection = () => {
                   clipPath,
                   marginLeft: index !== 0 ? "-30px" : "0",
                   zIndex: platformCards.length - index,
-                  border: "1px solid #ccc ",
+                  border: "1px solid #cccccc ",
                   boxShadow:
                     activeIndex === index
                       ? "0 0 10px rgba(0,0,0,0.5)"
@@ -94,7 +94,7 @@ const PlatformSection = () => {
               <button
                 key={index}
                 onClick={() => handleArrowClick(index)}
-                className={`flex md:hidden items-center justify-center w-full h-11  ${
+                className={`flex md:hidden items-center justify-center w-full h-11   ${
                   activeIndex === index
                     ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
                     : "bg-white text-[#333333]/50"
@@ -110,7 +110,7 @@ const PlatformSection = () => {
         })}
       </div>
 
-      <div className="mt-6 md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center">
+      <div className="mt-6 w-[96%] md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center">
         <motion.div
           initial={{ x: -70, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

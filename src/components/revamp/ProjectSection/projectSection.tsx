@@ -137,9 +137,9 @@ const ProjectSection = () => {
         {" "}
         <Link href={"/projects"}>
           <button
-            className={`w-40 rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} my-10 cursor-pointer`}
+            className={`w-40 rounded-[12px] bg-[#2E2E2E] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} my-10 cursor-pointer`}
           >
-            View All
+            View All Projects
           </button>
         </Link>
       </div>
