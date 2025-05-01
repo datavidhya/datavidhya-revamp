@@ -31,8 +31,8 @@ const NavigationBar = () => {
       transition={{ duration: 0.5 }}
       className="sticky top-1 md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8"
     >
-      <div className="flex justify-between md:justify-around">
-        <Link href="/" className="flex items-center gap-2">
+      <div className="flex items-center justify-between md:justify-around">
+        <Link href="/" className="flex items-center gap-2 ">
           <img
             src="/revamp/logo.svg"
             alt="Data Vidhya"
@@ -102,11 +102,11 @@ const NavigationBar = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2 }}
-          className={`mt-4 bg-gray-100 shadow-sm  border-[1px] border-neutral-400 backdrop-blur-xl rounded-xl space-y-3 py-2 md:hidden ${inter.className}`}
+          className={`w-full mt-4 bg-gray-100 shadow-sm  border-[1px] border-neutral-400 backdrop-blur-xl rounded-xl space-y-3 py-2 md:hidden ${inter.className}`}
         >
           <Link
             href="/"
-            className="block rounded-lg px-4 py-2 font-medium text-gray-800 hover:bg-gray-100"
+            className="block  px-4 py-2 font-medium text-gray-800 hover:bg-gray-100"
           >
             Home
           </Link>
