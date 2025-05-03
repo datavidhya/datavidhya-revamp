@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 // import { Roboto } from "next/font/google";
 import TestimonyCard from "./TestimonyCard";
+import Marquee from "react-fast-marquee";
 // const roboto = Roboto({
 //   variable: "--font-roboto",
 //   subsets: ["latin"],
@@ -9,7 +12,7 @@ import TestimonyCard from "./TestimonyCard";
 const Testimony = () => {
   return (
     // ${roboto.className}
-    <div className={` w-full flex flex-col items-center justify-center `}>
+    <div className={` w-full flex flex-col items-center justify-center mb-20`}>
       <h1 className="text-4xl md:text-5xl text-black text-center  font-bold leading-[120%] mt-12 md:mt-28">
         Customer <br className="block md:hidden" />{" "}
         <span className="relative inline-block">
@@ -40,71 +43,488 @@ const Testimony = () => {
       <p className="text-lg md:text-xl font-normal leading-[150%] text-center text-black my-6 md:mb-20">
         What our customers say about us!
       </p>
-      <div className="max-w-[85vh] flex flex-col md:flex-row items-center md:items-start justify-center gap-0 md:gap-5 mb-6 md:mb-28">
-        <span className="md:flex flex-col">
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      <div className="hidden md:flex justify-around relative max-w-[85vw] h-[100vh]  overflow-hidden gap-2 md:gap-4 mb-6 md:mb-28">
+        <div className="absolute top-0 w-full h-[10%] bg-gradient-to-b from-white to-transparent z-20"></div>
+        <div className="absolute bottom-0 w-full h-[10%] bg-gradient-to-t from-white to-transparent z-20"></div>
+        <div className="w-1/2 xl:w-1/3 h-full overflow-hidden ">
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: -2000 }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className=""
+          >
+            {" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />
+          </motion.div>
+        </div>
+        <div className="w-1/2 xl:w-1/3 h-full">
+          <motion.div
+            initial={{ y: -2000 }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 45,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className="hidden md:flex flex-col"
+          >
+            {" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
           mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
           perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
           incidunt cum."
-            Name="Name SurName"
-            position="AI Engineer"
-            companyName="Google"
-            pfp="/revamp/author.svg"
-          />
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+          </motion.div>
+        </div>
+        <div className="w-1/3 overflow-hidden hidden xl:flex flex-col">
+          <motion.div
+            className=" "
+            initial={{ y: 0 }}
+            animate={{ y: -2000 }}
+            transition={{
+              duration: 32,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+          >
+            {" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
           mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
-          perspiciatis "
-            Name="Name Surname"
-            position="Data Engineer"
-            companyName=""
-            pfp="/revamp/author.svg"
-          />
-        </span>
-        <span className=" hidden md:flex flex-col">
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
-          mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
-          perspiciatis  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
           perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
           incidunt cum."
-            Name="Name SurName"
-            position="AI Engineer"
-            companyName="Google"
-            pfp="/revamp/author.svg"
-          />
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
-          mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
-          perspiciatis "
-            Name="Name Surname"
-            position="Data Engineer"
-            companyName=""
-            pfp="/revamp/author.svg"
-          />
-        </span>
-        <span className=" hidden xl:flex flex-col">
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
-          mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
-          perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
-          incidunt cum."
-            Name="Name SurName"
-            position="AI Engineer"
-            companyName="Google"
-            pfp="/revamp/author.svg"
-          />
-          <TestimonyCard
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
-          mollitia voluptate,  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed perspiciatis nesciunt, modi laudantium voluptas fuga sed
-          perspiciatis "
-            Name="Name Surname"
-            position="Data Engineer"
-            companyName=""
-            pfp="/revamp/author.svg"
-          />
-        </span>
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />
+          </motion.div>
+        </div>
+      </div>
+      <div className="flex flex-col md:hidden ">
+        <Marquee className="" direction="left">
+
+          {" "}
+          <div className=" flex gap-2">
+            {" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+          </div>
+        </Marquee>
+        <Marquee className="relative ">
+          <div className=" flex gap-2">
+            {" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+          </div>
+        </Marquee>
       </div>
     </div>
   );

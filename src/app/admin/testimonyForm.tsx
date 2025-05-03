@@ -13,7 +13,7 @@ const TestimonyForm = () => {
   });
   return (
     <form
-      className="h-auto w-full p-4 px-24 text-black flex flex-col items-center gap-2 bg-green-200"
+      className="h-auto w-full p-4 px-12 text-black flex flex-col items-center gap-2 bg-green-200"
       onSubmit={handleSubmit((data) => console.log(data))}
     >
       <input

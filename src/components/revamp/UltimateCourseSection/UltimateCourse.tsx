@@ -66,7 +66,7 @@ const UltimateCourse = () => {
             className={`text-center text-[18px] text-[#000000] ${inter.className}`}
           >
             Go from data novice to engineering pro, faster than{" "}
-            <br className="hidden md:block" /> you thought possible
+            <br className="hidden md:block" /> you thought possible.
           </p>
         </div>
       </div>
