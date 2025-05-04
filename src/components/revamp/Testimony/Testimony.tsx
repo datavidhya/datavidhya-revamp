@@ -406,7 +406,7 @@ incidunt cum."
         <div className="w-full  overflow-hidden">
           <motion.div
             initial={{ x: 0 }}
-            animate={{ x: -400 }}
+            animate={{ x: -1000 }}
             transition={{
               duration: 12,
               repeat: Infinity,
@@ -457,6 +457,46 @@ incidunt cum."
             />{" "}
             <TestimonyCard
               text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
 mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
 perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
 incidunt cum."
@@ -470,7 +510,7 @@ incidunt cum."
         <div className="w-full overflow-hidden">
           <motion.div
             initial={{ x: 0 }}
-            animate={{ x: 400 }}
+            animate={{ x: 1000 }}
             transition={{
               duration: 12,
               repeat: Infinity,
@@ -484,6 +524,46 @@ incidunt cum."
         mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
         perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
         incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
               Name="Name SurName"
               position="AI Engineer"
               companyName="Google"

@@ -71,7 +71,7 @@ const PlatformSection = () => {
               <button
                 key={index}
                 onClick={() => handleArrowClick(index)}
-                className={`hidden md:flex  relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center overflow-hidden items-center justify-center font-thin md:font-semibold transition-all duration-300 ${
+                className={`hidden md:flex  relative w-[100%] md:w-1/4 h-20 md:h-14  text-xs md:text-lg text-center overflow-hidden items-center justify-center font-thin md:font-semibold  ${
                   activeIndex === index
                     ? "bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white"
                     : "bg-white text-[#333333]/50"
@@ -83,10 +83,6 @@ const PlatformSection = () => {
                   marginLeft: index !== 0 ? "-30px" : "0",
                   zIndex: platformCards.length - index,
                   border: "1px solid #cccccc ",
-                  boxShadow:
-                    activeIndex === index
-                      ? "0 0 10px rgba(0,0,0,0.5)"
-                      : "0 0 5px rgba(0,0,0,0.1)",
                 }}
               >
                 <span className="font-light text-lg">{card.title}</span>
@@ -146,7 +142,6 @@ const PlatformSection = () => {
           ) : (
             <div className="text-gray-600 text-lg leading-relaxed">
               {platformCards[activeIndex].description}
-              {/* {activeIndex === 2 ? <Carousel /> : ""} */}
             </div>
           )}
         </motion.div>
@@ -154,7 +149,9 @@ const PlatformSection = () => {
           initial={{ x: 70, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className=" w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] shadow-lg border-neutral-300 rounded-xl "
+          className={` w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] ${
+            activeIndex === 3 ? "" : "shadow-lg"
+          } border-neutral-300 rounded-xl `}
         >
           {Array.isArray(platformCards[activeIndex].imgSrc) ? (
             platformCards[activeIndex].imgSrc.map((src, i) => (
@@ -164,13 +161,11 @@ const PlatformSection = () => {
                 alt={`Platform Feature ${i + 1}`}
                 width={500}
                 height={300}
-                className="w-full sm:w-[45%] h-auto max-w-md rounded-xl shadow-lg object-cover"
+                className="w-full sm:w-[45%] h-auto max-w-md rounded-xl object-cover"
               />
             ))
           ) : platformCards[activeIndex].carousel ? (
-            <div className="">
-              <PlatformCarousel />
-            </div>
+            <PlatformCarousel />
           ) : (
             <Image
               src={`${platformCards[activeIndex].imgSrc}`}

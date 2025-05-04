@@ -159,7 +159,7 @@ export default function HeroSection() {
               variants={cardContainer}
               initial="hidden"
               animate="show"
-              className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row justify-around max-lg:bg-red-800 md:gap-8 lg:gap-16"
+              className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row justify-between md:gap-8 lg:gap-16"
             >
               <motion.div
                 variants={cardItem}

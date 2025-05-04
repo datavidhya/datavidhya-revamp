@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const TestimonyForm = () => {
+const TestimonyForm = ({ index }: any) => {
   const { register, handleSubmit } = useForm();
   const [user, setUser] = useState({
     name: "",
@@ -13,9 +13,10 @@ const TestimonyForm = () => {
   });
   return (
     <form
-      className="h-auto w-full p-4 px-12 text-black flex flex-col items-center gap-2 bg-green-200"
+      className="h-auto w-auto p-4 px-12 text-black flex flex-col items-center gap-2 bg-green-200 border m-1"
       onSubmit={handleSubmit((data) => console.log(data))}
     >
+      <h5>Form {index + 1}</h5>
       <input
         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
         {...register("name")}
