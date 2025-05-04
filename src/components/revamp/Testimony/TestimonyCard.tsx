@@ -9,7 +9,7 @@ interface prop {
 }
 const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
   return (
-    <div className="w-[19rem] md:w-[22rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-md hover:bg-gradient-to-bl from-purple-100 to-blue-50">
+    <div className="w-[19rem] md:w-[22rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-lg hover:bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="w-full  text-black text-left">
         {/* <p className="text-xl mb-8">⭐⭐⭐⭐⭐</p> */}
         <span className="flex gap-1">
@@ -52,7 +52,7 @@ const TestimonyCard = ({ text, pfp, Name, position, companyName }: prop) => {
           width={56}
           className="rounded-full size-10 md:size-12"
         ></Image>
-        <span className="text-left ml-0 md:-ml-8">
+        <span className="text-left -ml-7 md:-ml-10 flex flex-col justify-center">
           <h2 className="text-[16px] md:text-lg font-semibold leading-[150%] text-black">
             {Name}
           </h2>

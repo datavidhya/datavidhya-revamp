@@ -402,7 +402,137 @@ incidunt cum."
           </motion.div>
         </div>
       </div>
-      <div className="flex flex-col md:hidden ">
+      <div className="h-[78%] flex flex-col justify-center md:hidden">
+        <div className="w-full  overflow-hidden">
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: -400 }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className=" flex  gap-6"
+          >
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+          </motion.div>
+        </div>
+        <div className="w-full overflow-hidden">
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: 400 }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className="flex gap-6"
+          >
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+        mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+        perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+        incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+      mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+      perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+      incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+    mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+    perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+    incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+  mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+  perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+  incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+            <TestimonyCard
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio ut
+mollitia voluptate, nesciunt, modi laudantium voluptas fuga sed
+perspiciatis placeat cupiditate ipsum praesentium odit! Inventore
+incidunt cum."
+              Name="Name SurName"
+              position="AI Engineer"
+              companyName="Google"
+              pfp="/revamp/author.svg"
+            />{" "}
+          </motion.div>
+        </div>
+      </div>
+      {/* <div className="flex flex-col md:hidden ">
         <Marquee className="" direction="left">
 
           {" "}
@@ -525,7 +655,7 @@ incidunt cum."
             />{" "}
           </div>
         </Marquee>
-      </div>
+      </div> */}
     </div>
   );
 };
