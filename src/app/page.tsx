@@ -22,8 +22,17 @@ const Page = () => {
       <FAQsSection />
       <TopicCovered />
       <ViewCounter />
-      <div className="hidden md:flex justify-center my-8">
-        <img src="/revamp/bottomimage.png" alt="" />
+      <div className="flex justify-center my-8 mx-2">
+        <img
+          src="/revamp/bottomimage.png"
+          alt="banner"
+          className="hidden md:flex"
+        />
+        <img
+          src="/revamp/mobileBanner.jpeg"
+          alt="banner"
+          className="block md:hidden mx-2"
+        />
       </div>
       <Footer />
     </div>
