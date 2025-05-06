@@ -7,6 +7,7 @@ import Link from "next/link";
 import Carousel from "./Carousel";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import Reordering from "./Reordering";
 const inter = Inter({ subsets: ["latin"] });
 interface prop {
   src: string;
@@ -169,15 +170,16 @@ export default function HeroSection() {
                 variants={cardItem}
                 className="w-full rounded-[20px] border  border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 lg:w-[45%] md:rounded-[28px] md:p-6 "
               >
-                <div className="w-full mb-4">
-                  <div className="grid grid-cols-3 gap-2">
+                <div className="w-full mb-4 ">
+                  {/* <div className="grid grid-cols-3 gap-2">
                     <CourseImg href="/" src="/revamp/course1.jpeg" />
                     <CourseImg href="/" src="/revamp/course4.webp" />
                     <CourseImg href="/" src="/revamp/course6.webp" />{" "}
                     <CourseImg href="/" src="/revamp/course2.png" />
                     <CourseImg href="/" src="/revamp/course3.png" />{" "}
                     <CourseImg href="/" src="/revamp/course5.webp" />
-                  </div>
+                  </div> */}
+                  <Reordering />
                 </div>
                 <div className="mt-auto">
                   <h3
