@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Inter, Manrope } from "next/font/google";
 import { motion } from "framer-motion";
+import { ShineBorder } from "@/components/magicui/shine-border";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -29,8 +30,14 @@ const NavigationBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-1 md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8"
+      className="relative md:sticky top-0  md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8"
     >
+      {" "}
+      <ShineBorder
+        shineColor={"#000000"}
+        borderWidth={0.8}
+        className="hidden md:block"
+      />
       <div className="flex items-center justify-between md:justify-around">
         <Link href="/" className="flex items-center gap-2 ">
           <img
@@ -96,7 +103,6 @@ const NavigationBar = () => {
           )}
         </button>
       </div>
-
       {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0, x: 100 }}

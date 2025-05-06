@@ -3,6 +3,7 @@ import React from "react";
 import { Inter } from "next/font/google";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ShineBorder } from "@/components/magicui/shine-border";
 const inter = Inter({ subsets: ["latin"] });
 interface LinkitemProp {
   text: string;
@@ -28,7 +29,7 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
 const UltimateCourse = () => {
   // console.log(Linkitems);
   return (
-    <div className="flex flex-col items-center py-[40px] md:py-28 bg-[#F7F7FB]">
+    <div className="flex flex-col items-center py-[40px] md:py-28 bg-[#F7F7FB] mx-1">
       <div>
         <div className="flex justify-center">
           <h2
@@ -72,12 +73,12 @@ const UltimateCourse = () => {
       </div>
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
-        // animate={{ scale: 1 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        // viewport={{ amount: 0.55 }}
         transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
-        className="max-w-[845px] p-6 bg-white flex flex-col border border-[#d7d7d7] rounded-[28px] mt-[46px]"
+        className="relative max-w-[845px] p-6 bg-white flex flex-col rounded-[28px]  mt-[46px]"
       >
+        {" "}
+        <ShineBorder shineColor={"#AB47BC"} borderWidth={2} />{" "}
         <div className="flex flex-col">
           <div className="flex flex-col md:flex-row gap-[24px]">
             {" "}
@@ -149,6 +150,7 @@ const UltimateCourse = () => {
           </div>
         </div>
       </motion.div>
+
       <Link href={"/courses"}>
         <button
           className={`w-40 rounded-[12px] bg-[#2E2E2E] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-16 cursor-pointer`}

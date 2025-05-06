@@ -28,7 +28,7 @@ function Counter({ number }: prop) {
 
   return (
     <div>
-      <h1 className="text-center text-[3rem] font-bold text-white dark:text-black max-sm:text-[2rem]">
+      <h1 className="text-center text-[3rem] font-bold text-black max-sm:text-[2rem]">
         {count}K+
       </h1>
     </div>

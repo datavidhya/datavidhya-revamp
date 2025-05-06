@@ -32,7 +32,7 @@ const ProjectCard = ({
           </span>
         </div>
         <p
-          className={`mb-4 line-clamp-4 text-xs leading-6 text-[#333333B2] ${inter.className}`}
+          className={`mb-4 line-clamp-4 text-[14px] leading-6 text-[#000000b2] ${inter.className}`}
         >
           {description}
         </p>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Carousel from "./Carousel";
+import { RetroGrid } from "@/components/magicui/retro-grid";
 const inter = Inter({ subsets: ["latin"] });
 interface prop {
   src: string;
@@ -68,12 +69,13 @@ export default function HeroSection() {
   };
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
-      <div className="absolute left-0 top-0 flex h-full inset-0 overflow-hidden bg-white">
-        <img
+      <div className="left-0 top-0 flex h-full inset-0 overflow-hidden bg-white">
+        <RetroGrid angle={45} cellSize={40} />
+        {/* <img
           src="/revamp/tiltgrid.jpg"
           className="absolute bottom-0 h-[40%] w-full min-w-full object-cover opacity-25"
           alt="Grid background"
-        />
+        /> */}
       </div>
       <div className="absolute left-0 top-0 hidden h-full w-screen max-w-none items-end justify-between overflow-hidden md:flex">
         <div className="relative flex h-full w-1/2 overflow-hidden">

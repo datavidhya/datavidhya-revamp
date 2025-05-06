@@ -16,10 +16,10 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   link,
   icon,
 }) => (
-  <div className="flex flex-row md:flex-col justify-center max-sm:gap-4 items-center ">
+  <div className="flex flex-row md:flex-col justify-center max-sm:gap-4 items-center text-black">
     <Counter number={number} />
     <div className="flex items-center gap-2">
-      <p className="text-center text-[1rem] font-semibold text-white dark:text-black ">
+      <p className="text-center text-[1rem] font-semibold text-black ">
         {name}
       </p>
       <Link href={link}>
@@ -31,8 +31,8 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
 
 const ViewCounter: React.FC = () => {
   return (
-    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full  max-sm:rounded-none ">
-      <h3 className="mb-2 text-center text-[40px] font-bold text-white dark:text-black max-md:text-[30px]">
+    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full  max-sm:rounded-none text-black">
+      <h3 className="mb-2 text-center text-[40px] font-bold text-black max-md:text-[30px]">
         Join our community...
       </h3>
       <div className="flex w-full justify-around max-md:flex-col max-md:gap-4">
