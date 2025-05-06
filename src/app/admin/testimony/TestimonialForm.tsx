@@ -380,7 +380,7 @@ export default function TestimonialForm({ onSuccess }: TestimonialFormProps) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md text-black">
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md text-black border border-neutral-500">
       <h1 className="text-2xl font-bold mb-6">Add New Testimonial</h1>
 
       {submitStatus && (
@@ -490,7 +490,7 @@ export default function TestimonialForm({ onSuccess }: TestimonialFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition disabled:bg-blue-300"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md transition disabled:bg-blue-300"
           >
             {isSubmitting ? "Submitting..." : "Add Testimonial"}
           </button>

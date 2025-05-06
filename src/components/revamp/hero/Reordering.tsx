@@ -64,7 +64,7 @@ export default function Reordering() {
           className="overflow-hidden shadow-md"
           style={{
             width: 160,
-            height: 100,
+            height: 120,
             borderRadius: "10px",
           }}
         >
@@ -100,6 +100,6 @@ function shuffle(array: any) {
  */
 const spring = {
   type: "spring",
-  damping: 20,
+  damping: 27,
   stiffness: 300,
 };

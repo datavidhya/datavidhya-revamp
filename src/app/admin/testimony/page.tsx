@@ -297,23 +297,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -427,7 +410,9 @@ export default function TestimonialManagement() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 text-black">
-      <h1 className="text-3xl font-bold mb-8">Testimonial Management</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center my-4 ">
+        Testimonial Management
+      </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1">
@@ -436,12 +421,12 @@ export default function TestimonialManagement() {
 
         {/* Testimonials List Section */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white rounded-lg shadow-md p-6 h-full border border-neutral-600">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Existing Testimonials</h2>
               <button
                 onClick={fetchTestimonials}
-                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                className=" text-white px-4 py-2 rounded-md bg-blue-600"
               >
                 Refresh
               </button>
