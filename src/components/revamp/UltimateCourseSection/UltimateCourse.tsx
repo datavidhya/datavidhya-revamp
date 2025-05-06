@@ -78,7 +78,7 @@ const UltimateCourse = () => {
         className="relative max-w-[845px] p-6 bg-white flex flex-col rounded-[28px]  mt-[46px]"
       >
         {" "}
-        <ShineBorder shineColor={"#AB47BC"} borderWidth={2} />{" "}
+        <ShineBorder shineColor={"#AB47BC"} borderWidth={3} />{" "}
         <div className="flex flex-col">
           <div className="flex flex-col md:flex-row gap-[24px]">
             {" "}
