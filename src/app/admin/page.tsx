@@ -35,7 +35,7 @@ const page = () => {
         </Link>
         <Link href={"/admin/faq"}>
           {" "}
-          <div className="h-40 w-48 flex items-center justify-center bg-neutral-300 inset-2 border border-neutral-400  text-neutral-800 text-2xl font-semibold shadow-lg rounded-lg py-8 px ">
+          <div className="h-40 w-48 flex items-center justify-center bg-blue-500 inset-2 border border-neutral-400  text-neutral-800 text-2xl font-semibold shadow-lg rounded-lg py-8 px ">
             FAQs
           </div>
         </Link>

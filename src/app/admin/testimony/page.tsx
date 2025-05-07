@@ -333,7 +333,7 @@ export default function TestimonialManagement() {
     setError(null);
 
     try {
-      const response = await fetch("/api/v1/user/testimonial.ts");
+      const response = await fetch("/api/v1/user/testimonial");
       const result = await response.json();
 
       if (result.success) {
@@ -410,7 +410,7 @@ export default function TestimonialManagement() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 text-black">
-      <h1 className="text-5xl font-bold mb-6 text-center my-4 ">
+      <h1 className="text-5xl font-bold mb-12 text-center my-4 ">
         Testimonial Management
       </h1>
 

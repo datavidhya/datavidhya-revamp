@@ -399,13 +399,13 @@ export default function TestimonialForm({ onSuccess }: TestimonialFormProps) {
         {/* Name Input */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Client Name
+            User Name
           </label>
           <input
             {...register("name")}
             type="text"
             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="John Doe"
+            placeholder="User Name"
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -439,7 +439,7 @@ export default function TestimonialForm({ onSuccess }: TestimonialFormProps) {
             {...register("userReview")}
             rows={4}
             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Write the client's review here..."
+            placeholder="Client's review here..."
           ></textarea>
           {errors.userReview && (
             <p className="mt-1 text-sm text-red-600">

@@ -88,18 +88,13 @@ const initialOrder = [
   "/revamp/course6.webp",
 ];
 
-/**
- * ==============   Utils   ================
- */
+
 function shuffle(array: any) {
   return [...array].sort(() => Math.random() - 0.5);
 }
 
-/**
- * ==============   Styles   ================
- */
 const spring = {
   type: "spring",
-  damping: 27,
+  damping: 28,
   stiffness: 300,
 };
