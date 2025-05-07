@@ -300,7 +300,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import TestimonialForm from "./TestimonialForm";
+import TestimonialForm from "../../../components/revamp/Testimony/TestimonialForm";
 
 type Testimonial = {
   id: string;
