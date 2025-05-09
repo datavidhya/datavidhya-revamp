@@ -82,26 +82,26 @@ export default function HeroSection() {
       </div>
       <div className="absolute left-0 top-0 hidden h-full w-screen max-w-none items-end justify-between overflow-hidden md:flex">
         <motion.div
-          initial={{ opacity: 0, scale: 1.3 }}
+          initial={{ opacity: 0, scale: 1.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="relative flex h-full w-1/2 overflow-hidden"
         >
           <img
             src="/revamp/realBg1.svg"
-            className="absolute -bottom:[35%] xl:-bottom-[25%] -left-1/3 xl:-left-1/4 h-[740px] w-full -rotate-12"
+            className="absolute -bottom:[35%] xl:-bottom-[15%] -left-1/4 xl:-left-1/4 h-[740px] w-full -rotate-12"
             alt="Bg decoration 1"
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 1.3 }}
+          initial={{ opacity: 0, scale: 1.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="relative h-full w-1/2 overflow-hidden"
         >
           <img
             src="/revamp/realBg2.svg"
-            className="absolute -bottom-[30%] -right-1/4 h-[900px] w-full -rotate-12 max-2xl:-bottom-[35%] max-2xl:w-[800px]"
+            className="absolute -bottom-[30%] -right-1/5 h-[900px] w-full -rotate-12 max-2xl:-bottom-[35%] max-2xl:w-[800px]"
             alt="Background decoration 2"
           />
         </motion.div>
