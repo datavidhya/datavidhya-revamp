@@ -90,7 +90,7 @@ export default function HeroSection() {
           <img
             src="/revamp/realBg1.svg"
             className="absolute -bottom:[35%] xl:-bottom-[15%] -left-1/4 xl:-left-1/4 h-[740px] w-full -rotate-12"
-            alt="Bg decoration img 1"
+            alt="Background decoration img 1"
           />
         </motion.div>
         <motion.div
