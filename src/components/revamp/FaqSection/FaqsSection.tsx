@@ -21,8 +21,8 @@ const FAQsSection = () => {
   };
 
   return (
-    <div className="w-full bg-[#F7F7FB] pb-4 md:pb-14 pt-2 md:pt-28">
-      <div className="faqWidht z-40 mx-auto max-md:my-10 max-md:w-[90%]">
+    <div className="w-full bg-[#F7F7FB]  py-6 md:py-28">
+      <div className="faqWidht z-40 mx-auto max-md:my-4 max-md:w-[90%]">
         <h2
           className={`faqheading mx-auto   text-center text-[48px] font-bold text-[#000000] ${roboto.className}`}
         >

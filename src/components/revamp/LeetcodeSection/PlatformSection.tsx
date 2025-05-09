@@ -53,7 +53,7 @@ const PlatformSection = () => {
   return (
     <section
       id="platform"
-      className="mt-6 md:mt-14 px-4 max-w-7xl mx-auto text-center"
+      className="mt-6 md:mt-28 px-4 max-w-7xl mx-auto text-center"
     >
       <div className="flex flex-col md:flex-row justify-center overflow-hidden  border border-neutral-200 md:border-0 rounded-2xl mt-1 ">
         {platformCards.map((card, index) => {
@@ -178,8 +178,8 @@ const PlatformSection = () => {
         </motion.div>{" "}
       </div>
 
-      <div className="mt-20 flex justify-center">
-        <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-[112px]">
+      <div className="my-6 md:my-28 flex justify-center">
+        <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-6 md:mb-28">
           Try Platform
         </button>
       </div>

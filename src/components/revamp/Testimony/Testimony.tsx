@@ -12,8 +12,8 @@ import Marquee from "react-fast-marquee";
 const Testimony = () => {
   return (
     // ${roboto.className}
-    <div className={` w-full flex flex-col items-center justify-center mb-20`}>
-      <h1 className="text-4xl md:text-5xl text-black text-center  font-bold leading-[120%] mt-12 md:mt-28">
+    <div className={` w-full flex flex-col items-center justify-center my-6 md:my-28`}>
+      <h1 className="text-4xl md:text-5xl text-black text-center  font-bold leading-[120%] ">
         Customer <br className="block md:hidden" />{" "}
         <span className="relative inline-block">
           Testimonials
