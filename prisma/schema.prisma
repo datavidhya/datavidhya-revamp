@@ -8,9 +8,11 @@ datasource db {
 }
 
 model testimonial {
-  id         Int       @id @default(autoincrement())
-  name       String
-  review     String?
-  rating     Decimal?  @db.Decimal(5, 1)
-  created_at DateTime? @default(now()) @db.Timestamp(6)
+  id          Int       @id @default(autoincrement())
+  profileImg  String
+  userReview  String
+  linkedinUrl String
+  name        String
+  rating      Decimal?  @db.Decimal(5, 1)
+  created_at  DateTime? @default(now()) @db.Timestamp(6)
 }

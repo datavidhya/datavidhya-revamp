@@ -7,19 +7,20 @@ import Link from "next/link";
 import Carousel from "./Carousel";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import Reordering from "./Reordering";
+// import Reordering from "./Reordering";
 const inter = Inter({ subsets: ["latin"] });
 interface prop {
   src: string;
   href: string;
+  classname?: string;
 }
-export const CourseImg = ({ src, href }: prop) => {
+export const CourseImg = ({ src, href, classname }: prop) => {
   return (
     <Link href={href}>
       <img
-        alt="Course instructor"
+        alt="+3"
         src={src}
-        className="h-full w-full object-cover rounded-md"
+        className={`${classname} h-full w-full object-cover rounded-md`}
       />
     </Link>
   );
@@ -72,7 +73,7 @@ export default function HeroSection() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
       <div className="left-0 top-0 flex h-full inset-0 overflow-hidden bg-white">
-        <RetroGrid angle={45} cellSize={40} />
+        <RetroGrid angle={55} cellSize={40} />
         {/* <img
           src="/revamp/tiltgrid.jpg"
           className="absolute bottom-0 h-[40%] w-full min-w-full object-cover opacity-25"
@@ -124,7 +125,7 @@ export default function HeroSection() {
             </motion.h1>{" "}
             <motion.div
               variants={item}
-              className="my-4 flex flex-col flex-wrap gap-3 sm:flex-row md:my-6 md:gap-8"
+              className="my-4 flex flex-row flex-wrap gap-3 max-sm:flex-col md:my-6 lg:my-8 md:gap-4"
             >
               <p
                 className={`flex items-center gap-1.5 text-sm font-light text-[#3D3D3D] md:text-base ${inter.className}`}
@@ -168,18 +169,34 @@ export default function HeroSection() {
             >
               <motion.div
                 variants={cardItem}
-                className="w-full rounded-[20px] border  border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2 lg:w-[45%] md:rounded-[28px] md:p-6 "
+                className="w-full rounded-[20px] border  border-[#D7D7D7] bg-gradient-to-br from-neutral-50 to-neutral-100 p-4 sm:p-6 md:w-1/2 lg:w-[45%] md:rounded-[28px] md:p-5 "
               >
                 <div className="w-full mb-4 ">
-                  {/* <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
                     <CourseImg href="/" src="/revamp/course1.jpeg" />
                     <CourseImg href="/" src="/revamp/course4.webp" />
-                    <CourseImg href="/" src="/revamp/course6.webp" />{" "}
-                    <CourseImg href="/" src="/revamp/course2.png" />
-                    <CourseImg href="/" src="/revamp/course3.png" />{" "}
-                    <CourseImg href="/" src="/revamp/course5.webp" />
-                  </div> */}
-                  <Reordering />
+                    <CourseImg href="/" src="/revamp/course6.webp" />
+                    <div className="flex lg:hidden">
+                      {" "}
+                      <CourseImg href="/" src="/revamp/3img.jpg" />
+                    </div>
+                    <CourseImg
+                      href="/"
+                      src="/revamp/course2.png"
+                      classname="hidden lg:block"
+                    />
+                    <CourseImg
+                      href="/"
+                      src="/revamp/course3.png"
+                      classname="hidden lg:block"
+                    />
+                    <CourseImg
+                      href="/"
+                      src="/revamp/course5.webp"
+                      classname="hidden lg:block"
+                    />
+                  </div>
+                  {/* <Reordering /> */}
                 </div>
                 <div className="mt-auto">
                   <h3
@@ -207,6 +224,14 @@ export default function HeroSection() {
                 <div className="flex w-full justify-center mb-4">
                   <div className="w-full max-w-[520px] overflow-hidden rounded-lg shadow-lg">
                     <Carousel />
+                    {/* <div className="h-64 rounded-lg overflow-hidden">
+                      {" "}
+                      <img
+                        src="/revamp/orange.png"
+                        alt=""
+                        className=" object-cover"
+                      />
+                    </div> */}
                   </div>
                 </div>
                 <div className="mt-auto">

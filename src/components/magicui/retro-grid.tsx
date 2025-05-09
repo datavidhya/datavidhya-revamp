@@ -36,7 +36,7 @@ export function RetroGrid({
   className,
   angle = 65,
   cellSize = 60,
-  opacity = 0.5,
+  opacity = 0.4,
   lightLineColor = "gray",
   darkLineColor = "gray",
   ...props
@@ -52,9 +52,9 @@ export function RetroGrid({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute size-full overflow-hidden [perspective:150px]",
+        "pointer-events-none absolute size-full overflow-hidden [perspective:200px]",
         `opacity-[var(--opacity)]`,
-        className,
+        className
       )}
       style={gridStyles}
       {...props}
