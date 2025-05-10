@@ -211,7 +211,7 @@ export async function POST(request: Request) {
         profileImg,
         userReview,
         linkedinUrl,
-        starRating,
+        // starRating,
       },
     });
 
