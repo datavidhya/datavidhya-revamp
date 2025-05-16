@@ -119,7 +119,7 @@ export default function HeroSection() {
           >
             <motion.h1
               variants={item}
-              className="relative max-w-full text-3xl font-bold leading-[1.2] text-[#333333] sm:text-4xl md:text-[44px] md:leading-[100%] lg:text-[61px] my-0  md:my-6"
+              className="relative max-w-full text-3xl font-bold leading-[1.2] text-[#333333] sm:text-4xl md:text-[44px] md:leading-[100%] lg:text-[56px] my-0  md:my-6"
             >
               Unlock your
               <br className="block md:hidden" />
@@ -175,11 +175,11 @@ export default function HeroSection() {
               variants={cardContainer}
               initial="hidden"
               animate="show"
-              className="mt-6 flex w-full flex-col gap-6 md:mt-10 md:flex-row justify-between md:gap-8 lg:gap-16"
+              className=" mt-6 flex w-full  flex-col gap-6 md:mt-10 md:flex-row justify-between md:justify-around md:gap-8 lg:gap-16"
             >
               <motion.div
                 variants={cardItem}
-                className="w-full rounded-[20px] border  border-[#D7D7D7] bg-gradient-to-br from-neutral-50 to-neutral-100 p-4 sm:p-6 md:w-1/2 lg:w-[45%] md:rounded-[28px] md:p-5 "
+                className="w-full rounded-[20px] border  border-[#D7D7D7] bg-gradient-to-br from-neutral-50 to-neutral-100 p-4 sm:p-6 md:w-[45%] lg:w-[45%] md:rounded-[28px] md:p-4 "
               >
                 <div className="w-full mb-4 ">
                   <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
@@ -229,7 +229,7 @@ export default function HeroSection() {
 
               <motion.div
                 variants={cardItem}
-                className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 md:w-1/2  lg:w-[45%] md:rounded-[28px] md:p-6 "
+                className="w-full rounded-[20px] border border-[#D7D7D7] bg-[#FAFAFA] p-4 sm:p-6 max-md:w-[40%] md:w-[45%] md:rounded-[28px] md:p-4 "
               >
                 <div className="flex w-full justify-center mb-4">
                   <div className="w-full max-w-[520px] overflow-hidden rounded-lg shadow-lg">
