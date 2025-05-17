@@ -31,21 +31,21 @@ export function Bubble({ size, image, dx, dy }: BubbleProps) {
         x: [
           dx,
           dx + Math.random() * 50,
-          dx - Math.random() * 50,
-          dx + Math.random() * 40,
+          dx - Math.random() * 30,
+          dx + Math.random() * 60,
           dx - Math.random() * 40,
           dx,
         ],
         y: [
           dy,
-          dy + Math.random() * 50,
+          dy + Math.random() * 30,
+          dy - Math.random() * 70,
+          dy + Math.random() * 20,
           dy - Math.random() * 50,
-          dy + Math.random() * 40,
-          dy - Math.random() * 40,
           dy,
         ],
         scale: [1, 1.2, 1.1, 1.3, 1, 1.1],
-        opacity: [0.6, 1, 0.9, 1, 0.6, 0.7],
+        opacity: [0.6, 1, 0.8, 1, 0.9, 1],
       }}
       transition={{
         duration: 20,
@@ -70,13 +70,13 @@ export default function Hero() {
   ];
 
   useEffect(() => {
-    const newBubbles = new Array(10).fill(null).map((_, i) => {
-      const size = Math.random() * 40 + 30;
+    const newBubbles = new Array(15).fill(null).map((_, i) => {
+      const size = Math.random() * 40 + 20;
       const dx = Math.random() * window.innerWidth - window.innerWidth / 2;
       const dy = Math.random() * window.innerHeight - window.innerHeight / 2;
       const image = imageUrls[i % imageUrls.length];
 
-      return <Bubble key={i} size={55} dx={dx} dy={dy} image={image} />;
+      return <Bubble key={i} size={size} dx={dx} dy={dy} image={image} />;
     });
 
     setBubbles(newBubbles);
