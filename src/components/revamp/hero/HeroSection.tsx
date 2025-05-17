@@ -2,8 +2,8 @@ import React from "react";
 import { ChevronRight } from "lucide-react";
 import { Inter } from "next/font/google";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import Hero from "@/app/exp/page";
 import Link from "next/link";
+import Hero from "./Hero";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
   const item = {
