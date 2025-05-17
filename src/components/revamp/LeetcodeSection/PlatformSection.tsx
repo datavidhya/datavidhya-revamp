@@ -104,80 +104,80 @@ const PlatformSection = () => {
             </>
           );
         })}
-      </div>
+      </div>{" "}
+      <div className="mt-6 w-[96%] md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center bg-[#ffffff] border border-[#d7d7d7] rounded-[8px] p-3">
+        <div className="p-2 border border-[#d7d7d7] bg-[#fafafa/6] rounded-[8px]  flex flex-wrap md:flex-nowrap">
+          <motion.div
+            initial={{ x: -70, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="w-full md:w-[45%] text-left ml-6 p-6"
+          >
+            <h3 className="text-2xl font-bold mb-4 text-black ">
+              {activeIndex === 2 ? (
+                <>
+                  <span className="bg-gradient-to-r from-blue-500 to-indigo-500 text-transparent bg-clip-text">
+                    1/4{" "}
+                  </span>
+                  AI Review✨
+                </>
+              ) : (
+                platformCards[activeIndex].title
+              )}
+            </h3>
 
-      <div className="mt-6 w-[96%] md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center">
-        <motion.div
-          initial={{ x: -70, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="w-full md:w-[45%] text-left ml-6 p-6"
-        >
-          <h3 className="text-2xl font-bold mb-4 text-black ">
-            {activeIndex === 2 ? (
-              <>
-                <span className="bg-gradient-to-r from-blue-500 to-indigo-500 text-transparent bg-clip-text">
-                  1/4{" "}
-                </span>
-                AI Review✨
-              </>
+            {Array.isArray(platformCards[activeIndex].description) ? (
+              <div className="text-gray-600 text-lg leading-relaxed">
+                <p className="mb-2 md:mb-3">
+                  {platformCards[activeIndex].description[0]}
+                </p>
+                <ol className="list-decimal text-[16px] md:text-lg ml-6">
+                  {platformCards[activeIndex].description
+                    .slice(1)
+                    .map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                </ol>
+              </div>
             ) : (
-              platformCards[activeIndex].title
+              <div className="text-gray-600 text-lg leading-relaxed">
+                {platformCards[activeIndex].description}
+              </div>
             )}
-          </h3>
-
-          {Array.isArray(platformCards[activeIndex].description) ? (
-            <div className="text-gray-600 text-lg leading-relaxed">
-              <p className="mb-2 md:mb-3">
-                {platformCards[activeIndex].description[0]}
-              </p>
-              <ol className="list-decimal text-[16px] md:text-lg ml-6">
-                {platformCards[activeIndex].description
-                  .slice(1)
-                  .map((point, idx) => (
-                    <li key={idx}>{point}</li>
-                  ))}
-              </ol>
-            </div>
-          ) : (
-            <div className="text-gray-600 text-lg leading-relaxed">
-              {platformCards[activeIndex].description}
-            </div>
-          )}
-        </motion.div>
-        <motion.div
-          initial={{ x: 70, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className={` w-full md:w-[90%] flex justify-center items-center gap-6 flex-wrap border-[0px] ${
-            activeIndex === 3 ? "" : "shadow-lg"
-          } border-neutral-300 rounded-xl `}
-        >
-          {Array.isArray(platformCards[activeIndex].imgSrc) ? (
-            platformCards[activeIndex].imgSrc.map((src, i) => (
+          </motion.div>
+          <motion.div
+            initial={{ x: 70, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className={` w-full md:w-[90%] flex justify-center items-center border border-neutral-300 gap-6 flex-wrap  ${
+              activeIndex === 3 ? "" : ""
+            } border-neutral-300 rounded-xl `}
+          >
+            {Array.isArray(platformCards[activeIndex].imgSrc) ? (
+              platformCards[activeIndex].imgSrc.map((src, i) => (
+                <Image
+                  key={i}
+                  src={`${src}`}
+                  alt={`Platform Feature ${i + 1}`}
+                  width={500}
+                  height={300}
+                  className="w-full sm:w-[45%] h-auto max-w-md rounded-xl object-cover"
+                />
+              ))
+            ) : platformCards[activeIndex].carousel ? (
+              <PlatformCarousel />
+            ) : (
               <Image
-                key={i}
-                src={`${src}`}
-                alt={`Platform Feature ${i + 1}`}
-                width={500}
-                height={300}
-                className="w-full sm:w-[45%] h-auto max-w-md rounded-xl object-cover"
+                src={`${platformCards[activeIndex].imgSrc}`}
+                alt="Platform Feature"
+                width={600}
+                height={400}
+                className="w-full h-auto max-w-5xl rounded-xl object-cover"
               />
-            ))
-          ) : platformCards[activeIndex].carousel ? (
-            <PlatformCarousel />
-          ) : (
-            <Image
-              src={`${platformCards[activeIndex].imgSrc}`}
-              alt="Platform Feature"
-              width={600}
-              height={400}
-              className="w-full h-auto max-w-5xl rounded-xl object-cover"
-            />
-          )}
-        </motion.div>{" "}
+            )}
+          </motion.div>{" "}
+        </div>
       </div>
-
       <div className="my-6 md:my-28 flex justify-center">
         <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-6 md:mb-28">
           Try Platform

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Inter, Manrope } from "next/font/google";
 import { motion } from "framer-motion";
-import { ShineBorder } from "@/components/magicui/shine-border";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -17,7 +16,7 @@ export const NavItems = ({ href, text }: prop) => {
       href={href}
       className=" text-gray-800 transition-colors hover:text-purple-600"
     >
-      {text}
+      <p className="font-medium text-[16px] leading-5 text-[#363636]">{text}</p>
     </Link>
   );
 };
@@ -30,15 +29,10 @@ const NavigationBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative md:sticky top-0  md:top-3 z-50 mx-auto  h-[56px] max-w-[687px] rounded-2xl md:border  border-[#DBDBDB] bg-transparent md:bg-[#F0F0F07A]/50 px-4 md:shadow-sm backdrop-blur-sm md:px-8"
+      className=" max-w-[1262px] mx-auto mt-[23px]  h-[68px] "
     >
       {" "}
-      <ShineBorder
-        shineColor={"#000000"}
-        borderWidth={0.8}
-        className="hidden md:block"
-      />
-      <div className="flex items-center justify-between md:justify-around">
+      <div className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 ">
           <img
             src="/revamp/logo.svg"
@@ -48,7 +42,7 @@ const NavigationBar = () => {
             className="-mt-0.5 size-[58px]"
           />
           <span
-            className={`-ml-[16px] font-extrabold text-[#2B2B2B] ${manrope.className}`}
+            className={`-ml-[16px] font-bold text-[#333333] leading-6 ${manrope.className}`}
           >
             Data Vidhya
           </span>
