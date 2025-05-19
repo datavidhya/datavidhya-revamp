@@ -32,7 +32,7 @@ const NavigationBar = () => {
       className=" max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-50"
     >
       {" "}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between z-50">
         <Link href="/" className="flex items-center gap-2 ">
           <img
             src="/revamp/logo.svg"
@@ -49,7 +49,7 @@ const NavigationBar = () => {
         </Link>
 
         <div
-          className={`hidden items-center ml-10 space-x-10 md:flex ${inter.className}`}
+          className={`hidden items-center ml-10 space-x-10 md:flex z-50 ${inter.className}`}
         >
           <NavItems href="/" text="Home" />
           <NavItems href="/courses" text="Courses" />
