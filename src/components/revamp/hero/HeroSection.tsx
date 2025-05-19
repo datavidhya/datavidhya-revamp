@@ -13,12 +13,12 @@ const HeroSection = () => {
   return (
     <section className="relative flex flex-col justify-center items-center mb-6">
       <Hero />
-      <Link href={"/"} className="z-0 md:z-10">
+      <Link href={"/"} className=" md:z-10">
         {" "}
         <div
-          className={` h-[37px] p-1 md:p-3 flex items-center justify-evenly rounded-[30px] mt-9 md:mt-[80px] mx-auto border-[0.6px] md:border border-[#2c2c2c]/22 md:border-[#2c2c2c] mb-4 z-10`}
+          className={` h-[37px] p-1 md:p-3 flex items-center justify-evenly rounded-[30px] mt-8 md:mt-[80px] mx-auto border-[0.6px] md:border border-[#2c2c2c]/22 md:border-[#2c2c2c] mb-8 z-10`}
         >
-          <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9] z-0 md:z-10 mr-1">
+          <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9]  md:z-10 mr-1">
             <p className="text-white flex items-center justify-center text-sm"> new</p>
           </div>{" "}
           <p className="text-[12.5px]">Introducing datavidhya platform </p>
@@ -36,18 +36,18 @@ const HeroSection = () => {
         </AuroraText>
       </h1>
       <p
-        className={`hidden md:flex font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10 z-0 md:z-10 ${inter.className}`}
+        className={`hidden md:flex font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10  md:z-10 ${inter.className}`}
       >
         Crush System Design and AI Interview for breakfast!{" "}
       </p>
-      <div className="flex flex-row gap-1.5 md:gap-4 mb-12 md:mb-24 px-2">
+      <div className="flex flex-row gap-1.5 md:gap-4 mb-12 md:mb-24 ">
         <button
-          className={` rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:px-8 sm:py-3 ${inter.className}`}
+          className={` rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
         >
           Explore Courses
         </button>
         <button
-          className={`rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:px-8 sm:py-3 ${inter.className}`}
+          className={`rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105  sm:py-3 ${inter.className}`}
         >
           Solve Questions
         </button>
@@ -63,7 +63,7 @@ const HeroSection = () => {
         alt="brands"
       />
 
-      <div className="p-1.5 md:p-4 mx-2 rounded-[8px] bg-[#A434EA]/10 border border-[#000]/20 z-0 md:z-10">
+      <div className="p-1.5 md:p-4 mx-2 rounded-[8px] bg-[#A434EA]/10 border border-[#000]/20  md:z-10">
         <img src="/revamp/heroScreenshot.svg" alt="background" />
       </div>
     </section>
