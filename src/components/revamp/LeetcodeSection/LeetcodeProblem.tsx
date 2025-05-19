@@ -6,7 +6,7 @@ import PlatformSection from "./PlatformSection";
 
 const LeetcodeProblem = () => {
   return (
-    <div className="bg-[#f7f7fb]">
+    <div className="bg-[#fff]">
       <Header />
       <PlatformSection />
     </div>

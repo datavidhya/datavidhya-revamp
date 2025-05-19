@@ -29,7 +29,7 @@ const NavigationBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className=" max-w-[1262px] mx-auto mt-[23px]  h-[68px] "
+      className=" max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-50"
     >
       {" "}
       <div className="flex items-center justify-between">
@@ -102,7 +102,7 @@ const NavigationBar = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2 }}
-          className={`w-full mt-4 bg-gray-100 shadow-sm  border-[1px] border-neutral-400 backdrop-blur-xl rounded-xl space-y-3 py-2 md:hidden ${inter.className}`}
+          className={`w-full mt-4 bg-gray-100 shadow-sm  border-[1px] border-neutral-400 backdrop-blur-xl rounded-xl space-y-3 py-2 mx-4 md:hidden z-50 ${inter.className}`}
         >
           <Link
             href="/"

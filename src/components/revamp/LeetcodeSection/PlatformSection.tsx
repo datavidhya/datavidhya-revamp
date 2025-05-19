@@ -105,8 +105,8 @@ const PlatformSection = () => {
           );
         })}
       </div>{" "}
-      <div className="mt-6 w-[96%] md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center bg-[#ffffff] border border-[#d7d7d7] rounded-[8px] p-3">
-        <div className="p-2 border border-[#d7d7d7] bg-[#fafafa/6] rounded-[8px]  flex flex-wrap md:flex-nowrap">
+      <div className="mt-6 w-[92%] mx-auto md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center bg-[#ffffff] border border-[#d7d7d7] rounded-[8px] p-3">
+        <div className="p-2 border border-[#000]/6  bg-[#Fbfaff] rounded-[8px]  flex flex-wrap items-center md:flex-nowrap">
           <motion.div
             initial={{ x: -70, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -149,8 +149,8 @@ const PlatformSection = () => {
             initial={{ x: 70, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className={` w-full md:w-[90%] flex justify-center items-center border border-neutral-300 gap-6 flex-wrap  ${
-              activeIndex === 3 ? "" : ""
+            className={` w-full md:w-[60%] flex justify-center items-center border border-neutral-300 gap-6 flex-wrap my-14 mr-6  ${
+              activeIndex === 3 ? "border-0" : "border"
             } border-neutral-300 rounded-xl `}
           >
             {Array.isArray(platformCards[activeIndex].imgSrc) ? (
