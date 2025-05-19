@@ -11,10 +11,16 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:$di+e&ya+HfS._6@db.kuhzxoehkdpfuztvmzso.supabase.co:5432/postgres"
+  url      = env("DATABASE_URL")
 }
 
-model user {
-  id   String @id @default(uuid())
-  name String
+model Testimonial {
+  id        String   @id @default(cuid())
+  username  String
+  review    String
+  stars     Int
+  imageUrl  String
+  position  String
+  company   String
+  createdAt DateTime @default(now())
 }

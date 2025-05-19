@@ -16,32 +16,33 @@ const HeroSection = () => {
       <Link href={"/"} className="z-10">
         {" "}
         <div
-          className={` h-[37px] w-[320px] bg-white flex items-center justify-evenly rounded-[30px] mt-[80px] mx-auto border border-[#2c2c2c] mb-4 z-10`}
+          className={` h-[37px] p-3 bg-white flex items-center justify-evenly rounded-[30px] mt-9 md:mt-[80px] mx-auto border border-[#2c2c2c] mb-4 z-10`}
         >
-          <div className="w-[47px] h-[27px] rounded-[25px] py-[12px] px-[21px] bg-gradient-to-r from-[#2D3BF2] to-[#B832E9] text-white flex items-center justify-center z-10">
-            new
+          <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9]  z-10 mr-1">
+            <p className="text-white flex items-center justify-center text-sm"> new</p>
           </div>{" "}
-          <p>Introducing datavidhya platform </p>
+          <p className="text-[12.5px]">Introducing datavidhya platform </p>
           <ChevronRight size={20} strokeWidth={1} />
         </div>
       </Link>
 
       <h1
-        className={`font-bold text-[61px] bg-white text-center leading-[120%] tracking-[-2%] text-[#333] mb-4 z-10 ${inter.className}`}
+        className={`font-bold text-2xl md:text-[61px] bg-white text-center leading-[120%] tracking-[-2%] text-[#333] mb-10 md:mb-4 z-10 ${inter.className}`}
       >
-        The #1 Job Transition Platform for <br />
+        The #1 Job Transition <br className="flex md:hidden" /> Platform for{" "}
+        <br className="hidden md:flex" />
         <AuroraText className="mx-0 md:mx-1.5 leading-[120%]">
           Data Engineers.{" "}
         </AuroraText>
       </h1>
       <p
-        className={`font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10 z-10 ${inter.className}`}
+        className={`hidden md:flex font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10 z-10 ${inter.className}`}
       >
         Crush System Design and AI Interview for breakfast!{" "}
       </p>
-      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 mb-24 z-10">
+      <div className="flex flex-row gap-3 sm:flex-row sm:gap-4 mb-12 md:mb-24 z-10">
         <button
-          className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:px-8 sm:py-3 ${inter.className}`}
+          className={` rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:px-8 sm:py-3 ${inter.className}`}
         >
           Explore Courses
         </button>
@@ -52,16 +53,18 @@ const HeroSection = () => {
         </button>
       </div>
       <p
-        className={`h-[58px] bg-white font-medium text-2xl leading-[100%] tracking-[-2%] text-[#929292] z-10 ${inter.className}`}
+        className={` bg-white font-medium text-[12px] md:text-2xl leading-[100%] tracking-[-2%] text-[#929292] z-10 ${inter.className}`}
       >
         Trusted by 25934 Engineers who got their dream job at
       </p>
-      <img className="mb-32 z-10 bg-white" src="/revamp/brand.svg" alt="brands" />
+      <img
+        className="p-3 mb-12 md:mb-32 z-10 bg-white"
+        src="/revamp/brand.svg"
+        alt="brands"
+      />
 
-      <div className="p-4  rounded-[8px] bg-[#A434EA]/10 border border-[#000]/20 z-10">
-        <div className="border rounded-[8px] border-[#000]/13">
-          <img src="/revamp/heroScreenshot.svg" alt="background" />
-        </div>
+      <div className="p-4 m-2 rounded-[8px] bg-[#A434EA]/10 border border-[#000]/20 z-10">
+        <img src="/revamp/heroScreenshot.svg" alt="background" />
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 w-screen h-[90vh] overflow-hidden ">
+    <div className="hidden md:block absolute  top-0 left-0 w-screen h-[90vh] overflow-hidden ">
       {bubbles}
     </div>
   );

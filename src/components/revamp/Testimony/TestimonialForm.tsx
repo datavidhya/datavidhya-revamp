@@ -1,501 +1,200 @@
-// // "use client";
-// // import React, { useState } from "react";
-// // import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-// // const TestimonyForm = ({ index, onSubmitToParent }: any) => {
-// //   const { register, handleSubmit } = useForm();
-// //   const onSubmit = (data: any) => {
-// //     onSubmitToParent(data); // Send data to parent
-// //   };
-
-// //   return (
-// //     <form
-// //       className="h-auto w-auto p-4 px-12 text-black flex flex-col items-center gap-2 bg-white/30 border m-1 rounded-xl"
-// //       onSubmit={handleSubmit(onSubmit)}
-// //     >
-// //       <h5 className="text-lg">Form {index + 1}</h5>
-// //       <input
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //         {...register("name")}
-// //         type="text"
-// //         placeholder="Name"
-// //       />
-// //       {/* <input
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //         {...register("lastname")}
-// //         type="text"
-// //         placeholder="Surname"
-// //       /> */}
-// //       <input
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //         {...register("company")}
-// //         type="text"
-// //         placeholder="Company"
-// //       />
-// //       <input
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //         {...register("position")}
-// //         type="text"
-// //         placeholder="Position"
-// //       />
-// //       <input
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //         {...register("LinkedInLink")}
-// //         type="text"
-// //         placeholder="LinkedIn Profile Link"
-// //       />
-// //       <input
-// //         {...register("profileImage")}
-// //         type="file"
-// //         placeholder="profileImg"
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //       />
-// //       <input
-// //         {...register("starRating")}
-// //         type="text"
-// //         placeholder="Star Rating"
-// //         className="px-3 py-2 bg-white h-12 w-64 rounded-lg"
-// //       />
-// //       <textarea
-// //         name="userReview"
-// //         id=""
-// //         placeholder="User Review"
-// //         className="px-3 py-2 bg-white h-24 w-64 rounded-lg"
-// //       ></textarea>{" "}
-// //       <input
-// //         className="px-3 py-2 bg-blue-600 text-white h-12 w-24 rounded-lg"
-// //         type="submit"
-// //         // onChange={() => console.log(user)}
-// //       />
-// //       <button
-// //         className="px-3 py-2 bg-blue-800 text-white h-12 w-24 rounded-lg"
-// //         // type="submit"
-// //         // onClick={() =>
-// //         //   // setUser({
-// //         //   //   name: "",
-// //         //   //   surname: "",
-// //         //   //   company: "",
-// //         //   //   position: "",
-// //         //   //   image: "",
-// //         //   // })
-// //         // }
-// //       />
-// //     </form>
-// //   );
-// // };
-
-// // export default TestimonyForm;
-// "use client";
-
-// import { useState } from "react";
-// import { useForm } from "react-hook-form";
-// import { zodResolver } from "@hookform/resolvers/zod";
-// import { z } from "zod";
-
-// // Schema definition matching the API schema
-// const testimonialSchema = z.object({
-//   name: z.string().min(3, "Name is required (minimum 3 characters)"),
-//   profileImg: z.string().url("Invalid profile image URL"),
-//   userReview: z.string().min(10, "Review is required (minimum 10 characters)"),
-//   linkedinUrl: z.string().url("Invalid LinkedIn URL"),
-//   starRating: z
-//     .number()
-//     .min(1, "Star rating is required")
-//     .max(5, "Star rating must be between 1 and 5"),
-// });
-
-// // Type for our form values
-// type TestimonialFormValues = z.infer<typeof testimonialSchema>;
-
-// export default function TestimonialForm() {
-//   const [isSubmitting, setIsSubmitting] = useState(false);
-//   const [submitStatus, setSubmitStatus] = useState<{
-//     success: boolean;
-//     message: string;
-//   } | null>(null);
-
-//   const {
-//     register,
-//     handleSubmit,
-//     reset,
-//     formState: { errors },
-//   } = useForm<TestimonialFormValues>({
-//     resolver: zodResolver(testimonialSchema),
-//     defaultValues: {
-//       name: "",
-//       profileImg: "",
-//       userReview: "",
-//       linkedinUrl: "",
-//       starRating: 5,
-//     },
-//   });
-
-//   const onSubmit = async (data: TestimonialFormValues) => {
-//     setIsSubmitting(true);
-//     setSubmitStatus(null);
-
-//     try {
-//       const response = await fetch("/api/v1/user/testimonial/route.ts", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(data),
-//       });
-
-//       const result = await response.json();
-
-//       if (result.success) {
-//         setSubmitStatus({
-//           success: true,
-//           message: "Testimonial added successfully!",
-//         });
-//         reset(); // Reset form on success
-//       } else {
-//         setSubmitStatus({
-//           success: false,
-//           message: result.message || "Failed to add testimonial",
-//         });
-//       }
-//     } catch (error) {
-//       setSubmitStatus({
-//         success: false,
-//         message: "An error occurred while submitting the form",
-//       });
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
-
-//   return (
-//     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md text-black">
-//       <h1 className="text-2xl font-bold mb-6">Add New Testimonial</h1>
-
-//       {submitStatus && (
-//         <div
-//           className={`p-4 mb-6 rounded-md ${
-//             submitStatus.success
-//               ? "bg-green-100 text-green-800"
-//               : "bg-red-100 text-red-800"
-//           }`}
-//         >
-//           {submitStatus.message}
-//         </div>
-//       )}
-
-//       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-//         {/* Name Input */}
-//         <div>
-//           <label className="block text-sm font-medium text-gray-700 mb-1">
-//             Client Name
-//           </label>
-//           <input
-//             {...register("name")}
-//             type="text"
-//             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-//             placeholder="John Doe"
-//           />
-//           {errors.name && (
-//             <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-//           )}
-//         </div>
-
-//         {/* Profile Image URL */}
-//         <div>
-//           <label className="block text-sm font-medium text-gray-700 mb-1">
-//             Profile Image URL
-//           </label>
-//           <input
-//             {...register("profileImg")}
-//             type="url"
-//             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-//             placeholder="https://example.com/image.jpg"
-//           />
-//           {errors.profileImg && (
-//             <p className="mt-1 text-sm text-red-600">
-//               {errors.profileImg.message}
-//             </p>
-//           )}
-//         </div>
-
-//         {/* User Review */}
-//         <div>
-//           <label className="block text-sm font-medium text-gray-700 mb-1">
-//             Testimonial Review
-//           </label>
-//           <textarea
-//             {...register("userReview")}
-//             rows={4}
-//             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-//             placeholder="Write the client's review here..."
-//           ></textarea>
-//           {errors.userReview && (
-//             <p className="mt-1 text-sm text-red-600">
-//               {errors.userReview.message}
-//             </p>
-//           )}
-//         </div>
-
-//         {/* LinkedIn URL */}
-//         <div>
-//           <label className="block text-sm font-medium text-gray-700 mb-1">
-//             LinkedIn URL
-//           </label>
-//           <input
-//             {...register("linkedinUrl")}
-//             type="url"
-//             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-//             placeholder="https://linkedin.com/in/username"
-//           />
-//           {errors.linkedinUrl && (
-//             <p className="mt-1 text-sm text-red-600">
-//               {errors.linkedinUrl.message}
-//             </p>
-//           )}
-//         </div>
-
-//         {/* Star Rating */}
-//         <div>
-//           <label className="block text-sm font-medium text-gray-700 mb-1">
-//             Star Rating (1-5)
-//           </label>
-//           <input
-//             {...register("starRating", { valueAsNumber: true })}
-//             type="number"
-//             min="1"
-//             max="5"
-//             className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-//           />
-//           {errors.starRating && (
-//             <p className="mt-1 text-sm text-red-600">
-//               {errors.starRating.message}
-//             </p>
-//           )}
-//         </div>
-
-//         {/* Submit Button */}
-//         <div>
-//           <button
-//             type="submit"
-//             disabled={isSubmitting}
-//             className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition disabled:bg-blue-300"
-//           >
-//             {isSubmitting ? "Submitting..." : "Add Testimonial"}
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-"use client";
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-
-// Schema definition matching the API schema
+// Define the testimonial schema with Zod
 const testimonialSchema = z.object({
-  name: z.string().min(3, "Name is required (minimum 3 characters)"),
-  profileImg: z.string().url("Invalid profile image URL"),
-  userReview: z.string().min(10, "Review is required (minimum 10 characters)"),
-  linkedinUrl: z.string().url("Invalid LinkedIn URL"),
-  starRating: z
-    .number()
-    .min(1, "Star rating is required")
-    .max(5, "Star rating must be between 1 and 5"),
+  username: z.string().min(2, { message: 'Username must be at least 2 characters' }),
+  review: z.string().min(10, { message: 'Review must be at least 10 characters' }),
+  stars: z.number().min(1).max(5, { message: 'Rating must be between 1 and 5 stars' }),
+  position: z.string().min(2, { message: 'Position must be at least 2 characters' }),
+  company: z.string().min(2, { message: 'Company must be at least 2 characters' }),
 });
 
-// Type for our form values
-type TestimonialFormValues = z.infer<typeof testimonialSchema>;
+// TypeScript type derived from the Zod schema
+type TestimonialFormData = z.infer<typeof testimonialSchema>;
 
-type TestimonialFormProps = {
-  onSuccess?: () => void;
-};
+interface TestimonialFormProps {
+  onSubmit: (data: TestimonialFormData, profileImage: File | null) => void;
+  onCancel?: () => void;
+  isOpen: boolean;
+}
 
-export default function TestimonialForm({ onSuccess }: TestimonialFormProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    success: boolean;
-    message: string;
-  } | null>(null);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<TestimonialFormValues>({
+const TestimonialForm: React.FC<TestimonialFormProps> = ({ onSubmit, onCancel, isOpen }) => {
+  const [profileImage, setProfileImage] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string>('');
+  
+  const { 
+    register, 
+    handleSubmit, 
+    control,
+    reset, 
+    formState: { errors, isSubmitting } 
+  } = useForm<TestimonialFormData>({
     resolver: zodResolver(testimonialSchema),
     defaultValues: {
-      name: "",
-      profileImg: "",
-      userReview: "",
-      linkedinUrl: "",
-      starRating: 5,
-    },
+      username: '',
+      review: '',
+      stars: 5,
+      position: '',
+      company: '',
+    }
   });
 
-  const onSubmit = async (data: TestimonialFormValues) => {
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch("/api/v1/user/testimonial", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitStatus({
-          success: true,
-          message: "Testimonial added successfully!",
-        });
-        reset(); // Reset form on success
-
-        // Call the onSuccess callback if provided
-        if (onSuccess) {
-          onSuccess();
-        }
-      } else {
-        setSubmitStatus({
-          success: false,
-          message: result.message || "Failed to add testimonial",
-        });
-      }
-    } catch (error) {
-      setSubmitStatus({
-        success: false,
-        message: "An error occurred while submitting the form",
-      });
-    } finally {
-      setIsSubmitting(false);
+  // Handle file input change
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setProfileImage(file);
+    
+    // Create preview URL
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setPreviewUrl(url);
+    } else {
+      setPreviewUrl('');
     }
   };
 
+  // Handle form submission
+  const submitForm = (data: TestimonialFormData) => {
+    onSubmit(data, profileImage);
+    reset();
+    setProfileImage(null);
+    setPreviewUrl('');
+  };
+
+  // Handle cancel
+  const handleCancel = () => {
+    reset();
+    setProfileImage(null);
+    setPreviewUrl('');
+    if (onCancel) onCancel();
+  };
+
+  if (!isOpen) return null;
+
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md text-black border border-neutral-500">
-      <h1 className="text-2xl font-bold mb-6">Add New Testimonial</h1>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg p-6 w-full max-w-lg">
+        <h2 className="text-xl font-bold mb-4">Add New Testimonial</h2>
+        
+        <form onSubmit={handleSubmit(submitForm)} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1">Name</label>
+            <input
+              {...register('username')}
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Full Name"
+            />
+            {errors.username && (
+              <p className="text-red-500 text-sm mt-1">{errors.username.message}</p>
+            )}
+          </div>
 
-      {submitStatus && (
-        <div
-          className={`p-4 mb-6 rounded-md ${
-            submitStatus.success
-              ? "bg-green-100 text-green-800"
-              : "bg-red-100 text-red-800"
-          }`}
-        >
-          {submitStatus.message}
-        </div>
-      )}
+          <div>
+            <label className="block text-sm font-medium mb-1">Position</label>
+            <input
+              {...register('position')}
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Job Title"
+            />
+            {errors.position && (
+              <p className="text-red-500 text-sm mt-1">{errors.position.message}</p>
+            )}
+          </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Name Input */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            User Name
-          </label>
-          <input
-            {...register("name")}
-            type="text"
-            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="User Name"
-          />
-          {errors.name && (
-            <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-          )}
-        </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Company</label>
+            <input
+              {...register('company')}
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Company Name"
+            />
+            {errors.company && (
+              <p className="text-red-500 text-sm mt-1">{errors.company.message}</p>
+            )}
+          </div>
 
-        {/* Profile Image URL */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Profile Image URL
-          </label>
-          <input
-            {...register("profileImg")}
-            type="url"
-            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="https://example.com/image.jpg"
-          />
-          {errors.profileImg && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.profileImg.message}
-            </p>
-          )}
-        </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Rating</label>
+            <Controller
+              name="stars"
+              control={control}
+              render={({ field }) => (
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => field.onChange(star)}
+                      className="text-2xl focus:outline-none"
+                    >
+                      {star <= field.value ? '★' : '☆'}
+                    </button>
+                  ))}
+                  <span className="ml-2">{field.value}/5</span>
+                </div>
+              )}
+            />
+            {errors.stars && (
+              <p className="text-red-500 text-sm mt-1">{errors.stars.message}</p>
+            )}
+          </div>
 
-        {/* User Review */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Testimonial Review
-          </label>
-          <textarea
-            {...register("userReview")}
-            rows={4}
-            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Client's review here..."
-          ></textarea>
-          {errors.userReview && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.userReview.message}
-            </p>
-          )}
-        </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Review</label>
+            <textarea
+              {...register('review')}
+              rows={4}
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Write your testimonial..."
+            />
+            {errors.review && (
+              <p className="text-red-500 text-sm mt-1">{errors.review.message}</p>
+            )}
+          </div>
 
-        {/* LinkedIn URL */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            LinkedIn URL
-          </label>
-          <input
-            {...register("linkedinUrl")}
-            type="url"
-            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="https://linkedin.com/in/username"
-          />
-          {errors.linkedinUrl && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.linkedinUrl.message}
-            </p>
-          )}
-        </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Profile Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="w-full"
+            />
+            {previewUrl && (
+              <div className="mt-2">
+                <img 
+                  src={previewUrl} 
+                  alt="Preview" 
+                  className="h-20 w-20 object-cover rounded-full" 
+                />
+              </div>
+            )}
+          </div>
 
-        {/* Star Rating */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Star Rating (1-5)
-          </label>
-          <input
-            {...register("starRating", { valueAsNumber: true })}
-            type="number"
-            min="1"
-            max="5"
-            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-          />
-          {errors.starRating && (
-            <p className="mt-1 text-sm text-red-600">
-              {errors.starRating.message}
-            </p>
-          )}
-        </div>
-
-        {/* Submit Button */}
-        <div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md transition disabled:bg-blue-300"
-          >
-            {isSubmitting ? "Submitting..." : "Add Testimonial"}
-          </button>
-        </div>
-      </form>
+          <div className="flex justify-end space-x-2 pt-4">
+            <button
+              type="button"
+              onClick={handleCancel}
+              className="px-4 py-2 border rounded-md"
+              disabled={isSubmitting}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit Testimonial'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
-}
+};
+
+export default TestimonialForm;
