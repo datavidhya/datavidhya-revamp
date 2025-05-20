@@ -61,7 +61,7 @@ const PlatformCarousel = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-52 md:h-[500px] w-full mx-auto overflow-hidden rounded-xl shadow-md">
+    <div className="relative h-52 md:h-[400px] w-full mx-auto overflow-hidden rounded-xl shadow-md">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{

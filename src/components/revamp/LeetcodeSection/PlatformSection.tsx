@@ -85,7 +85,7 @@ const PlatformSection = () => {
                   border: "1px solid #cccccc ",
                 }}
               >
-                <span className="font-light text-lg">{card.title}</span>
+                <span className="font-medium text-lg">{card.title}</span>
               </button>
               <button
                 key={index}
@@ -99,7 +99,7 @@ const PlatformSection = () => {
                 } `}
               >
                 {" "}
-                <span className="font-medium text-sm">{card.title}</span>
+                <span className="font-medium  text-sm">{card.title}</span>
               </button>
             </>
           );

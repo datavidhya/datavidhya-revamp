@@ -6,12 +6,13 @@ import Link from "next/link";
 import Hero from "./Hero";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  };
+  // const item = {
+  //   hidden: { y: 20, opacity: 0 },
+  //   show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  // };
   return (
     <section className="relative flex flex-col justify-center items-center mb-6">
+      <div className="absolute top-0 left-0 w-1/3 h-2/5 rounded-r-full hidden md:flex bg-gradient-to-l from-transparent to-purple-100 -z-40">werwer</div>
       <Hero />
       <Link href={"/"} className=" md:z-10">
         {" "}
@@ -19,7 +20,10 @@ const HeroSection = () => {
           className={` h-[37px] p-1 md:p-3 flex items-center justify-evenly rounded-[30px] mt-8 md:mt-[80px] mx-auto border-[0.6px] md:border border-[#2c2c2c]/22 md:border-[#2c2c2c] mb-8 z-10`}
         >
           <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9]  md:z-10 mr-1">
-            <p className="text-white flex items-center justify-center text-sm"> new</p>
+            <p className="text-white flex items-center justify-center text-sm">
+              {" "}
+              new
+            </p>
           </div>{" "}
           <p className="text-[12.5px]">Introducing datavidhya platform </p>
           <ChevronRight size={20} strokeWidth={1} />
