@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import Link from "next/link";
 import Hero from "./Hero";
+// import RadialGlow from "./RadialGlow";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
   // const item = {
@@ -12,7 +13,17 @@ const HeroSection = () => {
   // };
   return (
     <section className="relative flex flex-col justify-center items-center mb-6">
-      <div className="absolute top-0 left-0 w-1/3 h-2/5 rounded-r-full hidden md:flex bg-gradient-to-l from-transparent to-purple-100 -z-40">werwer</div>
+      {/* <div
+        // style={{
+        //   backgroundImage:
+        //     "radial-gradient(circle, rgba(233,213,255,1) 0%, rgba(233,213,255,0.4) 50%, rgba(233,213,255,0) 100%)",
+        // }}
+        className="absolute top-0 -left-[5%] w-1/3 h-2/5 rounded-r-ull hidden md:flex bg-gradient-to-r from-purple-200 via-purple-200/40  to-white -z-40"
+      ></div> */}
+      {/* <RadialGlow opacity={0.5} />
+      <div className="absolute top-0 right-0 w-1/3 h-2/5 rounded-l-full hidden md:flex bg-gradient-to-r from-transparent to-purple-100 -z-40">
+        w
+      </div> */}
       <Hero />
       <Link href={"/"} className=" md:z-10">
         {" "}
