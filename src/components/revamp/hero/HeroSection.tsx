@@ -30,8 +30,8 @@ const HeroSection = () => {
         <div
           className={` h-[37px] p-1 md:p-3 flex items-center justify-evenly rounded-[30px] mt-8 md:mt-[80px] mx-auto border-[0.6px] md:border border-[#2c2c2c]/22 md:border-[#2c2c2c] mb-8 z-10`}
         >
-          <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9]  md:z-10 mr-1">
-            <p className="text-white flex items-center justify-center text-sm">
+          <div className=" rounded-[25px] py-0.5 px-2 bg-gradient-to-r from-[#4044ED] to-[#B832E9]  md:z-10 mr-1 flex items-center justify-center">
+            <p className="text-white text-center my-auto text-sm">
               {" "}
               new
             </p>

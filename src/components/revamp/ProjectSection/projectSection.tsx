@@ -40,7 +40,7 @@ const ProjectSection = () => {
       </p>
       <div className="flex justify-center">
         <h2
-          className={`mt-5 w-full max-w-xs text-center text-3xl font-bold leading-[120%] text-[#000000] sm:max-w-md md:max-w-lg md:text-5xl lg:max-w-xl lg:text-[48px] xl:max-w-2xl ${inter.className}`}
+          className={`mt-5 -mb-2 w-full max-w-xs text-center text-3xl font-bold leading-[120%] text-[#000000] sm:max-w-md md:max-w-lg md:text-5xl lg:max-w-xl lg:text-[48px] xl:max-w-2xl ${inter.className}`}
         >
           Work on Real Time{" "}
           <span className="relative inline-block">
@@ -69,17 +69,17 @@ const ProjectSection = () => {
           </span>
         </h2>
       </div>
-      <div className="mx-auto mt-[30px] flex w-full justify-center">
+      <div className="mx-auto mt-[30px] flex w-full justify-center mb-10 md:mb-20">
         <p
-          className={`text-center text-[18px] text-[#000000] ${inter.className}`}
+          className={`text-center text-[17px] text-[#000000] ${inter.className}`}
         >
           Gain proficiency with 14+ extensive projects designed to provide
-          practical, real-world data engineering experience
+          practical, real-world <br className="flex md:hidden"/> data engineering experience
         </p>
       </div>
 
       <div className="mt-5 flex justify-center">
-        <div className="inline-flex overflow-hidden">
+        <div className="inline-flex overflow-hidden mb-2 md:mb-10">
           <button
             className={`rounded-l-2xl px-6 py-2.5 text-sm font-medium transition-colors focus:outline-none sm:text-base ${
               activeTab === "projects"
