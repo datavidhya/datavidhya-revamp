@@ -54,15 +54,17 @@ const SaleBanner = () => {
         <div className="relative flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Left section with penguin and main message */}
           <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
-            <div className="animate-bounce text-2xl">🐧</div>
+            <div className="animate-bounce text-2xl hidden md:flex">🐧</div>
             <div className="text-center sm:text-left">
-              <p className="font-medium text-black">Save 50%</p>
-              <p className="text-sm text-neutral-400">Ends in:</p>
+              <p className="font-medium text-black ">Save 50%</p>
+              <p className="text-sm text-neutral-400 hidden md:flex">
+                Ends in:
+              </p>
             </div>
           </div>
 
           {/* Timer */}
-          <div className="flex w-full items-center justify-center space-x-3 sm:w-auto">
+          <div className=" hidden md:flex w-full items-center justify-center space-x-3 sm:w-auto ">
             <TimeUnit value={timeLeft.days} label="D" />
             <TimeUnit value={timeLeft.hours} label="H" />
             <TimeUnit value={timeLeft.minutes} label="M" />
@@ -71,13 +73,15 @@ const SaleBanner = () => {
           </div>
 
           {/* Coupon section */}
-          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
+          <div className="flex w-full flex-col items-center gap-1 md:gap-3 sm:w-auto sm:flex-row">
             <div
               onClick={handleCopyCode}
               className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-purple-400 px-4 py-1.5 transition-colors hover:bg-purple-500/85 sm:w-auto"
             >
               <span className="text-sm text-black">Use code:</span>
-              <span className="font-mono font-medium text-purple-950">COMBO50</span>
+              <span className="font-mono font-medium text-neutral-900">
+                COMBO50
+              </span>
               {copied ? (
                 <Check className="size-4 text-green-400" />
               ) : (
@@ -87,7 +91,7 @@ const SaleBanner = () => {
 
             <a
               href="https://com.rpy.club/pdp/combo6?code=COMBO50"
-              className="w-full rounded bg-neutral-800 px-6 py-1.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto"
+              className="w-full rounded bg-neutral-800 px-6 py-1.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center"
             >
               Shop Now
             </a>

@@ -30,7 +30,7 @@ const NavigationBar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-50"
+        className="relative max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-40 bg-transparent"
       >
         {" "}
         <div className="flex items-center justify-between z-50">
@@ -65,8 +65,8 @@ const NavigationBar = () => {
             />
             <NavItems
               href="/combopack"
-              textColor=" text-purple-500"
-              text="Combo Pack"
+              textColor=" text-grey-500"
+              text="Try For Free"
             />
           </div>
 

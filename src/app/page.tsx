@@ -13,7 +13,13 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className=" overflow-x-hidden">
+    <div className="relative overflow-x-hidden">
+      <div className="absolute top-10 left-0  hidden md:flex z-40">
+        <img src="/revamp/fadedCircle1.png" alt="" />
+      </div>{" "}
+      <div className="absolute top-10 right-0  hidden md:flex z-40">
+        <img src="/revamp/fadedCircle2.png" alt="" />
+      </div>
       <NavigationBar />
       <HeroSection />
       <UltimateCourse />
