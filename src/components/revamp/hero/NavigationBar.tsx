@@ -27,8 +27,8 @@ const NavigationBar = () => {
     <>
       <SaleBanner />
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="relative max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-40 bg-transparent"
       >

@@ -15,9 +15,9 @@ export default function Hero() {
 
   useEffect(() => {
     const newBubbles = new Array(10).fill(null).map((_, i) => {
-      const size = Math.random() * 40 + 20;
+      const size = Math.random() * 40 + 40;
       const dx = Math.random() * window.innerWidth - window.innerWidth / 2;
-      const dy = Math.random() * window.innerHeight - window.innerHeight / 2;
+      const dy = Math.random() * window.innerHeight - window.innerHeight / 3;
       const image = imageUrls[i % imageUrls.length];
 
       return <Bubble key={i} size={size} dx={dx} dy={dy} image={image} />;
@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hidden md:block absolute  top-0 left-0 w-screen h-[90vh] overflow-hidden ">
+    <div className="hidden md:block absolute z-20 top-0 left-0 w-screen h-[90vh] overflow-hidden ">
       {bubbles}
     </div>
   );

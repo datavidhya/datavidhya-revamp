@@ -78,7 +78,7 @@ const SaleBanner = () => {
           <div className="flex w-full flex-col items-center gap-1 md:gap-3 sm:w-auto sm:flex-row">
             <div
               onClick={handleCopyCode}
-              className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-purple-400 px-4 py-1.5 transition-colors hover:bg-purple-500/85 sm:w-auto"
+              className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[8px] bg-purple-400 px-4 py-1.5 transition-colors hover:bg-purple-500/85 sm:w-auto"
             >
               <span className="text-sm text-black">Use code:</span>
               <span className="font-mono font-light md:font-medium text-neutral-900">
@@ -93,7 +93,7 @@ const SaleBanner = () => {
 
             <a
               href="https://com.rpy.club/pdp/combo6?code=COMBO50"
-              className="w-full rounded bg-neutral-800 px-6 py-1.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center"
+              className="w-full rounded-[8px] bg-neutral-800 px-6 py-1.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center"
             >
               Shop Now
             </a>

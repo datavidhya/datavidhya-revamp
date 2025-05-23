@@ -177,7 +177,7 @@
   }
 }
 ::-webkit-scrollbar {
-  background-color: #222;
+  background-color: #fff;
   border: none;
   width: 4px;
 }

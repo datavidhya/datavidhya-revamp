@@ -14,12 +14,12 @@ import React from "react";
 const Page = () => {
   return (
     <div className="noScroll relative overflow-x-hidden ">
-      <div className="absolute top-10 left-0  hidden md:flex z-40">
+      {/* <div className="absolute top-10 left-0  hidden md:flex z-40">
         <img src="/revamp/fadedCircle1.png" alt="" />
       </div>{" "}
       <div className="absolute top-10 right-0  hidden md:flex z-40">
         <img src="/revamp/fadedCircle2.png" alt="" />
-      </div>
+      </div> */}
       <NavigationBar />
       <HeroSection />
       <UltimateCourse />
