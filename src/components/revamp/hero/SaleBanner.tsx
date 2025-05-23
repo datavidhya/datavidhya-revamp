@@ -49,28 +49,30 @@ const SaleBanner = () => {
   };
 
   return (
-    <div className=" inset-x-0 top-0 z-50 w-full bg-neutral-200 shadow-lg">
-      <div className="mx-auto max-w-7xl p-2">
+    <div className=" inset-x-0 top-0 z-50 w-full bg-neutral-100 ">
+      <div className="mx-auto max-w-8xl p-2">
         <div className="relative flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Left section with penguin and main message */}
-          <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
-            <div className="animate-bounce text-2xl hidden md:flex">🐧</div>
-            <div className="text-center sm:text-left">
-              <p className="font-medium text-black ">Save 50%</p>
-              <p className="text-sm text-neutral-400 hidden md:flex">
-                Ends in:
-              </p>
+          <span className="flex gap-6   justify-evenly px-4">
+            {" "}
+            <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
+              <div className="animate-bounce text-2xl hidden md:flex">🐧</div>
+              <div className="text-center sm:text-left">
+                <p className="font-medium text-black ">Save 50%</p>
+                <p className="text-sm text-neutral-400 hidden md:flex">
+                  Ends in:
+                </p>
+              </div>
             </div>
-          </div>
-
-          {/* Timer */}
-          <div className=" hidden md:flex w-full items-center justify-center space-x-3 sm:w-auto ">
-            <TimeUnit value={timeLeft.days} label="D" />
-            <TimeUnit value={timeLeft.hours} label="H" />
-            <TimeUnit value={timeLeft.minutes} label="M" />
-            <TimeUnit value={timeLeft.seconds} label="S" />
-            <TimeUnit value={timeLeft.milliseconds} label="MS" />
-          </div>
+            {/* Timer */}
+            <div className=" hidden md:flex w-full items-center justify-center space-x-3 sm:w-auto ">
+              <TimeUnit value={timeLeft.days} label="Day" />
+              <TimeUnit value={timeLeft.hours} label="Hours" />
+              <TimeUnit value={timeLeft.minutes} label="Mins" />
+              <TimeUnit value={timeLeft.seconds} label="Sec" />
+              <TimeUnit value={timeLeft.milliseconds} label="Ms" />
+            </div>
+          </span>
 
           {/* Coupon section */}
           <div className="flex w-full flex-col items-center gap-1 md:gap-3 sm:w-auto sm:flex-row">
@@ -79,7 +81,7 @@ const SaleBanner = () => {
               className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-purple-400 px-4 py-1.5 transition-colors hover:bg-purple-500/85 sm:w-auto"
             >
               <span className="text-sm text-black">Use code:</span>
-              <span className="font-mono font-medium text-neutral-900">
+              <span className="font-mono font-light md:font-medium text-neutral-900">
                 COMBO50
               </span>
               {copied ? (

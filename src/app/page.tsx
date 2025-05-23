@@ -13,7 +13,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="noScroll relative overflow-x-hidden ">
       <div className="absolute top-10 left-0  hidden md:flex z-40">
         <img src="/revamp/fadedCircle1.png" alt="" />
       </div>{" "}
