@@ -14,10 +14,15 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Testimonial
+ * Model testimonial
  * 
  */
-export type Testimonial = $Result.DefaultSelection<Prisma.$TestimonialPayload>
+export type testimonial = $Result.DefaultSelection<Prisma.$testimonialPayload>
+/**
+ * Model course
+ * 
+ */
+export type course = $Result.DefaultSelection<Prisma.$coursePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -145,14 +150,24 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.testimonial`: Exposes CRUD operations for the **Testimonial** model.
+   * `prisma.testimonial`: Exposes CRUD operations for the **testimonial** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Testimonials
     * const testimonials = await prisma.testimonial.findMany()
     * ```
     */
-  get testimonial(): Prisma.TestimonialDelegate<ExtArgs, ClientOptions>;
+  get testimonial(): Prisma.testimonialDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.course`: Exposes CRUD operations for the **course** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Courses
+    * const courses = await prisma.course.findMany()
+    * ```
+    */
+  get course(): Prisma.courseDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -593,7 +608,8 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Testimonial: 'Testimonial'
+    testimonial: 'testimonial',
+    course: 'course'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -612,81 +628,155 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "testimonial"
+      modelProps: "testimonial" | "course"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Testimonial: {
-        payload: Prisma.$TestimonialPayload<ExtArgs>
-        fields: Prisma.TestimonialFieldRefs
+      testimonial: {
+        payload: Prisma.$testimonialPayload<ExtArgs>
+        fields: Prisma.testimonialFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TestimonialFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload> | null
+            args: Prisma.testimonialFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TestimonialFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           findFirst: {
-            args: Prisma.TestimonialFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload> | null
+            args: Prisma.testimonialFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TestimonialFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           findMany: {
-            args: Prisma.TestimonialFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>[]
+            args: Prisma.testimonialFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>[]
           }
           create: {
-            args: Prisma.TestimonialCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           createMany: {
-            args: Prisma.TestimonialCreateManyArgs<ExtArgs>
+            args: Prisma.testimonialCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.TestimonialCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>[]
+            args: Prisma.testimonialCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>[]
           }
           delete: {
-            args: Prisma.TestimonialDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           update: {
-            args: Prisma.TestimonialUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           deleteMany: {
-            args: Prisma.TestimonialDeleteManyArgs<ExtArgs>
+            args: Prisma.testimonialDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.TestimonialUpdateManyArgs<ExtArgs>
+            args: Prisma.testimonialUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.TestimonialUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>[]
+            args: Prisma.testimonialUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>[]
           }
           upsert: {
-            args: Prisma.TestimonialUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TestimonialPayload>
+            args: Prisma.testimonialUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$testimonialPayload>
           }
           aggregate: {
             args: Prisma.TestimonialAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateTestimonial>
           }
           groupBy: {
-            args: Prisma.TestimonialGroupByArgs<ExtArgs>
+            args: Prisma.testimonialGroupByArgs<ExtArgs>
             result: $Utils.Optional<TestimonialGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TestimonialCountArgs<ExtArgs>
+            args: Prisma.testimonialCountArgs<ExtArgs>
             result: $Utils.Optional<TestimonialCountAggregateOutputType> | number
+          }
+        }
+      }
+      course: {
+        payload: Prisma.$coursePayload<ExtArgs>
+        fields: Prisma.courseFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.courseFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.courseFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          findFirst: {
+            args: Prisma.courseFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.courseFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          findMany: {
+            args: Prisma.courseFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>[]
+          }
+          create: {
+            args: Prisma.courseCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          createMany: {
+            args: Prisma.courseCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.courseCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>[]
+          }
+          delete: {
+            args: Prisma.courseDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          update: {
+            args: Prisma.courseUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          deleteMany: {
+            args: Prisma.courseDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.courseUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.courseUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>[]
+          }
+          upsert: {
+            args: Prisma.courseUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$coursePayload>
+          }
+          aggregate: {
+            args: Prisma.CourseAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCourse>
+          }
+          groupBy: {
+            args: Prisma.courseGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CourseGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.courseCountArgs<ExtArgs>
+            result: $Utils.Optional<CourseCountAggregateOutputType> | number
           }
         }
       }
@@ -774,7 +864,8 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    testimonial?: TestimonialOmit
+    testimonial?: testimonialOmit
+    course?: courseOmit
   }
 
   /* Types for Logging */
@@ -870,7 +961,7 @@ export namespace Prisma {
    */
 
   /**
-   * Model Testimonial
+   * Model testimonial
    */
 
   export type AggregateTestimonial = {
@@ -882,123 +973,127 @@ export namespace Prisma {
   }
 
   export type TestimonialAvgAggregateOutputType = {
+    id: number | null
     stars: number | null
   }
 
   export type TestimonialSumAggregateOutputType = {
+    id: number | null
     stars: number | null
   }
 
   export type TestimonialMinAggregateOutputType = {
-    id: string | null
-    username: string | null
-    review: string | null
+    id: number | null
+    name: string | null
+    image: string | null
+    description: string | null
     stars: number | null
-    imageUrl: string | null
-    position: string | null
-    company: string | null
+    linkedInUrl: string | null
     createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type TestimonialMaxAggregateOutputType = {
-    id: string | null
-    username: string | null
-    review: string | null
+    id: number | null
+    name: string | null
+    image: string | null
+    description: string | null
     stars: number | null
-    imageUrl: string | null
-    position: string | null
-    company: string | null
+    linkedInUrl: string | null
     createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type TestimonialCountAggregateOutputType = {
     id: number
-    username: number
-    review: number
+    name: number
+    image: number
+    description: number
     stars: number
-    imageUrl: number
-    position: number
-    company: number
+    linkedInUrl: number
     createdAt: number
+    updatedAt: number
     _all: number
   }
 
 
   export type TestimonialAvgAggregateInputType = {
+    id?: true
     stars?: true
   }
 
   export type TestimonialSumAggregateInputType = {
+    id?: true
     stars?: true
   }
 
   export type TestimonialMinAggregateInputType = {
     id?: true
-    username?: true
-    review?: true
+    name?: true
+    image?: true
+    description?: true
     stars?: true
-    imageUrl?: true
-    position?: true
-    company?: true
+    linkedInUrl?: true
     createdAt?: true
+    updatedAt?: true
   }
 
   export type TestimonialMaxAggregateInputType = {
     id?: true
-    username?: true
-    review?: true
+    name?: true
+    image?: true
+    description?: true
     stars?: true
-    imageUrl?: true
-    position?: true
-    company?: true
+    linkedInUrl?: true
     createdAt?: true
+    updatedAt?: true
   }
 
   export type TestimonialCountAggregateInputType = {
     id?: true
-    username?: true
-    review?: true
+    name?: true
+    image?: true
+    description?: true
     stars?: true
-    imageUrl?: true
-    position?: true
-    company?: true
+    linkedInUrl?: true
     createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
   export type TestimonialAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Testimonial to aggregate.
+     * Filter which testimonial to aggregate.
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Testimonials to fetch.
+     * Determine the order of testimonials to fetch.
      */
-    orderBy?: TestimonialOrderByWithRelationInput | TestimonialOrderByWithRelationInput[]
+    orderBy?: testimonialOrderByWithRelationInput | testimonialOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TestimonialWhereUniqueInput
+    cursor?: testimonialWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Testimonials from the position of the cursor.
+     * Take `±n` testimonials from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Testimonials.
+     * Skip the first `n` testimonials.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Testimonials
+     * Count returned testimonials
     **/
     _count?: true | TestimonialCountAggregateInputType
     /**
@@ -1038,11 +1133,11 @@ export namespace Prisma {
 
 
 
-  export type TestimonialGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TestimonialWhereInput
-    orderBy?: TestimonialOrderByWithAggregationInput | TestimonialOrderByWithAggregationInput[]
+  export type testimonialGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: testimonialWhereInput
+    orderBy?: testimonialOrderByWithAggregationInput | testimonialOrderByWithAggregationInput[]
     by: TestimonialScalarFieldEnum[] | TestimonialScalarFieldEnum
-    having?: TestimonialScalarWhereWithAggregatesInput
+    having?: testimonialScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: TestimonialCountAggregateInputType | true
@@ -1053,14 +1148,14 @@ export namespace Prisma {
   }
 
   export type TestimonialGroupByOutputType = {
-    id: string
-    username: string
-    review: string
+    id: number
+    name: string
+    image: string
+    description: string
     stars: number
-    imageUrl: string
-    position: string
-    company: string
+    linkedInUrl: string
     createdAt: Date
+    updatedAt: Date
     _count: TestimonialCountAggregateOutputType | null
     _avg: TestimonialAvgAggregateOutputType | null
     _sum: TestimonialSumAggregateOutputType | null
@@ -1068,7 +1163,7 @@ export namespace Prisma {
     _max: TestimonialMaxAggregateOutputType | null
   }
 
-  type GetTestimonialGroupByPayload<T extends TestimonialGroupByArgs> = Prisma.PrismaPromise<
+  type GetTestimonialGroupByPayload<T extends testimonialGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<TestimonialGroupByOutputType, T['by']> &
         {
@@ -1082,80 +1177,80 @@ export namespace Prisma {
     >
 
 
-  export type TestimonialSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type testimonialSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    username?: boolean
-    review?: boolean
+    name?: boolean
+    image?: boolean
+    description?: boolean
     stars?: boolean
-    imageUrl?: boolean
-    position?: boolean
-    company?: boolean
+    linkedInUrl?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["testimonial"]>
 
-  export type TestimonialSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type testimonialSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    username?: boolean
-    review?: boolean
+    name?: boolean
+    image?: boolean
+    description?: boolean
     stars?: boolean
-    imageUrl?: boolean
-    position?: boolean
-    company?: boolean
+    linkedInUrl?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["testimonial"]>
 
-  export type TestimonialSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type testimonialSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    username?: boolean
-    review?: boolean
+    name?: boolean
+    image?: boolean
+    description?: boolean
     stars?: boolean
-    imageUrl?: boolean
-    position?: boolean
-    company?: boolean
+    linkedInUrl?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["testimonial"]>
 
-  export type TestimonialSelectScalar = {
+  export type testimonialSelectScalar = {
     id?: boolean
-    username?: boolean
-    review?: boolean
+    name?: boolean
+    image?: boolean
+    description?: boolean
     stars?: boolean
-    imageUrl?: boolean
-    position?: boolean
-    company?: boolean
+    linkedInUrl?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type TestimonialOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "username" | "review" | "stars" | "imageUrl" | "position" | "company" | "createdAt", ExtArgs["result"]["testimonial"]>
+  export type testimonialOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "stars" | "linkedInUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["testimonial"]>
 
-  export type $TestimonialPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Testimonial"
+  export type $testimonialPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "testimonial"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: string
-      username: string
-      review: string
+      id: number
+      name: string
+      image: string
+      description: string
       stars: number
-      imageUrl: string
-      position: string
-      company: string
+      linkedInUrl: string
       createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["testimonial"]>
     composites: {}
   }
 
-  type TestimonialGetPayload<S extends boolean | null | undefined | TestimonialDefaultArgs> = $Result.GetResult<Prisma.$TestimonialPayload, S>
+  type testimonialGetPayload<S extends boolean | null | undefined | testimonialDefaultArgs> = $Result.GetResult<Prisma.$testimonialPayload, S>
 
-  type TestimonialCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<TestimonialFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type testimonialCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<testimonialFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: TestimonialCountAggregateInputType | true
     }
 
-  export interface TestimonialDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Testimonial'], meta: { name: 'Testimonial' } }
+  export interface testimonialDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['testimonial'], meta: { name: 'testimonial' } }
     /**
      * Find zero or one Testimonial that matches the filter.
-     * @param {TestimonialFindUniqueArgs} args - Arguments to find a Testimonial
+     * @param {testimonialFindUniqueArgs} args - Arguments to find a Testimonial
      * @example
      * // Get one Testimonial
      * const testimonial = await prisma.testimonial.findUnique({
@@ -1164,12 +1259,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends TestimonialFindUniqueArgs>(args: SelectSubset<T, TestimonialFindUniqueArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends testimonialFindUniqueArgs>(args: SelectSubset<T, testimonialFindUniqueArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Testimonial that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {TestimonialFindUniqueOrThrowArgs} args - Arguments to find a Testimonial
+     * @param {testimonialFindUniqueOrThrowArgs} args - Arguments to find a Testimonial
      * @example
      * // Get one Testimonial
      * const testimonial = await prisma.testimonial.findUniqueOrThrow({
@@ -1178,13 +1273,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends TestimonialFindUniqueOrThrowArgs>(args: SelectSubset<T, TestimonialFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends testimonialFindUniqueOrThrowArgs>(args: SelectSubset<T, testimonialFindUniqueOrThrowArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Testimonial that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialFindFirstArgs} args - Arguments to find a Testimonial
+     * @param {testimonialFindFirstArgs} args - Arguments to find a Testimonial
      * @example
      * // Get one Testimonial
      * const testimonial = await prisma.testimonial.findFirst({
@@ -1193,14 +1288,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends TestimonialFindFirstArgs>(args?: SelectSubset<T, TestimonialFindFirstArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends testimonialFindFirstArgs>(args?: SelectSubset<T, testimonialFindFirstArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Testimonial that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialFindFirstOrThrowArgs} args - Arguments to find a Testimonial
+     * @param {testimonialFindFirstOrThrowArgs} args - Arguments to find a Testimonial
      * @example
      * // Get one Testimonial
      * const testimonial = await prisma.testimonial.findFirstOrThrow({
@@ -1209,13 +1304,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends TestimonialFindFirstOrThrowArgs>(args?: SelectSubset<T, TestimonialFindFirstOrThrowArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends testimonialFindFirstOrThrowArgs>(args?: SelectSubset<T, testimonialFindFirstOrThrowArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Testimonials that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {testimonialFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Testimonials
      * const testimonials = await prisma.testimonial.findMany()
@@ -1227,11 +1322,11 @@ export namespace Prisma {
      * const testimonialWithIdOnly = await prisma.testimonial.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends TestimonialFindManyArgs>(args?: SelectSubset<T, TestimonialFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends testimonialFindManyArgs>(args?: SelectSubset<T, testimonialFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Testimonial.
-     * @param {TestimonialCreateArgs} args - Arguments to create a Testimonial.
+     * @param {testimonialCreateArgs} args - Arguments to create a Testimonial.
      * @example
      * // Create one Testimonial
      * const Testimonial = await prisma.testimonial.create({
@@ -1241,11 +1336,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends TestimonialCreateArgs>(args: SelectSubset<T, TestimonialCreateArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends testimonialCreateArgs>(args: SelectSubset<T, testimonialCreateArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Testimonials.
-     * @param {TestimonialCreateManyArgs} args - Arguments to create many Testimonials.
+     * @param {testimonialCreateManyArgs} args - Arguments to create many Testimonials.
      * @example
      * // Create many Testimonials
      * const testimonial = await prisma.testimonial.createMany({
@@ -1255,11 +1350,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends TestimonialCreateManyArgs>(args?: SelectSubset<T, TestimonialCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends testimonialCreateManyArgs>(args?: SelectSubset<T, testimonialCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Testimonials and returns the data saved in the database.
-     * @param {TestimonialCreateManyAndReturnArgs} args - Arguments to create many Testimonials.
+     * @param {testimonialCreateManyAndReturnArgs} args - Arguments to create many Testimonials.
      * @example
      * // Create many Testimonials
      * const testimonial = await prisma.testimonial.createManyAndReturn({
@@ -1279,11 +1374,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends TestimonialCreateManyAndReturnArgs>(args?: SelectSubset<T, TestimonialCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends testimonialCreateManyAndReturnArgs>(args?: SelectSubset<T, testimonialCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Delete a Testimonial.
-     * @param {TestimonialDeleteArgs} args - Arguments to delete one Testimonial.
+     * @param {testimonialDeleteArgs} args - Arguments to delete one Testimonial.
      * @example
      * // Delete one Testimonial
      * const Testimonial = await prisma.testimonial.delete({
@@ -1293,11 +1388,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends TestimonialDeleteArgs>(args: SelectSubset<T, TestimonialDeleteArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends testimonialDeleteArgs>(args: SelectSubset<T, testimonialDeleteArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Testimonial.
-     * @param {TestimonialUpdateArgs} args - Arguments to update one Testimonial.
+     * @param {testimonialUpdateArgs} args - Arguments to update one Testimonial.
      * @example
      * // Update one Testimonial
      * const testimonial = await prisma.testimonial.update({
@@ -1310,11 +1405,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends TestimonialUpdateArgs>(args: SelectSubset<T, TestimonialUpdateArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends testimonialUpdateArgs>(args: SelectSubset<T, testimonialUpdateArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Testimonials.
-     * @param {TestimonialDeleteManyArgs} args - Arguments to filter Testimonials to delete.
+     * @param {testimonialDeleteManyArgs} args - Arguments to filter Testimonials to delete.
      * @example
      * // Delete a few Testimonials
      * const { count } = await prisma.testimonial.deleteMany({
@@ -1324,13 +1419,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends TestimonialDeleteManyArgs>(args?: SelectSubset<T, TestimonialDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends testimonialDeleteManyArgs>(args?: SelectSubset<T, testimonialDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Testimonials.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {testimonialUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Testimonials
      * const testimonial = await prisma.testimonial.updateMany({
@@ -1343,11 +1438,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends TestimonialUpdateManyArgs>(args: SelectSubset<T, TestimonialUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends testimonialUpdateManyArgs>(args: SelectSubset<T, testimonialUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Testimonials and returns the data updated in the database.
-     * @param {TestimonialUpdateManyAndReturnArgs} args - Arguments to update many Testimonials.
+     * @param {testimonialUpdateManyAndReturnArgs} args - Arguments to update many Testimonials.
      * @example
      * // Update many Testimonials
      * const testimonial = await prisma.testimonial.updateManyAndReturn({
@@ -1373,11 +1468,11 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends TestimonialUpdateManyAndReturnArgs>(args: SelectSubset<T, TestimonialUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends testimonialUpdateManyAndReturnArgs>(args: SelectSubset<T, testimonialUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Testimonial.
-     * @param {TestimonialUpsertArgs} args - Arguments to update or create a Testimonial.
+     * @param {testimonialUpsertArgs} args - Arguments to update or create a Testimonial.
      * @example
      * // Update or create a Testimonial
      * const testimonial = await prisma.testimonial.upsert({
@@ -1392,14 +1487,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends TestimonialUpsertArgs>(args: SelectSubset<T, TestimonialUpsertArgs<ExtArgs>>): Prisma__TestimonialClient<$Result.GetResult<Prisma.$TestimonialPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends testimonialUpsertArgs>(args: SelectSubset<T, testimonialUpsertArgs<ExtArgs>>): Prisma__testimonialClient<$Result.GetResult<Prisma.$testimonialPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Testimonials.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialCountArgs} args - Arguments to filter Testimonials to count.
+     * @param {testimonialCountArgs} args - Arguments to filter Testimonials to count.
      * @example
      * // Count the number of Testimonials
      * const count = await prisma.testimonial.count({
@@ -1408,8 +1503,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends TestimonialCountArgs>(
-      args?: Subset<T, TestimonialCountArgs>,
+    count<T extends testimonialCountArgs>(
+      args?: Subset<T, testimonialCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -1448,7 +1543,7 @@ export namespace Prisma {
      * Group by Testimonial.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestimonialGroupByArgs} args - Group by arguments.
+     * @param {testimonialGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1463,14 +1558,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TestimonialGroupByArgs,
+      T extends testimonialGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TestimonialGroupByArgs['orderBy'] }
-        : { orderBy?: TestimonialGroupByArgs['orderBy'] },
+        ? { orderBy: testimonialGroupByArgs['orderBy'] }
+        : { orderBy?: testimonialGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1519,20 +1614,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TestimonialGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTestimonialGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, testimonialGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTestimonialGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Testimonial model
+   * Fields of the testimonial model
    */
-  readonly fields: TestimonialFieldRefs;
+  readonly fields: testimonialFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Testimonial.
+   * The delegate class that acts as a "Promise-like" for testimonial.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TestimonialClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__testimonialClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1560,380 +1655,1542 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Testimonial model
+   * Fields of the testimonial model
    */
-  interface TestimonialFieldRefs {
-    readonly id: FieldRef<"Testimonial", 'String'>
-    readonly username: FieldRef<"Testimonial", 'String'>
-    readonly review: FieldRef<"Testimonial", 'String'>
-    readonly stars: FieldRef<"Testimonial", 'Int'>
-    readonly imageUrl: FieldRef<"Testimonial", 'String'>
-    readonly position: FieldRef<"Testimonial", 'String'>
-    readonly company: FieldRef<"Testimonial", 'String'>
-    readonly createdAt: FieldRef<"Testimonial", 'DateTime'>
+  interface testimonialFieldRefs {
+    readonly id: FieldRef<"testimonial", 'Int'>
+    readonly name: FieldRef<"testimonial", 'String'>
+    readonly image: FieldRef<"testimonial", 'String'>
+    readonly description: FieldRef<"testimonial", 'String'>
+    readonly stars: FieldRef<"testimonial", 'Int'>
+    readonly linkedInUrl: FieldRef<"testimonial", 'String'>
+    readonly createdAt: FieldRef<"testimonial", 'DateTime'>
+    readonly updatedAt: FieldRef<"testimonial", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Testimonial findUnique
+   * testimonial findUnique
    */
-  export type TestimonialFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter, which Testimonial to fetch.
+     * Filter, which testimonial to fetch.
      */
-    where: TestimonialWhereUniqueInput
+    where: testimonialWhereUniqueInput
   }
 
   /**
-   * Testimonial findUniqueOrThrow
+   * testimonial findUniqueOrThrow
    */
-  export type TestimonialFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter, which Testimonial to fetch.
+     * Filter, which testimonial to fetch.
      */
-    where: TestimonialWhereUniqueInput
+    where: testimonialWhereUniqueInput
   }
 
   /**
-   * Testimonial findFirst
+   * testimonial findFirst
    */
-  export type TestimonialFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter, which Testimonial to fetch.
+     * Filter, which testimonial to fetch.
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Testimonials to fetch.
+     * Determine the order of testimonials to fetch.
      */
-    orderBy?: TestimonialOrderByWithRelationInput | TestimonialOrderByWithRelationInput[]
+    orderBy?: testimonialOrderByWithRelationInput | testimonialOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Testimonials.
+     * Sets the position for searching for testimonials.
      */
-    cursor?: TestimonialWhereUniqueInput
+    cursor?: testimonialWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Testimonials from the position of the cursor.
+     * Take `±n` testimonials from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Testimonials.
+     * Skip the first `n` testimonials.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Testimonials.
+     * Filter by unique combinations of testimonials.
      */
     distinct?: TestimonialScalarFieldEnum | TestimonialScalarFieldEnum[]
   }
 
   /**
-   * Testimonial findFirstOrThrow
+   * testimonial findFirstOrThrow
    */
-  export type TestimonialFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter, which Testimonial to fetch.
+     * Filter, which testimonial to fetch.
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Testimonials to fetch.
+     * Determine the order of testimonials to fetch.
      */
-    orderBy?: TestimonialOrderByWithRelationInput | TestimonialOrderByWithRelationInput[]
+    orderBy?: testimonialOrderByWithRelationInput | testimonialOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Testimonials.
+     * Sets the position for searching for testimonials.
      */
-    cursor?: TestimonialWhereUniqueInput
+    cursor?: testimonialWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Testimonials from the position of the cursor.
+     * Take `±n` testimonials from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Testimonials.
+     * Skip the first `n` testimonials.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Testimonials.
+     * Filter by unique combinations of testimonials.
      */
     distinct?: TestimonialScalarFieldEnum | TestimonialScalarFieldEnum[]
   }
 
   /**
-   * Testimonial findMany
+   * testimonial findMany
    */
-  export type TestimonialFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter, which Testimonials to fetch.
+     * Filter, which testimonials to fetch.
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Testimonials to fetch.
+     * Determine the order of testimonials to fetch.
      */
-    orderBy?: TestimonialOrderByWithRelationInput | TestimonialOrderByWithRelationInput[]
+    orderBy?: testimonialOrderByWithRelationInput | testimonialOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Testimonials.
+     * Sets the position for listing testimonials.
      */
-    cursor?: TestimonialWhereUniqueInput
+    cursor?: testimonialWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Testimonials from the position of the cursor.
+     * Take `±n` testimonials from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Testimonials.
+     * Skip the first `n` testimonials.
      */
     skip?: number
     distinct?: TestimonialScalarFieldEnum | TestimonialScalarFieldEnum[]
   }
 
   /**
-   * Testimonial create
+   * testimonial create
    */
-  export type TestimonialCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * The data needed to create a Testimonial.
+     * The data needed to create a testimonial.
      */
-    data: XOR<TestimonialCreateInput, TestimonialUncheckedCreateInput>
+    data: XOR<testimonialCreateInput, testimonialUncheckedCreateInput>
   }
 
   /**
-   * Testimonial createMany
+   * testimonial createMany
    */
-  export type TestimonialCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Testimonials.
+     * The data used to create many testimonials.
      */
-    data: TestimonialCreateManyInput | TestimonialCreateManyInput[]
+    data: testimonialCreateManyInput | testimonialCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Testimonial createManyAndReturn
+   * testimonial createManyAndReturn
    */
-  export type TestimonialCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelectCreateManyAndReturn<ExtArgs> | null
+    select?: testimonialSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * The data used to create many Testimonials.
+     * The data used to create many testimonials.
      */
-    data: TestimonialCreateManyInput | TestimonialCreateManyInput[]
+    data: testimonialCreateManyInput | testimonialCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Testimonial update
+   * testimonial update
    */
-  export type TestimonialUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * The data needed to update a Testimonial.
+     * The data needed to update a testimonial.
      */
-    data: XOR<TestimonialUpdateInput, TestimonialUncheckedUpdateInput>
+    data: XOR<testimonialUpdateInput, testimonialUncheckedUpdateInput>
     /**
-     * Choose, which Testimonial to update.
+     * Choose, which testimonial to update.
      */
-    where: TestimonialWhereUniqueInput
+    where: testimonialWhereUniqueInput
   }
 
   /**
-   * Testimonial updateMany
+   * testimonial updateMany
    */
-  export type TestimonialUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Testimonials.
+     * The data used to update testimonials.
      */
-    data: XOR<TestimonialUpdateManyMutationInput, TestimonialUncheckedUpdateManyInput>
+    data: XOR<testimonialUpdateManyMutationInput, testimonialUncheckedUpdateManyInput>
     /**
-     * Filter which Testimonials to update
+     * Filter which testimonials to update
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
-     * Limit how many Testimonials to update.
+     * Limit how many testimonials to update.
      */
     limit?: number
   }
 
   /**
-   * Testimonial updateManyAndReturn
+   * testimonial updateManyAndReturn
    */
-  export type TestimonialUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: testimonialSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * The data used to update Testimonials.
+     * The data used to update testimonials.
      */
-    data: XOR<TestimonialUpdateManyMutationInput, TestimonialUncheckedUpdateManyInput>
+    data: XOR<testimonialUpdateManyMutationInput, testimonialUncheckedUpdateManyInput>
     /**
-     * Filter which Testimonials to update
+     * Filter which testimonials to update
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
-     * Limit how many Testimonials to update.
+     * Limit how many testimonials to update.
      */
     limit?: number
   }
 
   /**
-   * Testimonial upsert
+   * testimonial upsert
    */
-  export type TestimonialUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * The filter to search for the Testimonial to update in case it exists.
+     * The filter to search for the testimonial to update in case it exists.
      */
-    where: TestimonialWhereUniqueInput
+    where: testimonialWhereUniqueInput
     /**
-     * In case the Testimonial found by the `where` argument doesn't exist, create a new Testimonial with this data.
+     * In case the testimonial found by the `where` argument doesn't exist, create a new testimonial with this data.
      */
-    create: XOR<TestimonialCreateInput, TestimonialUncheckedCreateInput>
+    create: XOR<testimonialCreateInput, testimonialUncheckedCreateInput>
     /**
-     * In case the Testimonial was found with the provided `where` argument, update it with this data.
+     * In case the testimonial was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<TestimonialUpdateInput, TestimonialUncheckedUpdateInput>
+    update: XOR<testimonialUpdateInput, testimonialUncheckedUpdateInput>
   }
 
   /**
-   * Testimonial delete
+   * testimonial delete
    */
-  export type TestimonialDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
     /**
-     * Filter which Testimonial to delete.
+     * Filter which testimonial to delete.
      */
-    where: TestimonialWhereUniqueInput
+    where: testimonialWhereUniqueInput
   }
 
   /**
-   * Testimonial deleteMany
+   * testimonial deleteMany
    */
-  export type TestimonialDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Testimonials to delete
+     * Filter which testimonials to delete
      */
-    where?: TestimonialWhereInput
+    where?: testimonialWhereInput
     /**
-     * Limit how many Testimonials to delete.
+     * Limit how many testimonials to delete.
      */
     limit?: number
   }
 
   /**
-   * Testimonial without action
+   * testimonial without action
    */
-  export type TestimonialDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type testimonialDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Testimonial
+     * Select specific fields to fetch from the testimonial
      */
-    select?: TestimonialSelect<ExtArgs> | null
+    select?: testimonialSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Testimonial
+     * Omit specific fields from the testimonial
      */
-    omit?: TestimonialOmit<ExtArgs> | null
+    omit?: testimonialOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model course
+   */
+
+  export type AggregateCourse = {
+    _count: CourseCountAggregateOutputType | null
+    _avg: CourseAvgAggregateOutputType | null
+    _sum: CourseSumAggregateOutputType | null
+    _min: CourseMinAggregateOutputType | null
+    _max: CourseMaxAggregateOutputType | null
+  }
+
+  export type CourseAvgAggregateOutputType = {
+    id: number | null
+    originalPrice: number | null
+    discountPrice: number | null
+    rating: number | null
+    ratingCount: number | null
+  }
+
+  export type CourseSumAggregateOutputType = {
+    id: number | null
+    originalPrice: number | null
+    discountPrice: number | null
+    rating: number | null
+    ratingCount: number | null
+  }
+
+  export type CourseMinAggregateOutputType = {
+    id: number | null
+    title: string | null
+    slug: string | null
+    description: string | null
+    originalPrice: number | null
+    discountPrice: number | null
+    image: string | null
+    language: string | null
+    rating: number | null
+    ratingCount: number | null
+    instructorName: string | null
+    instructorImage: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CourseMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    slug: string | null
+    description: string | null
+    originalPrice: number | null
+    discountPrice: number | null
+    image: string | null
+    language: string | null
+    rating: number | null
+    ratingCount: number | null
+    instructorName: string | null
+    instructorImage: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CourseCountAggregateOutputType = {
+    id: number
+    title: number
+    slug: number
+    description: number
+    originalPrice: number
+    discountPrice: number
+    image: number
+    language: number
+    rating: number
+    ratingCount: number
+    instructorName: number
+    instructorImage: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CourseAvgAggregateInputType = {
+    id?: true
+    originalPrice?: true
+    discountPrice?: true
+    rating?: true
+    ratingCount?: true
+  }
+
+  export type CourseSumAggregateInputType = {
+    id?: true
+    originalPrice?: true
+    discountPrice?: true
+    rating?: true
+    ratingCount?: true
+  }
+
+  export type CourseMinAggregateInputType = {
+    id?: true
+    title?: true
+    slug?: true
+    description?: true
+    originalPrice?: true
+    discountPrice?: true
+    image?: true
+    language?: true
+    rating?: true
+    ratingCount?: true
+    instructorName?: true
+    instructorImage?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CourseMaxAggregateInputType = {
+    id?: true
+    title?: true
+    slug?: true
+    description?: true
+    originalPrice?: true
+    discountPrice?: true
+    image?: true
+    language?: true
+    rating?: true
+    ratingCount?: true
+    instructorName?: true
+    instructorImage?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CourseCountAggregateInputType = {
+    id?: true
+    title?: true
+    slug?: true
+    description?: true
+    originalPrice?: true
+    discountPrice?: true
+    image?: true
+    language?: true
+    rating?: true
+    ratingCount?: true
+    instructorName?: true
+    instructorImage?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CourseAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which course to aggregate.
+     */
+    where?: courseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of courses to fetch.
+     */
+    orderBy?: courseOrderByWithRelationInput | courseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: courseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` courses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` courses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned courses
+    **/
+    _count?: true | CourseCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CourseAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CourseSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CourseMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CourseMaxAggregateInputType
+  }
+
+  export type GetCourseAggregateType<T extends CourseAggregateArgs> = {
+        [P in keyof T & keyof AggregateCourse]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCourse[P]>
+      : GetScalarType<T[P], AggregateCourse[P]>
+  }
+
+
+
+
+  export type courseGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: courseWhereInput
+    orderBy?: courseOrderByWithAggregationInput | courseOrderByWithAggregationInput[]
+    by: CourseScalarFieldEnum[] | CourseScalarFieldEnum
+    having?: courseScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CourseCountAggregateInputType | true
+    _avg?: CourseAvgAggregateInputType
+    _sum?: CourseSumAggregateInputType
+    _min?: CourseMinAggregateInputType
+    _max?: CourseMaxAggregateInputType
+  }
+
+  export type CourseGroupByOutputType = {
+    id: number
+    title: string
+    slug: string
+    description: string
+    originalPrice: number
+    discountPrice: number
+    image: string
+    language: string
+    rating: number
+    ratingCount: number
+    instructorName: string
+    instructorImage: string
+    createdAt: Date
+    updatedAt: Date
+    _count: CourseCountAggregateOutputType | null
+    _avg: CourseAvgAggregateOutputType | null
+    _sum: CourseSumAggregateOutputType | null
+    _min: CourseMinAggregateOutputType | null
+    _max: CourseMaxAggregateOutputType | null
+  }
+
+  type GetCourseGroupByPayload<T extends courseGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CourseGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CourseGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CourseGroupByOutputType[P]>
+            : GetScalarType<T[P], CourseGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type courseSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    slug?: boolean
+    description?: boolean
+    originalPrice?: boolean
+    discountPrice?: boolean
+    image?: boolean
+    language?: boolean
+    rating?: boolean
+    ratingCount?: boolean
+    instructorName?: boolean
+    instructorImage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["course"]>
+
+  export type courseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    slug?: boolean
+    description?: boolean
+    originalPrice?: boolean
+    discountPrice?: boolean
+    image?: boolean
+    language?: boolean
+    rating?: boolean
+    ratingCount?: boolean
+    instructorName?: boolean
+    instructorImage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["course"]>
+
+  export type courseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    slug?: boolean
+    description?: boolean
+    originalPrice?: boolean
+    discountPrice?: boolean
+    image?: boolean
+    language?: boolean
+    rating?: boolean
+    ratingCount?: boolean
+    instructorName?: boolean
+    instructorImage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["course"]>
+
+  export type courseSelectScalar = {
+    id?: boolean
+    title?: boolean
+    slug?: boolean
+    description?: boolean
+    originalPrice?: boolean
+    discountPrice?: boolean
+    image?: boolean
+    language?: boolean
+    rating?: boolean
+    ratingCount?: boolean
+    instructorName?: boolean
+    instructorImage?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type courseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "description" | "originalPrice" | "discountPrice" | "image" | "language" | "rating" | "ratingCount" | "instructorName" | "instructorImage" | "createdAt" | "updatedAt", ExtArgs["result"]["course"]>
+
+  export type $coursePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "course"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      title: string
+      slug: string
+      description: string
+      originalPrice: number
+      discountPrice: number
+      image: string
+      language: string
+      rating: number
+      ratingCount: number
+      instructorName: string
+      instructorImage: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["course"]>
+    composites: {}
+  }
+
+  type courseGetPayload<S extends boolean | null | undefined | courseDefaultArgs> = $Result.GetResult<Prisma.$coursePayload, S>
+
+  type courseCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<courseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CourseCountAggregateInputType | true
+    }
+
+  export interface courseDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['course'], meta: { name: 'course' } }
+    /**
+     * Find zero or one Course that matches the filter.
+     * @param {courseFindUniqueArgs} args - Arguments to find a Course
+     * @example
+     * // Get one Course
+     * const course = await prisma.course.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends courseFindUniqueArgs>(args: SelectSubset<T, courseFindUniqueArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Course that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {courseFindUniqueOrThrowArgs} args - Arguments to find a Course
+     * @example
+     * // Get one Course
+     * const course = await prisma.course.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends courseFindUniqueOrThrowArgs>(args: SelectSubset<T, courseFindUniqueOrThrowArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Course that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseFindFirstArgs} args - Arguments to find a Course
+     * @example
+     * // Get one Course
+     * const course = await prisma.course.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends courseFindFirstArgs>(args?: SelectSubset<T, courseFindFirstArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Course that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseFindFirstOrThrowArgs} args - Arguments to find a Course
+     * @example
+     * // Get one Course
+     * const course = await prisma.course.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends courseFindFirstOrThrowArgs>(args?: SelectSubset<T, courseFindFirstOrThrowArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Courses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Courses
+     * const courses = await prisma.course.findMany()
+     * 
+     * // Get first 10 Courses
+     * const courses = await prisma.course.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const courseWithIdOnly = await prisma.course.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends courseFindManyArgs>(args?: SelectSubset<T, courseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Course.
+     * @param {courseCreateArgs} args - Arguments to create a Course.
+     * @example
+     * // Create one Course
+     * const Course = await prisma.course.create({
+     *   data: {
+     *     // ... data to create a Course
+     *   }
+     * })
+     * 
+     */
+    create<T extends courseCreateArgs>(args: SelectSubset<T, courseCreateArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Courses.
+     * @param {courseCreateManyArgs} args - Arguments to create many Courses.
+     * @example
+     * // Create many Courses
+     * const course = await prisma.course.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends courseCreateManyArgs>(args?: SelectSubset<T, courseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Courses and returns the data saved in the database.
+     * @param {courseCreateManyAndReturnArgs} args - Arguments to create many Courses.
+     * @example
+     * // Create many Courses
+     * const course = await prisma.course.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Courses and only return the `id`
+     * const courseWithIdOnly = await prisma.course.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends courseCreateManyAndReturnArgs>(args?: SelectSubset<T, courseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Course.
+     * @param {courseDeleteArgs} args - Arguments to delete one Course.
+     * @example
+     * // Delete one Course
+     * const Course = await prisma.course.delete({
+     *   where: {
+     *     // ... filter to delete one Course
+     *   }
+     * })
+     * 
+     */
+    delete<T extends courseDeleteArgs>(args: SelectSubset<T, courseDeleteArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Course.
+     * @param {courseUpdateArgs} args - Arguments to update one Course.
+     * @example
+     * // Update one Course
+     * const course = await prisma.course.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends courseUpdateArgs>(args: SelectSubset<T, courseUpdateArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Courses.
+     * @param {courseDeleteManyArgs} args - Arguments to filter Courses to delete.
+     * @example
+     * // Delete a few Courses
+     * const { count } = await prisma.course.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends courseDeleteManyArgs>(args?: SelectSubset<T, courseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Courses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Courses
+     * const course = await prisma.course.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends courseUpdateManyArgs>(args: SelectSubset<T, courseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Courses and returns the data updated in the database.
+     * @param {courseUpdateManyAndReturnArgs} args - Arguments to update many Courses.
+     * @example
+     * // Update many Courses
+     * const course = await prisma.course.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Courses and only return the `id`
+     * const courseWithIdOnly = await prisma.course.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends courseUpdateManyAndReturnArgs>(args: SelectSubset<T, courseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Course.
+     * @param {courseUpsertArgs} args - Arguments to update or create a Course.
+     * @example
+     * // Update or create a Course
+     * const course = await prisma.course.upsert({
+     *   create: {
+     *     // ... data to create a Course
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Course we want to update
+     *   }
+     * })
+     */
+    upsert<T extends courseUpsertArgs>(args: SelectSubset<T, courseUpsertArgs<ExtArgs>>): Prisma__courseClient<$Result.GetResult<Prisma.$coursePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Courses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseCountArgs} args - Arguments to filter Courses to count.
+     * @example
+     * // Count the number of Courses
+     * const count = await prisma.course.count({
+     *   where: {
+     *     // ... the filter for the Courses we want to count
+     *   }
+     * })
+    **/
+    count<T extends courseCountArgs>(
+      args?: Subset<T, courseCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CourseCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Course.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CourseAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CourseAggregateArgs>(args: Subset<T, CourseAggregateArgs>): Prisma.PrismaPromise<GetCourseAggregateType<T>>
+
+    /**
+     * Group by Course.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {courseGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends courseGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: courseGroupByArgs['orderBy'] }
+        : { orderBy?: courseGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, courseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCourseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the course model
+   */
+  readonly fields: courseFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for course.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__courseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the course model
+   */
+  interface courseFieldRefs {
+    readonly id: FieldRef<"course", 'Int'>
+    readonly title: FieldRef<"course", 'String'>
+    readonly slug: FieldRef<"course", 'String'>
+    readonly description: FieldRef<"course", 'String'>
+    readonly originalPrice: FieldRef<"course", 'Float'>
+    readonly discountPrice: FieldRef<"course", 'Float'>
+    readonly image: FieldRef<"course", 'String'>
+    readonly language: FieldRef<"course", 'String'>
+    readonly rating: FieldRef<"course", 'Float'>
+    readonly ratingCount: FieldRef<"course", 'Int'>
+    readonly instructorName: FieldRef<"course", 'String'>
+    readonly instructorImage: FieldRef<"course", 'String'>
+    readonly createdAt: FieldRef<"course", 'DateTime'>
+    readonly updatedAt: FieldRef<"course", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * course findUnique
+   */
+  export type courseFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter, which course to fetch.
+     */
+    where: courseWhereUniqueInput
+  }
+
+  /**
+   * course findUniqueOrThrow
+   */
+  export type courseFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter, which course to fetch.
+     */
+    where: courseWhereUniqueInput
+  }
+
+  /**
+   * course findFirst
+   */
+  export type courseFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter, which course to fetch.
+     */
+    where?: courseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of courses to fetch.
+     */
+    orderBy?: courseOrderByWithRelationInput | courseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for courses.
+     */
+    cursor?: courseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` courses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` courses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of courses.
+     */
+    distinct?: CourseScalarFieldEnum | CourseScalarFieldEnum[]
+  }
+
+  /**
+   * course findFirstOrThrow
+   */
+  export type courseFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter, which course to fetch.
+     */
+    where?: courseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of courses to fetch.
+     */
+    orderBy?: courseOrderByWithRelationInput | courseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for courses.
+     */
+    cursor?: courseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` courses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` courses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of courses.
+     */
+    distinct?: CourseScalarFieldEnum | CourseScalarFieldEnum[]
+  }
+
+  /**
+   * course findMany
+   */
+  export type courseFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter, which courses to fetch.
+     */
+    where?: courseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of courses to fetch.
+     */
+    orderBy?: courseOrderByWithRelationInput | courseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing courses.
+     */
+    cursor?: courseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` courses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` courses.
+     */
+    skip?: number
+    distinct?: CourseScalarFieldEnum | CourseScalarFieldEnum[]
+  }
+
+  /**
+   * course create
+   */
+  export type courseCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * The data needed to create a course.
+     */
+    data: XOR<courseCreateInput, courseUncheckedCreateInput>
+  }
+
+  /**
+   * course createMany
+   */
+  export type courseCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many courses.
+     */
+    data: courseCreateManyInput | courseCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * course createManyAndReturn
+   */
+  export type courseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * The data used to create many courses.
+     */
+    data: courseCreateManyInput | courseCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * course update
+   */
+  export type courseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * The data needed to update a course.
+     */
+    data: XOR<courseUpdateInput, courseUncheckedUpdateInput>
+    /**
+     * Choose, which course to update.
+     */
+    where: courseWhereUniqueInput
+  }
+
+  /**
+   * course updateMany
+   */
+  export type courseUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update courses.
+     */
+    data: XOR<courseUpdateManyMutationInput, courseUncheckedUpdateManyInput>
+    /**
+     * Filter which courses to update
+     */
+    where?: courseWhereInput
+    /**
+     * Limit how many courses to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * course updateManyAndReturn
+   */
+  export type courseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * The data used to update courses.
+     */
+    data: XOR<courseUpdateManyMutationInput, courseUncheckedUpdateManyInput>
+    /**
+     * Filter which courses to update
+     */
+    where?: courseWhereInput
+    /**
+     * Limit how many courses to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * course upsert
+   */
+  export type courseUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * The filter to search for the course to update in case it exists.
+     */
+    where: courseWhereUniqueInput
+    /**
+     * In case the course found by the `where` argument doesn't exist, create a new course with this data.
+     */
+    create: XOR<courseCreateInput, courseUncheckedCreateInput>
+    /**
+     * In case the course was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<courseUpdateInput, courseUncheckedUpdateInput>
+  }
+
+  /**
+   * course delete
+   */
+  export type courseDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
+    /**
+     * Filter which course to delete.
+     */
+    where: courseWhereUniqueInput
+  }
+
+  /**
+   * course deleteMany
+   */
+  export type courseDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which courses to delete
+     */
+    where?: courseWhereInput
+    /**
+     * Limit how many courses to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * course without action
+   */
+  export type courseDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the course
+     */
+    select?: courseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the course
+     */
+    omit?: courseOmit<ExtArgs> | null
   }
 
 
@@ -1953,16 +3210,36 @@ export namespace Prisma {
 
   export const TestimonialScalarFieldEnum: {
     id: 'id',
-    username: 'username',
-    review: 'review',
+    name: 'name',
+    image: 'image',
+    description: 'description',
     stars: 'stars',
-    imageUrl: 'imageUrl',
-    position: 'position',
-    company: 'company',
-    createdAt: 'createdAt'
+    linkedInUrl: 'linkedInUrl',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type TestimonialScalarFieldEnum = (typeof TestimonialScalarFieldEnum)[keyof typeof TestimonialScalarFieldEnum]
+
+
+  export const CourseScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    slug: 'slug',
+    description: 'description',
+    originalPrice: 'originalPrice',
+    discountPrice: 'discountPrice',
+    image: 'image',
+    language: 'language',
+    rating: 'rating',
+    ratingCount: 'ratingCount',
+    instructorName: 'instructorName',
+    instructorImage: 'instructorImage',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CourseScalarFieldEnum = (typeof CourseScalarFieldEnum)[keyof typeof CourseScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1987,20 +3264,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'String'
-   */
-  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
-
-
-  /**
-   * Reference to a field of type 'String[]'
-   */
-  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -2011,6 +3274,20 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'String'
+   */
+  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+  /**
+   * Reference to a field of type 'String[]'
+   */
+  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
     
 
 
@@ -2045,150 +3322,373 @@ export namespace Prisma {
    */
 
 
-  export type TestimonialWhereInput = {
-    AND?: TestimonialWhereInput | TestimonialWhereInput[]
-    OR?: TestimonialWhereInput[]
-    NOT?: TestimonialWhereInput | TestimonialWhereInput[]
-    id?: StringFilter<"Testimonial"> | string
-    username?: StringFilter<"Testimonial"> | string
-    review?: StringFilter<"Testimonial"> | string
-    stars?: IntFilter<"Testimonial"> | number
-    imageUrl?: StringFilter<"Testimonial"> | string
-    position?: StringFilter<"Testimonial"> | string
-    company?: StringFilter<"Testimonial"> | string
-    createdAt?: DateTimeFilter<"Testimonial"> | Date | string
+  export type testimonialWhereInput = {
+    AND?: testimonialWhereInput | testimonialWhereInput[]
+    OR?: testimonialWhereInput[]
+    NOT?: testimonialWhereInput | testimonialWhereInput[]
+    id?: IntFilter<"testimonial"> | number
+    name?: StringFilter<"testimonial"> | string
+    image?: StringFilter<"testimonial"> | string
+    description?: StringFilter<"testimonial"> | string
+    stars?: IntFilter<"testimonial"> | number
+    linkedInUrl?: StringFilter<"testimonial"> | string
+    createdAt?: DateTimeFilter<"testimonial"> | Date | string
+    updatedAt?: DateTimeFilter<"testimonial"> | Date | string
   }
 
-  export type TestimonialOrderByWithRelationInput = {
+  export type testimonialOrderByWithRelationInput = {
     id?: SortOrder
-    username?: SortOrder
-    review?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    description?: SortOrder
     stars?: SortOrder
-    imageUrl?: SortOrder
-    position?: SortOrder
-    company?: SortOrder
+    linkedInUrl?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
-  export type TestimonialWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: TestimonialWhereInput | TestimonialWhereInput[]
-    OR?: TestimonialWhereInput[]
-    NOT?: TestimonialWhereInput | TestimonialWhereInput[]
-    username?: StringFilter<"Testimonial"> | string
-    review?: StringFilter<"Testimonial"> | string
-    stars?: IntFilter<"Testimonial"> | number
-    imageUrl?: StringFilter<"Testimonial"> | string
-    position?: StringFilter<"Testimonial"> | string
-    company?: StringFilter<"Testimonial"> | string
-    createdAt?: DateTimeFilter<"Testimonial"> | Date | string
+  export type testimonialWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: testimonialWhereInput | testimonialWhereInput[]
+    OR?: testimonialWhereInput[]
+    NOT?: testimonialWhereInput | testimonialWhereInput[]
+    name?: StringFilter<"testimonial"> | string
+    image?: StringFilter<"testimonial"> | string
+    description?: StringFilter<"testimonial"> | string
+    stars?: IntFilter<"testimonial"> | number
+    linkedInUrl?: StringFilter<"testimonial"> | string
+    createdAt?: DateTimeFilter<"testimonial"> | Date | string
+    updatedAt?: DateTimeFilter<"testimonial"> | Date | string
   }, "id">
 
-  export type TestimonialOrderByWithAggregationInput = {
+  export type testimonialOrderByWithAggregationInput = {
     id?: SortOrder
-    username?: SortOrder
-    review?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    description?: SortOrder
     stars?: SortOrder
-    imageUrl?: SortOrder
-    position?: SortOrder
-    company?: SortOrder
+    linkedInUrl?: SortOrder
     createdAt?: SortOrder
-    _count?: TestimonialCountOrderByAggregateInput
-    _avg?: TestimonialAvgOrderByAggregateInput
-    _max?: TestimonialMaxOrderByAggregateInput
-    _min?: TestimonialMinOrderByAggregateInput
-    _sum?: TestimonialSumOrderByAggregateInput
+    updatedAt?: SortOrder
+    _count?: testimonialCountOrderByAggregateInput
+    _avg?: testimonialAvgOrderByAggregateInput
+    _max?: testimonialMaxOrderByAggregateInput
+    _min?: testimonialMinOrderByAggregateInput
+    _sum?: testimonialSumOrderByAggregateInput
   }
 
-  export type TestimonialScalarWhereWithAggregatesInput = {
-    AND?: TestimonialScalarWhereWithAggregatesInput | TestimonialScalarWhereWithAggregatesInput[]
-    OR?: TestimonialScalarWhereWithAggregatesInput[]
-    NOT?: TestimonialScalarWhereWithAggregatesInput | TestimonialScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Testimonial"> | string
-    username?: StringWithAggregatesFilter<"Testimonial"> | string
-    review?: StringWithAggregatesFilter<"Testimonial"> | string
-    stars?: IntWithAggregatesFilter<"Testimonial"> | number
-    imageUrl?: StringWithAggregatesFilter<"Testimonial"> | string
-    position?: StringWithAggregatesFilter<"Testimonial"> | string
-    company?: StringWithAggregatesFilter<"Testimonial"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Testimonial"> | Date | string
+  export type testimonialScalarWhereWithAggregatesInput = {
+    AND?: testimonialScalarWhereWithAggregatesInput | testimonialScalarWhereWithAggregatesInput[]
+    OR?: testimonialScalarWhereWithAggregatesInput[]
+    NOT?: testimonialScalarWhereWithAggregatesInput | testimonialScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"testimonial"> | number
+    name?: StringWithAggregatesFilter<"testimonial"> | string
+    image?: StringWithAggregatesFilter<"testimonial"> | string
+    description?: StringWithAggregatesFilter<"testimonial"> | string
+    stars?: IntWithAggregatesFilter<"testimonial"> | number
+    linkedInUrl?: StringWithAggregatesFilter<"testimonial"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"testimonial"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"testimonial"> | Date | string
   }
 
-  export type TestimonialCreateInput = {
-    id?: string
-    username: string
-    review: string
+  export type courseWhereInput = {
+    AND?: courseWhereInput | courseWhereInput[]
+    OR?: courseWhereInput[]
+    NOT?: courseWhereInput | courseWhereInput[]
+    id?: IntFilter<"course"> | number
+    title?: StringFilter<"course"> | string
+    slug?: StringFilter<"course"> | string
+    description?: StringFilter<"course"> | string
+    originalPrice?: FloatFilter<"course"> | number
+    discountPrice?: FloatFilter<"course"> | number
+    image?: StringFilter<"course"> | string
+    language?: StringFilter<"course"> | string
+    rating?: FloatFilter<"course"> | number
+    ratingCount?: IntFilter<"course"> | number
+    instructorName?: StringFilter<"course"> | string
+    instructorImage?: StringFilter<"course"> | string
+    createdAt?: DateTimeFilter<"course"> | Date | string
+    updatedAt?: DateTimeFilter<"course"> | Date | string
+  }
+
+  export type courseOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    slug?: SortOrder
+    description?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    image?: SortOrder
+    language?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+    instructorName?: SortOrder
+    instructorImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type courseWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    slug?: string
+    AND?: courseWhereInput | courseWhereInput[]
+    OR?: courseWhereInput[]
+    NOT?: courseWhereInput | courseWhereInput[]
+    title?: StringFilter<"course"> | string
+    description?: StringFilter<"course"> | string
+    originalPrice?: FloatFilter<"course"> | number
+    discountPrice?: FloatFilter<"course"> | number
+    image?: StringFilter<"course"> | string
+    language?: StringFilter<"course"> | string
+    rating?: FloatFilter<"course"> | number
+    ratingCount?: IntFilter<"course"> | number
+    instructorName?: StringFilter<"course"> | string
+    instructorImage?: StringFilter<"course"> | string
+    createdAt?: DateTimeFilter<"course"> | Date | string
+    updatedAt?: DateTimeFilter<"course"> | Date | string
+  }, "id" | "slug">
+
+  export type courseOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    slug?: SortOrder
+    description?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    image?: SortOrder
+    language?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+    instructorName?: SortOrder
+    instructorImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: courseCountOrderByAggregateInput
+    _avg?: courseAvgOrderByAggregateInput
+    _max?: courseMaxOrderByAggregateInput
+    _min?: courseMinOrderByAggregateInput
+    _sum?: courseSumOrderByAggregateInput
+  }
+
+  export type courseScalarWhereWithAggregatesInput = {
+    AND?: courseScalarWhereWithAggregatesInput | courseScalarWhereWithAggregatesInput[]
+    OR?: courseScalarWhereWithAggregatesInput[]
+    NOT?: courseScalarWhereWithAggregatesInput | courseScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"course"> | number
+    title?: StringWithAggregatesFilter<"course"> | string
+    slug?: StringWithAggregatesFilter<"course"> | string
+    description?: StringWithAggregatesFilter<"course"> | string
+    originalPrice?: FloatWithAggregatesFilter<"course"> | number
+    discountPrice?: FloatWithAggregatesFilter<"course"> | number
+    image?: StringWithAggregatesFilter<"course"> | string
+    language?: StringWithAggregatesFilter<"course"> | string
+    rating?: FloatWithAggregatesFilter<"course"> | number
+    ratingCount?: IntWithAggregatesFilter<"course"> | number
+    instructorName?: StringWithAggregatesFilter<"course"> | string
+    instructorImage?: StringWithAggregatesFilter<"course"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"course"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"course"> | Date | string
+  }
+
+  export type testimonialCreateInput = {
+    name: string
+    image: string
+    description: string
     stars: number
-    imageUrl: string
-    position: string
-    company: string
+    linkedInUrl: string
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type TestimonialUncheckedCreateInput = {
-    id?: string
-    username: string
-    review: string
+  export type testimonialUncheckedCreateInput = {
+    id?: number
+    name: string
+    image: string
+    description: string
     stars: number
-    imageUrl: string
-    position: string
-    company: string
+    linkedInUrl: string
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type TestimonialUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    review?: StringFieldUpdateOperationsInput | string
+  export type testimonialUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     stars?: IntFieldUpdateOperationsInput | number
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
+    linkedInUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TestimonialUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    review?: StringFieldUpdateOperationsInput | string
+  export type testimonialUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     stars?: IntFieldUpdateOperationsInput | number
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
+    linkedInUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TestimonialCreateManyInput = {
-    id?: string
-    username: string
-    review: string
+  export type testimonialCreateManyInput = {
+    id?: number
+    name: string
+    image: string
+    description: string
     stars: number
-    imageUrl: string
-    position: string
-    company: string
+    linkedInUrl: string
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type TestimonialUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    review?: StringFieldUpdateOperationsInput | string
+  export type testimonialUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     stars?: IntFieldUpdateOperationsInput | number
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
+    linkedInUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TestimonialUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    review?: StringFieldUpdateOperationsInput | string
+  export type testimonialUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     stars?: IntFieldUpdateOperationsInput | number
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
+    linkedInUrl?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type courseCreateInput = {
+    title: string
+    slug: string
+    description: string
+    originalPrice: number
+    discountPrice: number
+    image: string
+    language: string
+    rating: number
+    ratingCount: number
+    instructorName: string
+    instructorImage: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type courseUncheckedCreateInput = {
+    id?: number
+    title: string
+    slug: string
+    description: string
+    originalPrice: number
+    discountPrice: number
+    image: string
+    language: string
+    rating: number
+    ratingCount: number
+    instructorName: string
+    instructorImage: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type courseUpdateInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    originalPrice?: FloatFieldUpdateOperationsInput | number
+    discountPrice?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    ratingCount?: IntFieldUpdateOperationsInput | number
+    instructorName?: StringFieldUpdateOperationsInput | string
+    instructorImage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type courseUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    originalPrice?: FloatFieldUpdateOperationsInput | number
+    discountPrice?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    ratingCount?: IntFieldUpdateOperationsInput | number
+    instructorName?: StringFieldUpdateOperationsInput | string
+    instructorImage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type courseCreateManyInput = {
+    id?: number
+    title: string
+    slug: string
+    description: string
+    originalPrice: number
+    discountPrice: number
+    image: string
+    language: string
+    rating: number
+    ratingCount: number
+    instructorName: string
+    instructorImage: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type courseUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    originalPrice?: FloatFieldUpdateOperationsInput | number
+    discountPrice?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    ratingCount?: IntFieldUpdateOperationsInput | number
+    instructorName?: StringFieldUpdateOperationsInput | string
+    instructorImage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type courseUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    originalPrice?: FloatFieldUpdateOperationsInput | number
+    discountPrice?: FloatFieldUpdateOperationsInput | number
+    image?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    ratingCount?: IntFieldUpdateOperationsInput | number
+    instructorName?: StringFieldUpdateOperationsInput | string
+    instructorImage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2206,17 +3706,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2228,45 +3717,63 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type TestimonialCountOrderByAggregateInput = {
+  export type testimonialCountOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
-    review?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    description?: SortOrder
     stars?: SortOrder
-    imageUrl?: SortOrder
-    position?: SortOrder
-    company?: SortOrder
+    linkedInUrl?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
-  export type TestimonialAvgOrderByAggregateInput = {
-    stars?: SortOrder
-  }
-
-  export type TestimonialMaxOrderByAggregateInput = {
+  export type testimonialAvgOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
-    review?: SortOrder
     stars?: SortOrder
-    imageUrl?: SortOrder
-    position?: SortOrder
-    company?: SortOrder
-    createdAt?: SortOrder
   }
 
-  export type TestimonialMinOrderByAggregateInput = {
+  export type testimonialMaxOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
-    review?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    description?: SortOrder
     stars?: SortOrder
-    imageUrl?: SortOrder
-    position?: SortOrder
-    company?: SortOrder
+    linkedInUrl?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
-  export type TestimonialSumOrderByAggregateInput = {
+  export type testimonialMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    description?: SortOrder
     stars?: SortOrder
+    linkedInUrl?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type testimonialSumOrderByAggregateInput = {
+    id?: SortOrder
+    stars?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2287,22 +3794,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2315,6 +3806,100 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type courseCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    slug?: SortOrder
+    description?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    image?: SortOrder
+    language?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+    instructorName?: SortOrder
+    instructorImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type courseAvgOrderByAggregateInput = {
+    id?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+  }
+
+  export type courseMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    slug?: SortOrder
+    description?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    image?: SortOrder
+    language?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+    instructorName?: SortOrder
+    instructorImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type courseMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    slug?: SortOrder
+    description?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    image?: SortOrder
+    language?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+    instructorName?: SortOrder
+    instructorImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type courseSumOrderByAggregateInput = {
+    id?: SortOrder
+    originalPrice?: SortOrder
+    discountPrice?: SortOrder
+    rating?: SortOrder
+    ratingCount?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -2333,6 +3918,25 @@ export namespace Prisma {
     set?: Date | string
   }
 
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -2347,17 +3951,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2367,23 +3960,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2413,6 +3989,23 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2425,6 +4018,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
 

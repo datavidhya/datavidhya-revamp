@@ -14,13 +14,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Testimonial {
-  id        String   @id @default(cuid())
-  username  String
-  review    String
-  stars     Int
-  imageUrl  String
-  position  String
-  company   String
-  createdAt DateTime @default(now())
+model testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  image       String
+  description String
+  stars       Int
+  linkedInUrl String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model course {
+  id              Int      @id @default(autoincrement())
+  title           String
+  slug            String   @unique
+  description     String
+  originalPrice   Float
+  discountPrice   Float
+  image           String
+  language        String
+  rating          Float
+  ratingCount     Int
+  instructorName  String
+  instructorImage String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }

@@ -122,13 +122,30 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.TestimonialScalarFieldEnum = {
   id: 'id',
-  username: 'username',
-  review: 'review',
+  name: 'name',
+  image: 'image',
+  description: 'description',
   stars: 'stars',
-  imageUrl: 'imageUrl',
-  position: 'position',
-  company: 'company',
-  createdAt: 'createdAt'
+  linkedInUrl: 'linkedInUrl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CourseScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  description: 'description',
+  originalPrice: 'originalPrice',
+  discountPrice: 'discountPrice',
+  image: 'image',
+  language: 'language',
+  rating: 'rating',
+  ratingCount: 'ratingCount',
+  instructorName: 'instructorName',
+  instructorImage: 'instructorImage',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -143,7 +160,8 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  Testimonial: 'Testimonial'
+  testimonial: 'testimonial',
+  course: 'course'
 };
 
 /**
