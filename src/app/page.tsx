@@ -5,6 +5,7 @@ import HeroSection from "@/components/revamp/hero/HeroSection";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
 import LeetcodeProblem from "@/components/revamp/LeetcodeSection/LeetcodeProblem";
 import TopicCovered from "@/components/revamp/marquee/TopicCovered";
+import { Notification } from "@/components/revamp/notification/notification";
 import ProjectSection from "@/components/revamp/ProjectSection/projectSection";
 import ViewCounter from "@/components/revamp/socialMediaCounter/ViewCounter";
 import Testimony from "@/components/revamp/Testimony/Testimony";
@@ -20,6 +21,7 @@ const Page = () => {
       <div className="absolute top-10 right-0  hidden md:flex z-40">
         <img src="/revamp/fadedCircle2.png" alt="" />
       </div> */}
+      <Notification />
       <NavigationBar />
       <HeroSection />
       <UltimateCourse />

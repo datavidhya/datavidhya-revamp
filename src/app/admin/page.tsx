@@ -11,7 +11,7 @@ export const Box = ({ bgColor, href, text }: prop) => {
     <Link href={href}>
       {" "}
       <div
-        className={`h-40 w-48 flex items-center justify-center ${bgColor} inset-2 border border-neutral-400  text-neutral-800 text-2xl font-semibold shadow-lg rounded-lg py-8 px `}
+        className={`h-40 w-48 flex items-center justify-center ${bgColor} inset-2 border border-neutral-400 text-center text-neutral-800 text-2xl font-semibold shadow-lg rounded-lg py-8 px `}
       >
         {text}
       </div>
@@ -29,7 +29,6 @@ const page = () => {
         <Box href="/admin/projects" bgColor="bg-[#B03052]" text="Projects" />
         <Box href="/admin/courses" bgColor="bg-[#309898]" text="Add Course" />
         <Box href="/admin/faq" bgColor="bg-blue-500" text="FAQs" />
-
         <Box href="/admin/comboPack" bgColor="bg-red-400" text="Combo Pack" />
         <Box
           href="/admin/recentlyPurchased"
