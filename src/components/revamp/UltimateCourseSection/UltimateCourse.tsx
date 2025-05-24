@@ -83,7 +83,7 @@ const UltimateCourse = () => {
           <div className="flex flex-col md:flex-row gap-[24px]">
             {" "}
             <div>
-              <img src="/revamp/ultimatecourse.png" alt="" />
+              <img src="/latest/ultimate2.png" className="rounded-xl" alt="" />
             </div>
             <div className=" flex flex-col  justify-between items-center py-[5px]">
               <h2 className="w-full text-[24px] text-center md:text-[28px] leading-[24px] font-semibold tracking-[-1.5%] text-[#333333]">

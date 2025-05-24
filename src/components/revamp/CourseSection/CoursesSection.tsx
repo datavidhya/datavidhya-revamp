@@ -7,7 +7,7 @@ import CourseCard from "./courseCard";
 const inter = Inter({ subsets: ["latin"] });
 export const courseCovered = [
   {
-    img: "/revamp/course2.png",
+    img: "/latest/orchest2.png",
     courseLink:
       "https://datavidhya.com/all-course:Workflow%20Orchestration%20with%20Apache%20Airflow%20for%20Data%20Engineering",
     name: "Workflow Orchestration with Apache Airflow for Data Engineering",
@@ -21,7 +21,7 @@ export const courseCovered = [
     instructor: "Darshil Parmar",
   },
   {
-    img: "/revamp/course1.jpeg",
+    img: "/latest/databricks.png",
     courseLink:
       "https://datavidhya.com/all-course:Apache%20Spark%20with%20Databricks%20for%20Data%20Engineers",
     name: "Apache Spark with Databricks for Data Engineers",
@@ -35,7 +35,7 @@ export const courseCovered = [
     instructor: "Darshil Parmar",
   },
   {
-    img: "/revamp/course3.png",
+    img: "/latest/snowflake.png",
     courseLink:
       "https://datavidhya.com/all-course:Data%20Warehouse%20for%20Data%20Engineering%20with%20Snowflake",
     name: "Data Warehouse for Data Engineering with Snowflake",
@@ -48,22 +48,9 @@ export const courseCovered = [
     language: "ENGLISH",
     instructor: "Darshil Parmar",
   },
+
   {
-    img: "/revamp/course4.webp  ",
-    courseLink:
-      "https://datavidhya.com/all-course:Python%20for%20Data%20Engineering",
-    name: "Python for Data Engineering",
-    rating: 4,
-    reviews: 720,
-    description:
-      "Learn Python for real-world data engineering! This course covers Python basics, advanced OOP, ETL processes, and libraries like Pandas and NumPy. Gain hands-on experience with data pipelines through 3 end-to-end projects and master clean, efficient coding for practical problem-solving!",
-    price: 9.0,
-    originalPrice: 29.0,
-    language: "ENGLISH",
-    instructor: "Darshil Parmar",
-  },
-  {
-    img: "/revamp/course2.png",
+    img: "/latest/sql.png",
     courseLink:
       "https://datavidhya.com/all-course:SQL%20for%20Data%20Engineering",
     name: "SQL for Data Engineering",
@@ -76,11 +63,25 @@ export const courseCovered = [
     language: "ENGLISH",
     instructor: "Darshil Parmar",
   },
+  {
+    img: "/latest/python.png",
+    courseLink:
+      "https://datavidhya.com/all-course:Python%20for%20Data%20Engineering",
+    name: "Python for Data Engineering",
+    rating: 4,
+    reviews: 720,
+    description:
+      "Learn Python for real-world data engineering! This course covers Python basics, advanced OOP, ETL processes, and libraries like Pandas and NumPy. Gain hands-on experience with data pipelines through 3 end-to-end projects and master clean, efficient coding for practical problem-solving!",
+    price: 9.0,
+    originalPrice: 29.0,
+    language: "ENGLISH",
+    instructor: "Darshil Parmar",
+  },
 ];
 
 const CoursesSection = () => {
   return (
-    <div className="bg-[#FAFAFA] py-3 md:py-12 text-center">
+    <div className="bg-[#fff] py-3 md:py-12 text-center">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-2 md:mb-12 text-center">
           {/* <p
@@ -92,7 +93,7 @@ const CoursesSection = () => {
             className={`mb-2 text-3xl md:text-5xl font-bold leading-[120%] text-[#000000] ${inter.className}`}
           >
             Explore Our Data Engineering
-            <br className="hidden md:block"/>
+            <br className="hidden md:block" />
             <span className="ml-2 relative inline-block">
               Courses
               <svg
