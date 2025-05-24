@@ -1,23 +1,6 @@
-import Link from "next/link";
+import Box from "@/components/revamp/Box";
 import React from "react";
-// import { string } from "zod";
-interface prop {
-  href: string;
-  text: string;
-  bgColor: string;
-}
-export const Box = ({ bgColor, href, text }: prop) => {
-  return (
-    <Link href={href}>
-      {" "}
-      <div
-        className={`h-40 w-48 flex items-center justify-center ${bgColor} inset-2 border border-neutral-400 text-center text-neutral-800 text-2xl font-semibold shadow-lg rounded-lg py-8 px `}
-      >
-        {text}
-      </div>
-    </Link>
-  );
-};
+
 const page = () => {
   return (
     <div className="h-full w-full bg-white p-4 flex flex-col justify-center items-center mt-12">
