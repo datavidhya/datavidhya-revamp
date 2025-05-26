@@ -11,7 +11,7 @@ const s3Client = new S3Client({
   },
 });
 
-const BUCKET_NAME = "datavidhya-code-frontend";
+const AWS_BUCKET_NAME = "datavidhya-code-frontend";
 const MAX_FILE_SIZE = 5 * 1024 * 1024; 
 
 const ALLOWED_IMAGE_TYPES = [
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     await s3Client.send(
       new PutObjectCommand({
-        Bucket: BUCKET_NAME,
+        Bucket: AWS_BUCKET_NAME,
         Key: fileName,
         Body: buffer,
         ContentType: file.type,
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
     );
 
     // Return the file URL
-    const fileUrl = `https://${BUCKET_NAME}.s3.ap-south-1.amazonaws.com/${fileName}`;
+    const fileUrl = `https://${AWS_BUCKET_NAME}.s3.ap-south-1.amazonaws.com/${fileName}`;
 
     return NextResponse.json({
       success: true,
