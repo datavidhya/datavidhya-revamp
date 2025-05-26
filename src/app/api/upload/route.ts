@@ -12,7 +12,7 @@ const s3Client = new S3Client({
 });
 
 const BUCKET_NAME = "datavidhya-code-frontend";
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB for images
+const MAX_FILE_SIZE = 5 * 1024 * 1024; 
 
 const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",
