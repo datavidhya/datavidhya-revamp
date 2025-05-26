@@ -307,7 +307,7 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
                 key={star}
                 type="button"
                 onClick={() => handleStarClick(star)}
-                className={`text-2xl transition-colors duration-200 ${
+                className={`text-2xl transition-colors  ${
                   star <= formData.stars
                     ? "text-yellow-400 hover:text-yellow-500"
                     : "text-gray-300 hover:text-gray-400"
