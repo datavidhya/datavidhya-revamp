@@ -5,9 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  provider      = "prisma-client-js"
 }
+
 
 datasource db {
   provider = "postgresql"
@@ -40,4 +40,37 @@ model course {
   instructorImage String
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+model projectFeedback {
+  id         Int      @id @default(autoincrement())
+  name        String
+  image       String
+  description String
+  linkedInUrl String
+  projectImage  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  description String
+  image       String
+  topic     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model user {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  image     String
+  password  String
+  role      String   @default("user")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
