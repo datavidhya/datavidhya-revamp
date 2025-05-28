@@ -30,18 +30,18 @@ const HeroSection = () => {
       <h1
         className={`font-bold text-2xl md:text-[61px]  text-center leading-[120%] tracking-[-2%] text-[#333] mb-10 md:mb-4 ${inter.className}`}
       >
-        The #1 Job Transition <br className="flex md:hidden" /> Platform for{" "}
+        The #1 Platform to <br className="flex md:hidden" /> Become a{" "}
         <br className="hidden md:flex" />
         <AuroraText className="mx-0 md:mx-1.5 leading-[120%]">
-          Data Engineers.{" "}
+          Data Engineer.{" "}
         </AuroraText>
       </h1>
       <p
         className={`hidden md:flex font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10  md:z-10 ${inter.className}`}
       >
-        Crush System Design and AI Interview for breakfast!{" "}
+        Courses, Projects & Interview Practice — All in One Place.
       </p>
-      <div className="flex flex-row gap-1.5 md:gap-4 mb-12 md:mb-24 ">
+      <div className="flex flex-row gap-1.5 md:gap-4 mb-12 md:mb-16 ">
         <button
           className={` rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
         >
@@ -54,9 +54,10 @@ const HeroSection = () => {
         </button>
       </div>
       <p
-        className={` font-medium text-[12px] md:text-2xl leading-[100%] tracking-[-2%] text-[#929292] z-10 ${inter.className}`}
+        className={`w-3/6 text-center font-semimedium text-[12px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
       >
-        Trusted by 25934 Engineers who got their dream job at
+        Trusted by 25,000+ Aspiring & Working Data Engineers Engineers from top
+        companies use DataVidhya to upskill & switch careers
       </p>
       <img
         className="p-3 mb-10 md:mb-32  "

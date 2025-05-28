@@ -9,7 +9,6 @@ const SaleBanner = () => {
     hours: 0,
     minutes: 0,
     seconds: 0,
-    milliseconds: 0,
   });
   const [copied, setCopied] = useState(false);
 
@@ -23,9 +22,8 @@ const SaleBanner = () => {
         const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((difference / (1000 * 60)) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
-        const milliseconds = Math.floor((difference % 1000) / 10);
 
-        setTimeLeft({ days, hours, minutes, seconds, milliseconds });
+        setTimeLeft({ days, hours, minutes, seconds });
       } else {
         // Timer expired
         setTimeLeft({
@@ -33,7 +31,6 @@ const SaleBanner = () => {
           hours: 0,
           minutes: 0,
           seconds: 0,
-          milliseconds: 0,
         });
       }
     };
@@ -70,7 +67,6 @@ const SaleBanner = () => {
               <TimeUnit value={timeLeft.hours} label="Hours" />
               <TimeUnit value={timeLeft.minutes} label="Mins" />
               <TimeUnit value={timeLeft.seconds} label="Sec" />
-              <TimeUnit value={timeLeft.milliseconds} label="Ms" />
             </div>
           </span>
 

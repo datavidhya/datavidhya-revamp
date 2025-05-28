@@ -86,8 +86,8 @@ const UltimateCourse = () => {
               <img src="/latest/ultimate2.png" className="rounded-xl" alt="" />
             </div>
             <div className=" flex flex-col  justify-between items-center py-[5px]">
-              <h2 className="w-full text-[24px] text-center md:text-[28px] leading-[24px] font-semibold tracking-[-1.5%] text-[#333333]">
-                Data Engineering Simplified
+              <h2 className="w-full text-[24px] text-center md:text-[29px] leading-[24px] md:leading-[30px] font-semibold tracking-[-1.5%] text-[#333333]">
+                Zero to Hero <br className="hidden md:block"/> Data Engineering.
               </h2>{" "}
               <div className="w-full my-3 md:my-0 flex justify-between items-center">
                 <span className="flex items-center">
@@ -107,7 +107,7 @@ const UltimateCourse = () => {
                   <span className="text-black">5</span> (800+ Reviews)
                 </span>
               </div>{" "}
-              <div className="w-full flex items-center justify-start gap-2">
+              <div className="w-full flex items-center justify-start gap-2 mb-3">
                 <span
                   className={` font-bold text-[26px] md:text-[35px] text-[#5751E1] ${inter.className}`}
                 >
@@ -125,7 +125,7 @@ const UltimateCourse = () => {
                   <button
                     className={`block w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}
                   >
-                    Enroll Now
+                    Buy Now
                   </button>
                 </Link>
                 <Link href={"/"}>
