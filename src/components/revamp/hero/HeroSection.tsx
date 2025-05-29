@@ -4,13 +4,8 @@ import { Inter } from "next/font/google";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import Link from "next/link";
 import Hero from "./Hero";
-// import RadialGlow from "./RadialGlow";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
-  // const item = {
-  //   hidden: { y: 20, opacity: 0 },
-  //   show: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  // };
   return (
     <section className="relative flex flex-col justify-center items-center mb-6">
       <Hero />
@@ -28,11 +23,11 @@ const HeroSection = () => {
       </Link>
 
       <h1
-        className={`font-bold text-2xl md:text-[61px]  text-center leading-[120%] tracking-[-2%] text-[#333] mb-10 md:mb-4 ${inter.className}`}
+        className={`font-bold text-3xl md:text-[61px]  text-center leading-[120%] tracking-[-2%] text-[#333] mb-10 md:mb-4 ${inter.className}`}
       >
-        The #1 Platform to <br className="flex md:hidden" /> Become a{" "}
-        <br className="hidden md:flex" />
-        <AuroraText className="mx-0 md:mx-1.5 leading-[120%]">
+        The #1 Platform to <br className="flex md:hidden" />become a{" "}
+        <br className="" />
+        <AuroraText className="mx-0 md:mx- leading-[120%]">
           Data Engineer.{" "}
         </AuroraText>
       </h1>
@@ -41,9 +36,9 @@ const HeroSection = () => {
       >
         Courses, Projects & Interview Practice — All in One Place.
       </p>
-      <div className="flex flex-row gap-1.5 md:gap-4 mb-12 md:mb-16 ">
+      <div className="w-full px-4 flex flex-col md:flex-row justify-center gap-1.5 md:gap-4 mb-12 md:mb-12 mt-4">
         <button
-          className={` rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
+          className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
         >
           Explore Courses
         </button>
@@ -54,7 +49,7 @@ const HeroSection = () => {
         </button>
       </div>
       <p
-        className={`w-3/6 text-center font-semimedium text-[12px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
+        className={`w-[95%]  md:w-3/6 bg-white text-center font-semimedium text-[14px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
       >
         Trusted by 25,000+ Aspiring & Working Data Engineers Engineers from top
         companies use DataVidhya to upskill & switch careers

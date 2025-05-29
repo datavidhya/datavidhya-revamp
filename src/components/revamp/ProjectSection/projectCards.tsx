@@ -12,8 +12,8 @@ const ProjectCard = ({
   topic,
 }: ProjectCardProps) => {
   return (
-    <div className="rounded-[28px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] transition-transform duration-600 ease-in-out hover:[transform:perspective(3000px)_rotateY(10deg)] [transform:perspective(1500px)_rotateY(18deg)]">
-      <div className="w-[20rem] md:w-[25rem] rounded-[28px] border border-[#a1a1a1] p-4 md:p-6 shadow-sm">
+    <div className="rounded-[28px] shadow-[0_15px_30px_-12px_rgba(0,0,0,0.25)] transition-transform duration-600 ease-in-out hover:[transform:perspective(1500px)_rotateY(18deg)] [transform:perspective(3000px)_rotateY(0deg)] ">
+      <div className="w-[20rem] md:w-[25rem] rounded-[28px] border border-[#d7d7d7] p-4 md:p-6 ">
         <div className="mb-3 overflow-hidden rounded-[13px] border border-[#D7D7D7]">
           <img
             src={projectImgUrl}
