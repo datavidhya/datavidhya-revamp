@@ -25,16 +25,19 @@ type CourseFormData = z.infer<typeof courseSchema>;
 
 export default function CourseForm() {
   const [loading, setLoading] = useState(false);
+  const [courseImage, setCourseImage] = useState("");
+  const [instructorImage, setInstructorImage] = useState("");
 
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<CourseFormData>({
     resolver: zodResolver(courseSchema),
     defaultValues: {
-      rating: 0,
+      rating :0,
       ratingCount: 0,
     },
   });
@@ -96,10 +99,40 @@ export default function CourseForm() {
       {errors.discountPrice && (
         <p className="text-red-500">{errors.discountPrice.message}</p>
       )}
+      <div className="input">
+        <label className="block font-medium mb-1">Course Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
 
-      <input placeholder="Image URL" {...register("image")} className="input" />
-      {errors.image && <p className="text-red-500">{errors.image.message}</p>}
+            const formData = new FormData();
+            formData.append("file", file);
 
+            try {
+              const res = await axios.post("/api/upload", formData);
+              const imageUrl = res.data.data.url;
+
+              setCourseImage(imageUrl);
+              setValue("image", imageUrl);
+              toast.success("Image uploaded successfully");
+            } catch (err) {
+              console.error("Upload error:", err);
+              toast.error("Image upload failed");
+            }
+          }}
+        />
+        {courseImage && (
+          <p className="text-sm text-green-600 mt-1">
+            Uploaded{" "}
+            <a href={courseImage} target="_blank">
+              View
+            </a>
+          </p>
+        )}
+      </div>
       <input
         placeholder="Language"
         {...register("language")}
@@ -137,11 +170,43 @@ export default function CourseForm() {
         <p className="text-red-500">{errors.instructorName.message}</p>
       )}
 
-      <input
-        placeholder="Instructor Image URL"
-        {...register("instructorImage")}
-        className="input"
-      />
+      <div className="input">
+        <label className="block font-medium mb-1">Instructor Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+              const res = await axios.post("/api/upload", formData);
+              const imageUrl = res.data.data.url;
+              setInstructorImage(imageUrl);
+              setValue("instructorImage", imageUrl);
+              toast.success("Image uploaded successfully");
+            } catch (err) {
+              console.error("Upload error:", err);
+              toast.error("Image upload failed");
+            }
+          }}
+        />
+        {instructorImage && (
+          <p className="text-sm text-green-600 mt-1">
+            Uploaded{" "}
+            <a
+              href={instructorImage}
+              target="_blank"
+              className="bg-green-200 rounded-2xl px-1.5 text-sm"
+            >
+              View
+            </a>
+          </p>
+        )}
+      </div>
       {errors.instructorImage && (
         <p className="text-red-500">{errors.instructorImage.message}</p>
       )}
@@ -149,6 +214,171 @@ export default function CourseForm() {
       <button type="submit" disabled={loading} className="btn-primary">
         {loading ? "Creating..." : "Create Course"}
       </button>
+      {/* <input type="hidden" {...register("image")} /> */}
+      {/* <input type="hidden" {...register("instructorImage")} /> */}
     </form>
   );
 }
+
+// "use client";
+
+// import { useState } from "react";
+// import axios from "axios";
+// import toast from "react-hot-toast";
+
+// export default function CourseForm() {
+//   const [title, setTitle] = useState("");
+//   const [slug, setSlug] = useState("");
+//   const [description, setDescription] = useState("");
+//   const [originalPrice, setOriginalPrice] = useState(0);
+//   const [discountPrice, setDiscountPrice] = useState(0);
+//   const [image, setImage] = useState("");
+//   const [language, setLanguage] = useState("");
+//   const [instructorName, setInstructorName] = useState("");
+//   const [instructorImage, setInstructorImage] = useState("");
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault();
+
+//     try {
+//       const res = await axios.post("/api/v1/admin/courses", {
+//         title,
+//         slug,
+//         description,
+//         originalPrice,
+//         discountPrice,
+//         image,
+//         language,
+//         instructorName,
+//         instructorImage,
+//       });
+
+//       toast.success("Course created successfully!");
+//       console.log(res.data);
+//     } catch (err) {
+//       console.error("Error creating course:", err);
+//       toast.error("Failed to create course");
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit} className="max-w-xl space-y-4">
+//       <div>
+//         <label className="block font-medium mb-1">Title</label>
+//         <input
+//           type="text"
+//           value={title}
+//           onChange={(e) => setTitle(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Slug</label>
+//         <input
+//           type="text"
+//           value={slug}
+//           onChange={(e) => setSlug(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Description</label>
+//         <textarea
+//           value={description}
+//           onChange={(e) => setDescription(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Original Price</label>
+//         <input
+//           type="number"
+//           value={originalPrice}
+//           onChange={(e) => setOriginalPrice(Number(e.target.value))}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Discount Price</label>
+//         <input
+//           type="number"
+//           value={discountPrice}
+//           onChange={(e) => setDiscountPrice(Number(e.target.value))}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       {/* ✅ Replaced Image URL Input with Upload */}
+//       <div>
+//         <label className="block font-medium mb-1">Course Image</label>
+//         <input
+//           type="file"
+//           accept="image/*"
+//           onChange={async (e) => {
+//             const file = e.target.files?.[0];
+//             if (!file) return;
+
+//             const formData = new FormData();
+//             formData.append("file", file);
+
+//             try {
+//               const res = await axios.post("/api/upload", formData);
+//               const imageUrl = res.data.data.url;
+//               setImage(imageUrl);
+//               toast.success("Image uploaded successfully");
+//             } catch (err) {
+//               console.error("Upload error:", err);
+//               toast.error("Image upload failed");
+//             }
+//           }}
+//         />
+//         {image && (
+//           <p className="text-sm text-green-600 mt-1">
+//             Uploaded ✅ <a href={image} target="_blank" >View</a>
+//           </p>
+//         )}
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Language</label>
+//         <input
+//           type="text"
+//           value={language}
+//           onChange={(e) => setLanguage(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Instructor Name</label>
+//         <input
+//           type="text"
+//           value={instructorName}
+//           onChange={(e) => setInstructorName(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="block font-medium mb-1">Instructor Image URL</label>
+//         <input
+//           type="text"
+//           value={instructorImage}
+//           onChange={(e) => setInstructorImage(e.target.value)}
+//           className="w-full border px-3 py-2 rounded"
+//         />
+//       </div>
+
+//       <button
+//         type="submit"
+//         className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+//       >
+//         Create Course
+//       </button>
+//     </form>
+//   );
+// }

@@ -30,7 +30,7 @@ const NavigationBar = () => {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative max-w-[1262px] mx-auto mt-3 px-4 h-[68px] z-40 bg-transparent"
+        className="relative max-w-[1262px] bg-white mx-auto mt-3 px-4 h-[68px] "
       >
         {" "}
         <div className="flex items-center justify-between z-50">

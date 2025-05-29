@@ -1,4 +1,3 @@
-// app/api/upload/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { v4 as uuidv4 } from "uuid";
@@ -45,11 +44,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate unique filename
+    
     const fileExtension = file.name.split(".").pop() || "jpg";
     const fileName = `images/${Date.now()}-${uuidv4()}.${fileExtension}`;
 
-    // Upload to S3
     const buffer = Buffer.from(await file.arrayBuffer());
 
     await s3Client.send(
@@ -61,7 +59,6 @@ export async function POST(request: NextRequest) {
       })
     );
 
-    // Return the file URL
     const fileUrl = `https://${AWS_BUCKET_NAME}.s3.ap-south-1.amazonaws.com/${fileName}`;
 
     return NextResponse.json({

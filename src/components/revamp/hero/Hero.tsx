@@ -53,7 +53,7 @@ function Bubble({
           }
           25% {
             transform: translateY(-${floatDistance * 0.7}px)
-              translateX(${horizontalDrift * 0.3}px) scale(1.05);
+              translateX(${horizontalDrift * 0.5}px) scale(1.05);
           }
           50% {
             transform: translateY(-${floatDistance}px)
@@ -61,19 +61,11 @@ function Bubble({
           }
           75% {
             transform: translateY(-${floatDistance * 0.3}px)
-              translateX(${horizontalDrift * 0.7}px) scale(1.02);
+              translateX(${horizontalDrift * 0.9}px) scale(1.02);
           }
         }
 
-        @keyframes rotate-bubble {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
+      
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -115,9 +107,9 @@ export default function Hero() {
 
         const image = imageUrls[i % imageUrls.length];
 
-        const animationDuration = Math.random() * 8 + 6;
+        const animationDuration = Math.random() * 8 + 8;
         const floatDistance = Math.random() * 60 + 40;
-        const horizontalDrift = (Math.random() - 0.5) * 80; // -40 to 40px horizontal drift
+        const horizontalDrift = (Math.random() - 0.3) * 80; // -40 to 40px horizontal drift
 
         const delay = Math.random() * 4;
         const keyframeId = Math.floor(Math.random() * 10000) + i;
@@ -154,7 +146,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hidden md:block fixed -z-20 top-0 left-0 w-screen h-[90vh] overflow-hidden pointer-events-none">
+    <div className="hidden md:block absolute -z-20 top-0 left-0 w-screen h-[90%] overflow-hidden pointer-events-none">
       {bubbles}
     </div>
   );

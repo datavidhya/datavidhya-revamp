@@ -70,14 +70,26 @@ export default function AllCoursesPage() {
                 alt={course.title}
                 className="w-full h-40 object-cover mb-2"
               />
-              <h2 className="text-lg font-semibold">{course.title}</h2>
-              <p>{course.description}</p>
-              <p className="text-sm text-gray-500">
-                Instructor: {course.instructorName}
-              </p>
-              <p className="text-sm text-gray-500">
-                Rating: {course.rating} ({course.ratingCount})
-              </p>
+              <div className="w-full bg-red-50 flex flex-row">
+                <div className="flex items-center justify-center px-5"><img
+                  src={course.instructorImage}
+                  alt={course.instructorName}
+                  className="rounded-full  size-28"
+                />{" "}</div>
+                <div className="w-1/2 pl-8">
+                  <h2 className="text-lg font-semibold">{course.title}</h2>
+                  <p>{course.description}</p>
+                  <p>{course.language}</p>
+                  <p>Original price: {course.originalPrice}</p>
+                  <p>Discount price: {course.discountPrice}</p>
+                  <p className="text-sm text-gray-500">
+                    Instructor: {course.instructorName}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Rating: {course.rating} ({course.ratingCount})
+                  </p>
+                </div>
+              </div>
               <button
                 onClick={() => deleteCourse(course.id)}
                 className="absolute top-2 right-2 text-sm bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700"
