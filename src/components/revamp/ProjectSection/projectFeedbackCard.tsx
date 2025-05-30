@@ -7,18 +7,16 @@ const roboto = Roboto({ subsets: ["greek"], weight: "400" });
 
 const ProjectFeedbackCard: React.FC<ProjectFeedbackCardProps> = ({
   name,
-  profileImg,
-  projectImgUrl,
-  userReview,
-  userProjectUrl,
-  position,
-  companyName,
+  image,
+  projectImage,
+  description,
+  linkedInUrl,
 }) => {
   return (
     <div className="w-[20rem] md:w-[25rem] rounded-[28px] border border-[#D7D7D7] p-4 md:p-6 shadow-sm">
       <div className="mb-4 overflow-hidden rounded-[13px] border border-[#D7D7D7]">
         <img
-          src={projectImgUrl}
+          src={projectImage}
           alt="Project preview"
           className="h-48 w-full object-cover"
         />
@@ -27,14 +25,14 @@ const ProjectFeedbackCard: React.FC<ProjectFeedbackCardProps> = ({
       <p
         className={`mb-4 line-clamp-4 text-xs leading-6 text-[#333333B2] ${inter.className}`}
       >
-        {userReview}
+        {description}
       </p>
 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="size-10 overflow-hidden rounded-full">
             <img
-              src={profileImg}
+              src={image}
               alt={`${name}'s profile`}
               className="size-full object-cover"
             />
@@ -44,18 +42,18 @@ const ProjectFeedbackCard: React.FC<ProjectFeedbackCardProps> = ({
             <h3 className={`font-semibold text-[#000000]  ${roboto.className}`}>
               {name}
             </h3>
-            {(position || companyName) && (
+            {/* {(position || companyName) && (
               <p className="text-sm text-gray-500">
                 {position}
                 {position && companyName && ", "}
                 {companyName}
               </p>
-            )}
+            )} */}
           </div>
         </div>
 
         <a
-          href={userProjectUrl}
+          href={linkedInUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700"

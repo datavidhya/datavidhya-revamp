@@ -1,10 +1,8 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import CourseCard from "./courseCard";
 import axios from "axios";
-// import { courseCovered } from "@/context/GlobalData";
-// import Link from "next/link";
 
 interface Course {
   id: number;

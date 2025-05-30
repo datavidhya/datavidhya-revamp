@@ -4,17 +4,69 @@ import {
   projectFeedbackCards,
 } from "@/context/revamp/projectData";
 import { Inter } from "next/font/google";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProjectFeedbackCard from "./projectFeedbackCard";
 import ProjectCard from "./projectCards";
 import Link from "next/link";
 import { motion } from "framer-motion";
 // import {pathname} from usePathname
 import { usePathname } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
-
+interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  topic: string;
+  image: string;
+  createdAt: string;
+}
+interface projectFeedback {
+  id: number;
+  name: string;
+  description: string;
+  linkedInUrl: string;
+  image: string;
+  projectImage: string;
+  createdAt: string;
+}
 const ProjectSection = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [projectloading, setProjectLoading] = useState(true);
+  // const [addBtn, setAddBtn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const fetchProjects = async () => {
+    try {
+      const res = await axios.get("/api/v1/admin/projects");
+      setProjects(res.data.projects);
+    } catch (err) {
+      console.error("Error fetching projects:", err);
+    } finally {
+      setProjectLoading(false);
+    }
+  };
+
+  const [projectFeedback, setProjectFeedback] = useState<projectFeedback[]>([]);
+  const fetchProjectFeedback = async () => {
+    try {
+      const res = await axios.get("/api/v1/admin/projectFeedback");
+      setProjectFeedback(res.data.projectFeedbacks);
+    } catch (err) {
+      console.error("Error fetching courses:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+    fetchProjectFeedback();
+  }, []);
+
   const [activeTab, setActiveTab] = useState("projects");
   const pathName = usePathname();
   console.log(pathName);
@@ -26,7 +78,7 @@ const ProjectSection = () => {
       ? projectFeedbackCards
       : projectFeedbackCards.slice(0, 3);
 
-  console.log(projectArray);
+  // console.log(projectArray);
   return (
     <div
       className={`w-full bg-[#FFFFFF] ${
@@ -74,7 +126,8 @@ const ProjectSection = () => {
           className={`text-center text-[17px] text-[#000000] ${inter.className}`}
         >
           Gain proficiency with 14+ extensive projects designed to provide
-          practical, real-world <br className="flex md:hidden"/> data engineering experience
+          practical, real-world <br className="flex md:hidden" /> data
+          engineering experience
         </p>
       </div>
 
@@ -105,23 +158,35 @@ const ProjectSection = () => {
       <div className="mx-auto my-10 max-w-7xl px-4">
         {activeTab === "projects" ? (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {projectArray.map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                // viewport={{ 0.5 }}
                 transition={{ duration: 0.5 }}
                 key={project.id}
               >
-                <ProjectCard {...project} />{" "}
+                <ProjectCard
+                  title={project.title}
+                  slug={project.slug}
+                  description={project.description}
+                  topic={project.topic}
+                  image={project.image}
+                />
               </motion.div>
             ))}
           </div>
         ) : (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {projectReview.map((review, index) => (
-              <div key={review.id}>
-                <ProjectFeedbackCard {...review} />
+            {projectFeedback.map((feedback, index) => (
+              <div key={feedback.id}>
+                {" "}
+                <ProjectFeedbackCard
+                  description={feedback.description}
+                  name={feedback.name}
+                  image={feedback.image}
+                  projectImage={feedback.projectImage}
+                  linkedInUrl={feedback.linkedInUrl}
+                />
               </div>
             ))}
           </div>
