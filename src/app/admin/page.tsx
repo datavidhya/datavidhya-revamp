@@ -10,7 +10,7 @@ function page() {
         <Box text="Testimony" bgColor="bg-teal-400" href="/admin/testimonial" />
         <Box text="Courses" bgColor="bg-orange-400" href="/admin/courses" />
         <Box text="Projects" bgColor="bg-rose-400" href="/admin/projects" />
-        <Box text="Project Reviews" bgColor="bg-emerald-400" href="/admin/projectReviews" />
+        <Box text="Project Feedback" bgColor="bg-emerald-400" href="/admin/projectFeedback" />
       </div>
     </div>
   );
