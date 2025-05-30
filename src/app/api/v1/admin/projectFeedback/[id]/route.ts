@@ -10,33 +10,33 @@ export async function DELETE(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  const courseId = parseInt(id, 10);
+  const projectFeedbackId = parseInt(id, 10);
 
-  if (isNaN(courseId)) {
-    return NextResponse.json({ message: "Invalid course ID" }, { status: 400 });
+  if (isNaN(projectFeedbackId)) {
+    return NextResponse.json({ message: "Invalid Project Feedback ID" }, { status: 400 });
   }
 
   try {
-    await prisma.course.delete({
-      where: { id: courseId },
+    await prisma.projectFeedback.delete({
+      where: { id: projectFeedbackId },
     });
 
     return NextResponse.json(
-      { message: "Course deleted successfully" },
+      { message: "Project Feedback deleted successfully" },
       { status: 200 }
     );
   } catch (error: any) {
-    console.error("Error deleting course:", error);
+    console.error("Error deleting project Feedback:", error);
 
     if (error.code === "P2025") {
       return NextResponse.json(
-        { message: "Course not found" },
+        { message: "project Feedback not found" },
         { status: 404 }
       );
     }
 
     return NextResponse.json(
-      { message: "Failed to delete course" },
+      { message: "Failed to delete projectFeedback" },
       { status: 500 }
     );
   }

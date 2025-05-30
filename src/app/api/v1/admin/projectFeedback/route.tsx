@@ -53,14 +53,14 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Error creating projectFeedback:", error);
 
-    if (error instanceof Error) {
-      if ("code" in error && error.code === "P2002") {
-        return NextResponse.json(
-          { message: "A project Feedback with this slug already exists" },
-          { status: 409 }
-        );
-      }
-    }
+    // if (error instanceof Error) {
+    //   if ("code" in error && error.code === "P2002") {
+    //     return NextResponse.json(
+    //       { message: "A project Feedback with this slug already exists" },
+    //       { status: 409 }
+    //     );
+    //   }
+    // }
 
     return NextResponse.json(
       { message: "Internal server error" },
