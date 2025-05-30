@@ -9,6 +9,7 @@ function page() {
       <div className="p-8 flex gap-6">
         <Box text="Testimony" bgColor="bg-teal-400" href="/admin/testimonial" />
         <Box text="Courses" bgColor="bg-orange-400" href="/admin/courses" />
+        <Box text="Projects" bgColor="bg-rose-400" href="/admin/projects" />
       </div>
     </div>
   );
