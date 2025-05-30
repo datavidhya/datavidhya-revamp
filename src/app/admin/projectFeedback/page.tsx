@@ -70,6 +70,11 @@ export default function ProjectFeedbackPage() {
                 className="w-full h-40 object-cover mb-2"
               />
               <div className="w-full bg-red-50 flex flex-row">
+                  <div className="flex items-center justify-center px-5"><img
+                  src={feedback.projectImage}
+                  alt={feedback.name}
+                  className="rounded-full  size-28"
+                />{" "}</div>
                 <div className="w-1/2 pl-8">
                   <h2 className="text-lg font-semibold">{feedback.name}</h2>
                   <p>{feedback.description}</p>
