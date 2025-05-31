@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Trash2, Edit, Star, Upload, X, Plus, Eye } from "lucide-react";
+import { Trash2, Edit, Star, Upload, X, Plus } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -453,7 +453,7 @@ const TestimonialManager = () => {
                             className="text-blue-600 hover:text-blue-800 text-sm mt-2 inline-flex items-center gap-1 hover:underline"
                           >
                             View LinkedIn Profile
-                            <Eye className="w-3 h-3" />
+                           
                           </a>
                         )}
                       </div>

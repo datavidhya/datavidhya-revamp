@@ -63,7 +63,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         <div className="flex justify-between">
           <div className="mb-4 flex items-center">
             <img
-              src={"/revamp/author.svg"}
+              src={course.instructorImg}
               alt={course.instructor}
               className="size-8 rounded-full border"
             />
