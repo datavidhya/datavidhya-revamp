@@ -1,18 +1,13 @@
 "use client";
-import {
-  projectCards,
-  projectFeedbackCards,
-} from "@/context/revamp/projectData";
+
 import { Inter } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import ProjectFeedbackCard from "./projectFeedbackCard";
 import ProjectCard from "./projectCards";
 import Link from "next/link";
 import { motion } from "framer-motion";
-// import {pathname} from usePathname
 import { usePathname } from "next/navigation";
 import axios from "axios";
-import toast from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 interface Project {
@@ -36,7 +31,6 @@ interface projectFeedback {
 const ProjectSection = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [projectloading, setProjectLoading] = useState(true);
-  // const [addBtn, setAddBtn] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const fetchProjects = async () => {
@@ -71,12 +65,10 @@ const ProjectSection = () => {
   const pathName = usePathname();
   console.log(pathName);
   const projectArray =
-    pathName === "/projects" ? projectCards : projectCards.slice(0, 3);
+    pathName === "/projects" ? projects : projects.slice(0, 3);
 
   const projectReview =
-    pathName === "/projects"
-      ? projectFeedbackCards
-      : projectFeedbackCards.slice(0, 3);
+    pathName === "/projects" ? projectFeedback : projectFeedback.slice(0, 3);
 
   // console.log(projectArray);
   return (
@@ -178,8 +170,12 @@ const ProjectSection = () => {
         ) : (
           <div className="flex flex-wrap items-center justify-center gap-4">
             {projectFeedback.map((feedback, index) => (
-              <div key={feedback.id}>
-                {" "}
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                key={feedback.id}
+              >
                 <ProjectFeedbackCard
                   description={feedback.description}
                   name={feedback.name}
@@ -187,7 +183,7 @@ const ProjectSection = () => {
                   projectImage={feedback.projectImage}
                   linkedInUrl={feedback.linkedInUrl}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
