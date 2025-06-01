@@ -11,6 +11,7 @@ function page() {
         <Box text="Courses" bgColor="bg-orange-400" href="/admin/courses" />
         <Box text="Projects" bgColor="bg-rose-400" href="/admin/projects" />
         <Box text="Project Feedback" bgColor="bg-emerald-400" href="/admin/projectFeedback" />
+        <Box text="Recently Purchased" bgColor="bg-blue-400" href="/admin/recently-purchase" />
       </div>
     </div>
   );
