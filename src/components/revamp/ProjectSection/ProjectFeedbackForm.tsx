@@ -75,7 +75,7 @@ export default function ProjectFeedbackForm() {
       )}
 
       <div className="input">
-        <label className="block font-medium mb-1">User  Image</label>
+        <label className="block font-medium mb-1">Project  Image</label>
         <input
           type="file"
           accept="image/*"
@@ -110,7 +110,7 @@ export default function ProjectFeedbackForm() {
       </div>
 
       <div className="input">
-        <label className="block font-medium mb-1">Project Image</label>
+        <label className="block font-medium mb-1">User Image</label>
         <input
           type="file"
           accept="image/*"

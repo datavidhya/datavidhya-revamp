@@ -17,7 +17,7 @@ const ProjectFeedbackCard: React.FC<ProjectFeedbackCardProps> = ({
       <div className="w-[20rem] md:w-[25rem] rounded-[28px] border border-[#D7D7D7] p-4 md:p-6 shadow-sm">
         <div className="mb-4 overflow-hidden rounded-[13px] border border-[#D7D7D7]">
           <img
-            src={projectImage}
+            src={image}
             alt="Project preview"
             className="h-48 w-full object-cover"
           />
@@ -33,7 +33,7 @@ const ProjectFeedbackCard: React.FC<ProjectFeedbackCardProps> = ({
           <div className="flex items-center gap-3">
             <div className="size-10 overflow-hidden rounded-full">
               <img
-                src={image}
+                src={projectImage}
                 alt={`${name}'s profile`}
                 className="size-full object-cover"
               />
