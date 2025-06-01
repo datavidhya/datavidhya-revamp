@@ -21,14 +21,14 @@ const Testimony = () => {
   const fetchTestimony = async () => {
     try {
       const res = await axios.get("/api/v1/admin/testimonial");
-      console.log("Full API response:", res);
-      console.log("Response data:", res.data);
-      console.log("Response data type:", typeof res.data);
-      console.log("Is array?", Array.isArray(res.data));
-      console.log(
-        "Response data keys:",
-        res.data ? Object.keys(res.data) : "No keys"
-      );
+      // console.log("Full API response:", res);
+      // console.log("Response data:", res.data);
+      // console.log("Response data type:", typeof res.data);
+      // console.log("Is array?", Array.isArray(res.data));
+      // console.log(
+      //   "Response data keys:",
+      //   res.data ? Object.keys(res.data) : "No keys"
+      // );
 
      
       let testimonyData: Testimony[] = [];
@@ -64,17 +64,17 @@ const Testimony = () => {
         testimonyData = [];
       }
 
-      console.log("Final testimony data:", testimonyData);
-      console.log("Number of items:", testimonyData.length);
+      // console.log("Final testimony data:", testimonyData);
+      // console.log("Number of items:", testimonyData.length);
 
 
-      if (testimonyData.length > 0) {
-        console.log("First item structure:", testimonyData[0]);
-        console.log("Required fields check:");
-        console.log("- name:", testimonyData[0]?.name);
-        console.log("- image:", testimonyData[0]?.image);
-        console.log("- description:", testimonyData[0]?.description);
-      }
+      // if (testimonyData.length > 0) {
+      //   console.log("First item structure:", testimonyData[0]);
+      //   console.log("Required fields check:");
+      //   console.log("- name:", testimonyData[0]?.name);
+      //   console.log("- image:", testimonyData[0]?.image);
+      //   console.log("- description:", testimonyData[0]?.description);
+      // }
 
       setTestimony(testimonyData);
     } catch (err) {
@@ -104,47 +104,47 @@ const Testimony = () => {
     );
   }
 
-  // Show message if no testimonials
-  if (!testimony || testimony.length === 0) {
-    return (
-      <div className="w-full flex flex-col items-center justify-center my-6 md:my-28">
-        <h1 className="description-4xl md:description-5xl description-black description-center font-bold leading-[120%]">
-          Customer <br className="block md:hidden" />{" "}
-          <span className="relative inline-block">
-            Testimonials
-            <svg
-              className="absolute -bottom-5 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
-              height="35"
-              viewBox="0 0 200 35"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <path
-                d="M10,25 Q100,10 190,25"
-                stroke="#a855f7"
-                strokeWidth="3"
-                fill="transparent"
-              />
-              <path
-                d="M10,30 Q100,15 190,30"
-                stroke="#a855f7"
-                strokeWidth="3"
-                fill="transparent"
-              />
-            </svg>
-          </span>
-        </h1>
-        <p className="description-lg md:description-xl font-normal leading-[150%] description-center description-black my-6 md:mb-20">
-          No testimonials available at the moment.
-        </p>
-        <div className="text-sm text-gray-500 mt-4">
-          Debug: Loading = {loading.toString()}, Array length ={" "}
-          {testimony?.length || 0}
-        </div>
-      </div>
-    );
-  }
+  // // Show message if no testimonials
+  // if (!testimony || testimony.length === 0) {
+  //   return (
+  //     <div className="w-full flex flex-col items-center justify-center my-6 md:my-28">
+  //       <h1 className="description-4xl md:description-5xl description-black description-center font-bold leading-[120%]">
+  //         Customer <br className="block md:hidden" />{" "}
+  //         <span className="relative inline-block">
+  //           Testimonials
+  //           <svg
+  //             className="absolute -bottom-5 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
+  //             height="35"
+  //             viewBox="0 0 200 35"
+  //             fill="none"
+  //             xmlns="http://www.w3.org/2000/svg"
+  //             preserveAspectRatio="xMidYMid meet"
+  //           >
+  //             <path
+  //               d="M10,25 Q100,10 190,25"
+  //               stroke="#a855f7"
+  //               strokeWidth="3"
+  //               fill="transparent"
+  //             />
+  //             <path
+  //               d="M10,30 Q100,15 190,30"
+  //               stroke="#a855f7"
+  //               strokeWidth="3"
+  //               fill="transparent"
+  //             />
+  //           </svg>
+  //         </span>
+  //       </h1>
+  //       <p className="description-lg md:description-xl font-normal leading-[150%] description-center description-black my-6 md:mb-20">
+  //         No testimonials available at the moment.
+  //       </p>
+  //       <div className="text-sm text-gray-500 mt-4">
+  //         Debug: Loading = {loading.toString()}, Array length ={" "}
+  //         {testimony?.length || 0}
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="w-full flex flex-col items-center justify-center my-6 md:my-28">
