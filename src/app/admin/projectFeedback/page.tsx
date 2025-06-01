@@ -100,7 +100,7 @@ export default function ProjectFeedbackPage() {
           className="bg-blue-500 px-3 py-2 rounded-lg text-white m-3"
         >
           {" "}
-          Add Course
+          Add Feedback
         </button>
         {addBtn ? <ProjectFeedbackForm /> : ""}
       </div>

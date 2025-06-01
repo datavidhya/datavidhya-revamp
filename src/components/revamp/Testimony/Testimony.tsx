@@ -30,7 +30,7 @@ const Testimony = () => {
         res.data ? Object.keys(res.data) : "No keys"
       );
 
-      // Handle different possible response structures
+     
       let testimonyData: Testimony[] = [];
 
       if (Array.isArray(res.data)) {
@@ -67,7 +67,7 @@ const Testimony = () => {
       console.log("Final testimony data:", testimonyData);
       console.log("Number of items:", testimonyData.length);
 
-      // Validate the data structure
+
       if (testimonyData.length > 0) {
         console.log("First item structure:", testimonyData[0]);
         console.log("Required fields check:");

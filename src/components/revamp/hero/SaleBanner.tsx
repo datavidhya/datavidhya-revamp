@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { X, Copy, Check } from "lucide-react";
 
 const SaleBanner = () => {
-  const targetDate = new Date("2025-05-31T00:00:00"); // Target date
+  const targetDate = new Date("2025-06-30T00:00:00"); // Target date
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
