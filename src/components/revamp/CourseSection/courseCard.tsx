@@ -8,7 +8,7 @@ interface CourseProps {
   price: number;
   name: string;
   instructor: string;
-  instructorImg?: string;
+  instructorImg: string;
   rating: number;
   reviews: number;
   courseLink: string;
