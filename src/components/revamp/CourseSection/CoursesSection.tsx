@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import CourseCard from "./courseCard";
 import axios from "axios";
+import Shimmer from "@/components/ui/Shimmer";
 
 interface Course {
   id: number;
@@ -76,25 +77,29 @@ const CoursesSection = () => {
             Unlock your potential with our expert-led courses.
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center xl:justify-start gap-x-5 gap-y-5 mx-auto">
-          {courses.map((course) => (
-            <CourseCard
-              key={course.id}
-              course={{
-                img: course.image,
-                language: course.language,
-                originalPrice: course.originalPrice,
-                price: course.discountPrice,
-                name: course.title,
-                instructor: course.instructorName,
-                instructorImg: course.instructorImage,
-                rating: course.rating,
-                reviews: course.ratingCount,
-                courseLink: `/courses/${course.slug}`,
-              }}
-            />
-          ))}
-        </div>
+        {courses.length === 0 ? (
+          <Shimmer />
+        ) : (
+          <div className="flex flex-wrap items-center justify-center xl:justify-start gap-x-5 gap-y-5 mx-auto">
+            {courses.map((course) => (
+              <CourseCard
+                key={course.id}
+                course={{
+                  img: course.image,
+                  language: course.language,
+                  originalPrice: course.originalPrice,
+                  price: course.discountPrice,
+                  name: course.title,
+                  instructor: course.instructorName,
+                  instructorImg: course.instructorImage,
+                  rating: course.rating,
+                  reviews: course.ratingCount,
+                  courseLink: `/courses/${course.slug}`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="w-full text-center mt-9 md:mt-12"></div>
     </div>
