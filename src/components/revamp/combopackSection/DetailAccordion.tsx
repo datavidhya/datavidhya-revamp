@@ -57,7 +57,7 @@ const DetailAccordion: React.FC<AccordionProps> = ({
       className={` rounded-[2px] border border-b-0 border-[#D7D7D7] bg-white max-md:my-2.5`}
     >
       <div
-        className={`flex cursor-pointer items-center justify-between gap-3 px-6 ${
+        className={`flex cursor-pointer items-center justify-between gap-3 py-1.5 px-6 ${
           isOpen ? "dark:bg-gray-100" : ""
         }`}
         onClick={handleClick}
@@ -71,7 +71,7 @@ const DetailAccordion: React.FC<AccordionProps> = ({
             {isOpen ? "-" : "+"}
           </motion.div>
           <h5
-            className={`py-4 text-[18px] font-bold text-[#333333] max-md:py-2 max-md:text-[14px] ${roboto.className}`}
+            className={`py-4 text-[18px] font-bold text-[#212121] max-md:py-2 max-md:text-[14px] ${roboto.className}`}
           >
             {title}
           </h5>
