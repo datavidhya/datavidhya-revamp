@@ -47,9 +47,9 @@ const CourseDetailSection = () => {
             Expand All Lessons
           </p> */}
         </div>{" "}
-        <div className="mx-auto mt-[65px] max-md:w-[98%] max-lg:w-3/4 lg:w-3/5">
+        <div className="mx-auto mt-[65px] max-md:w-[98%] max-lg:w-3/4 lg:w-4/5">
           <div className="mx-auto flex w-full max-lg:flex-col">
-            <div className="mt-2 size-full max-lg:w-full max-sm:mt-0">
+            <div className="mt-2 size-full max-lg:w-full mb-16 border-b">
               {CourseDetailDemoData.map((item: any, index: any) => (
                 <DetailAccordion
                   mins={item.mins}

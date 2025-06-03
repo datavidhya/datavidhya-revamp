@@ -57,12 +57,12 @@ const DetailAccordion: React.FC<AccordionProps> = ({
       className={` rounded-[2px] border border-b-0 border-[#D7D7D7] bg-white max-md:my-2.5`}
     >
       <div
-        className={`flex cursor-pointer items-center justify-between gap-3 px-4 ${
+        className={`flex cursor-pointer items-center justify-between gap-3 px-6 ${
           isOpen ? "dark:bg-gray-100" : ""
         }`}
         onClick={handleClick}
       >
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-6">
           <motion.div
             className="text-[28px] text-[#7C7C7C] flex items-center"
             animate={{ rotate: isOpen ? 0 : 180 }}
