@@ -281,7 +281,7 @@ const AddRecentlyPurchased = () => {
             label="Student Name"
             value={formData.studentName}
             onChange={handleChange}
-            placeholder="Bhanu Singh"
+            placeholder="Student Name"
             name="studentName"
           />
           <InputField
