@@ -82,7 +82,6 @@
 //   );
 // };
 
-
 "use client";
 import axios from "axios";
 import React, { useEffect, useRef } from "react";
@@ -123,7 +122,12 @@ export const Notification = () => {
           () => (
             <div>
               <strong>{nextPurchase?.studentName}</strong> purchased{" "}
-              <span className="text-neutral-400">{nextPurchase?.courseName}</span>
+              <span className="text-neutral-400">
+                {nextPurchase?.courseName}
+              </span>{" "}
+              <div className="progress">
+                <div className="progress-value"></div>
+              </div>
             </div>
           ),
           {
