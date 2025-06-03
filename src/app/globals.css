@@ -192,3 +192,34 @@
 .btn-primary {
   @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
 }
+.shimmer-wrapper {
+  width: 22rem;
+  height: 25rem; /* Customize size */
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.shimmer {
+  width: 22rem;
+  height: 25rem;
+  background: linear-gradient(
+    90deg,
+    rgba(224, 224, 224, 0.1) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(224, 224, 224, 0.1) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: -100%;
+  animation: shimmerSlide 2s infinite;
+}
+
+@keyframes shimmerSlide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

@@ -1,11 +1,17 @@
-import { LoaderCircle } from "lucide-react";
 import React from "react";
 
 const Shimmer = () => {
   return (
-    <div className="flex flex-col items-center gap-3 ">
-      <p>Loading..</p>
-      <LoaderCircle size={48} absoluteStrokeWidth className="animate-spin" />
+    <div className="flex gap-3 mx-auto justify-center">
+      <div className="shimmer-wrapper  ">
+        <div className="shimmer"></div>
+      </div>{" "}
+      <div className="shimmer-wrapper hidden md:block ">
+        <div className="shimmer"></div>
+      </div>{" "}
+      <div className="shimmer-wrapper hidden md:block ">
+        <div className="shimmer"></div>
+      </div>
     </div>
   );
 };

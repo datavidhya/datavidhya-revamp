@@ -12,7 +12,7 @@ interface testimony {
 }
 const TestimonyCard = ({ testimony }: testimony) => {
   return (
-    <div className="max-sm:w-[18rem] max-md:w-[19rem] max-lg:w-[20rem] max-w-[22rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-lg hover:bg-gradient-to-br from-purple-50 to-blue-50">
+    <div className="max-sm:w-[18rem] max-md:w-[19rem] max-lg:w-[20rem] max-w-[22rem] p-5 my-3 rounded-2xl border-[1px] border-[#D7D7D7] flex flex-col justify-between hover:shadow-lg hover:bg-gradient-to-br from-white to-purple-100">
       <div className="w-full  text-black text-left">
         {/* <p className="text-xl mb-8">⭐⭐⭐⭐⭐</p> */}
         <span className="flex gap-1">

@@ -66,7 +66,7 @@ const NavigationBar = () => {
             <NavItems
               href="/combopack"
               textColor=" text-grey-500"
-              text="Try For Free"
+              text="Combo Pack"
             />
           </div>
 

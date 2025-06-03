@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import axios from "axios";
+import Shimmer from "@/components/ui/Shimmer";
 
 const inter = Inter({ subsets: ["latin"] });
 interface Project {
@@ -147,47 +148,51 @@ const ProjectSection = () => {
           </button>
         </div>
       </div>
-      <div className="mx-auto my-10 max-w-7xl px-4">
-        {activeTab === "projects" ? (
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {projects.map((project, index) => (
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                key={project.id + 10}
-              >
-                <ProjectCard
-                  title={project.title}
-                  slug={project.slug}
-                  description={project.description}
-                  topic={project.topic}
-                  image={project.image}
-                />
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {projectFeedback.map((feedback, index) => (
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                key={feedback.id}
-              >
-                <ProjectFeedbackCard
-                  description={feedback.description}
-                  name={feedback.name}
-                  image={feedback.image}
-                  projectImage={feedback.projectImage}
-                  linkedInUrl={feedback.linkedInUrl}
-                />
-              </motion.div>
-            ))}
-          </div>
-        )}
-      </div>
+      {projects.length === 0 || projectFeedback.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div className="mx-auto my-10 max-w-7xl px-4">
+          {activeTab === "projects" ? (
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {projectArray.map((project, index) => (
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  key={project.id + 10}
+                >
+                  <ProjectCard
+                    title={project.title}
+                    slug={project.slug}
+                    description={project.description}
+                    topic={project.topic}
+                    image={project.image}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {projectReview.map((feedback, index) => (
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  key={feedback.id}
+                >
+                  <ProjectFeedbackCard
+                    description={feedback.description}
+                    name={feedback.name}
+                    image={feedback.image}
+                    projectImage={feedback.projectImage}
+                    linkedInUrl={feedback.linkedInUrl}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
       <div
         className={`w-full  ${
           pathName === "/projects"
@@ -200,7 +205,7 @@ const ProjectSection = () => {
           <button
             className={`w-40 rounded-[12px] bg-[#2E2E2E] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className} mt-6 md:mt-16 mb-6 md:mb-28  cursor-pointer`}
           >
-            View All Projects
+            View All {activeTab === "projects" ? " Projects" : " Reviews"}
           </button>
         </Link>
       </div>
