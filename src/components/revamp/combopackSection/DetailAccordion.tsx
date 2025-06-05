@@ -57,14 +57,14 @@ const DetailAccordion: React.FC<AccordionProps> = ({
       className={` rounded-[2px] border border-b-0 border-[#D7D7D7] bg-white max-md:my-2.5`}
     >
       <div
-        className={`flex cursor-pointer items-center justify-between gap-3 py-1.5 px-6 ${
+        className={`flex cursor-pointer items-center justify-between gap-3 py-1.5 px-2 md:px-6 ${
           isOpen ? "dark:bg-gray-100" : ""
         }`}
         onClick={handleClick}
       >
-        <span className="flex items-center gap-6">
+        <span className="flex items-center gap-2 md:gap-6">
           <motion.div
-            className="text-[28px] text-[#7C7C7C] flex items-center"
+            className="text-lg md:text-[28px] text-[#7C7C7C] flex items-center"
             animate={{ rotate: isOpen ? 0 : 180 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
@@ -76,9 +76,9 @@ const DetailAccordion: React.FC<AccordionProps> = ({
             {title}
           </h5>
         </span>
-        <div className="flex gap-2">
-          <p>{Sections} Sections ,</p>
-          <p>{mins} Minutes</p>
+        <div className="flex flex-row gap-2">
+          <p className="text-xs md:text-lg">{Sections} Sections</p>
+          <p className="text-xs md:text-lg">{mins} Mins</p>
         </div>
       </div>
       <AnimatePresence>
@@ -90,7 +90,7 @@ const DetailAccordion: React.FC<AccordionProps> = ({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="w-full pl-12 rounded-b-[2px] px-4 pb-3 text-[14px] md:text-[16px] leading-6 md:leading-8 text-[#7C7C7C] shadow-md dark:bg-gray-100">
+            <div className="w-full pl-2 md:pl-12 rounded-b-[2px] px-4 pb-3 text-[14px] md:text-[16px] leading-6 md:leading-8 text-[#7C7C7C] shadow-md dark:bg-gray-100">
               <span className="w-full flex justify-between">
                 {" "}
                 <p> {content}</p>

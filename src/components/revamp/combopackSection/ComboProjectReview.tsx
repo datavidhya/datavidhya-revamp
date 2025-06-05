@@ -36,12 +36,12 @@ const ComboProjectReview = () => {
   return (
     <div className="flex flex-col items-center mt-28">
       <h1
-        className={`text-5xl font-bold leading-[120%] text-black mb-4 ${inter.className}`}
+        className={`text-3xl md:text-5xl text-center font-bold leading-[120%] text-black mb-4 ${inter.className}`}
       >
         Project reviews from students
       </h1>
       <p
-        className={`text-lg font-normal leading-[150%] text-black mb-16 ${inter.className}`}
+        className={`text-sm md:text-lg text-center font-normal leading-[150%] text-black mb-10 md:mb-16 ${inter.className}`}
       >
         Perfect for those eager to build robust data pipelines and advance their
         career in data engineering

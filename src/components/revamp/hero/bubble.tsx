@@ -17,6 +17,8 @@ export default function Bubble({ size, image, dx, dy }: BubbleProps) {
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        border: "1px",
+        borderColor:"black",
         borderRadius: "50%",
         position: "absolute",
         top: "50%",

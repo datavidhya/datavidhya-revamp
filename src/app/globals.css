@@ -255,3 +255,90 @@
     width: 100%;
   }
 }
+
+.bubble-element {
+  /* Glass-like bubble effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+
+  /* Subtle border for definition */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Multiple layered shadows for depth */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+
+  /* Glassmorphism effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+
+  /* Ensure perfect circle */
+  border-radius: 50%;
+
+  /* Subtle highlight on the top-left */
+  position: relative;
+}
+
+.bubble-element::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bubble-element::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 25%;
+  width: 15%;
+  height: 15%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 80%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hover effect for interactive bubbles */
+.bubble-element:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 2px 6px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Animation for extra bubble floating effect */
+@keyframes bubble-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bubble-element {
+  background-size: 200% 200%;
+  animation: bubble-shimmer 4s ease-in-out infinite;
+}

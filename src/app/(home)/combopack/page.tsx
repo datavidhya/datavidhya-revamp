@@ -14,7 +14,7 @@ const combopack = () => {
       <CombeHeroSection />
       <DataStackSection />
       <ComboProjectReview />
-      <img src={"/combopack/techStack.png"} className="mx-auto my-36"></img>
+      <img src={"/combopack/techStack.png"} className="hidden md:block mx-auto scale-[1.25] md:scale-100 my-36"></img>
       <CourseDetailSection />
       <FAQsSection />
       <Footer />
