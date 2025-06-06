@@ -1,221 +1,123 @@
-// "use client";
+"use client";
 
-// import { useForm } from "react-hook-form";
-// import { zodResolver } from "@hookform/resolvers/zod";
-// import { z } from "zod";
-// import axios from "axios";
-// import { useState } from "react";
-// import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
+const courseDetailSchema = z.object({
+  title: z.string().min(1),
+  content: z.string().min(1),
+  content2: z.string().optional(),
+  content3: z.string().optional(),
+  content4: z.string().optional(),
+  content5: z.string().optional(),
+  content6: z.string().optional(),
+  time: z.string().min(1),
+  time2: z.string().optional(),
+  time3: z.string().optional(),
+  time4: z.string().optional(),
+  time5: z.string().optional(),
+  time6: z.string().optional(),
+  mins: z.coerce.number().int().min(1),
+  Sections: z.coerce.number().int().min(1),
+});
 
-// const CourseDetailSchema = z.object({
-//   title: z.string().min(1, "Title is required"),
-//   content: z.string().min(1, "Content is required"),
-//   content2: z.string().min(1, "Content is required"),
-//   content3: z.string().min(1, "Content is required"),
-//   content4: z.string().min(1, "Content is required"),
-//   content5: z.string().min(1, "Content is required"),
-//   content6: z.string().min(1, "Content is required"),
-//   time: z.string().min(1, "Time is required"),
-//   time2: z.string().min(1, "Time is required"),
-//   time3: z.string().min(1, "Time is required"),
-//   time4: z.string().min(1, "Time is required"),
-//   time5: z.string().min(1, "Time is required"),
-//   time6: z.string().min(1, "Time is required"),
-//   mins: z.string().min(1, "Minutes is required"),
-//   Sections: z.string().min(1, "Sections is required"),
-// });
+type CourseDetailFormData = z.infer<typeof courseDetailSchema>;
 
-// type CourseDetailFormData = z.infer<typeof CourseDetailSchema>;
+export default function CourseDetailForm() {
+  const [loading, setLoading] = useState(false);
+  const contentFields = [
+    "content",
+    "content2",
+    "content3",
+    "content4",
+    "content5",
+    "content6",
+  ] as const;
+  const timeFields = [
+    "time",
+    "time2",
+    "time3",
+    "time4",
+    "time5",
+    "time6",
+  ] as const;
 
-// export default function CourseDetailForm() {
-//   const [loading, setLoading] = useState(false);
-//   const [courseImage, setCourseImage] = useState("");
-//   const [instructorImage, setInstructorImage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<CourseDetailFormData>({
+    resolver: zodResolver(courseDetailSchema),
+  });
 
-//   const {
-//     register,
-//     handleSubmit,
-//     reset,
-//     setValue,
-//     formState: { errors },
-//   } = useForm<CourseDetailFormData>({
-//     resolver: zodResolver(CourseDetailSchema),
-  
-//   });
+  const onSubmit = async (data: CourseDetailFormData) => {
+    setLoading(true);
+    try {
+      const res = await axios.post("/api/v1/admin/courseDetail", data);
+      toast.success("Course Detail created!");
+      reset();
+    } catch (err: any) {
+      console.error(err);
+      toast.error(
+        err.response?.data?.message || "Failed to create course detail"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-//   const onSubmit = async (data: CourseDetailFormData) => {
-//     setLoading(true);
-//     try {
-//       const res = await axios.post("/api/v1/admin/courses", data);
-//       toast.success("Course created!");
-//       reset();
-//     } catch (err: any) {
-//       console.error(err);
-//       toast.error(err.response?.data?.message || "Failed to create course");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-4 p-6 max-w-3xl mx-auto"
+    >
+      <h1 className="text-2xl font-bold mb-4">Create Course Detail</h1>
 
-//   return (
-//     <form
-//       onSubmit={handleSubmit(onSubmit)}
-//       className="space-y-4 p-6 w-3xl flex flex-col items-center mx-auto"
-//     >
-//       <h1 className="text-2xl font-bold mb-2">Create a New Course</h1>
+      <input placeholder="Title" {...register("title")} className="input" />
+      {errors.title && <p className="text-red-500">{errors.title.message}</p>}
 
-//       <input placeholder="Title" {...register("title")} className="input" />
-//       {errors.title && <p className="text-red-500">{errors.title.message}</p>}
+      {contentFields.map((field) => (
+        <div key={field}>
+          <input placeholder={field} {...register(field)} className="input" />
+          {errors[field] && (
+            <p className="text-red-500">{(errors[field] as any)?.message}</p>
+          )}
+        </div>
+      ))}
 
-//       <input placeholder="Slug" {...register("slug")} className="input" />
-//       {errors.slug && <p className="text-red-500">{errors.slug.message}</p>}
+      {timeFields.map((field) => (
+        <div key={field}>
+          <input placeholder={field} {...register(field)} className="input" />
+          {errors[field] && (
+            <p className="text-red-500">{(errors[field] as any)?.message}</p>
+          )}
+        </div>
+      ))}
 
-//       <textarea
-//         placeholder="Description"
-//         {...register("description")}
-//         className="input"
-//       />
-//       {errors.description && (
-//         <p className="text-red-500">{errors.description.message}</p>
-//       )}
+      <input
+        placeholder="Total Minutes"
+        {...register("mins")}
+        className="input"
+      />
+      {errors.mins && <p className="text-red-500">{errors.mins.message}</p>}
 
-//       <input
-//         type="number"
-//         step="0.01"
-//         placeholder="Original Price"
-//         {...register("originalPrice", { valueAsNumber: true })}
-//         className="input"
-//       />
-//       {errors.originalPrice && (
-//         <p className="text-red-500">{errors.originalPrice.message}</p>
-//       )}
+      <input
+        placeholder="Sections Count"
+        {...register("Sections")}
+        className="input"
+      />
+      {errors.Sections && (
+        <p className="text-red-500">{errors.Sections.message}</p>
+      )}
 
-//       <input
-//         type="number"
-//         step="0.01"
-//         placeholder="Discount Price"
-//         {...register("discountPrice", { valueAsNumber: true })}
-//         className="input"
-//       />
-//       {errors.discountPrice && (
-//         <p className="text-red-500">{errors.discountPrice.message}</p>
-//       )}
-//       <div className="input">
-//         <label className="block font-medium mb-1">Course Image</label>
-//         <input
-//           type="file"
-//           accept="image/*"
-//           onChange={async (e) => {
-//             const file = e.target.files?.[0];
-//             if (!file) return;
-
-//             const formData = new FormData();
-//             formData.append("file", file);
-
-//             try {
-//               const res = await axios.post("/api/upload", formData);
-//               const imageUrl = res.data.data.url;
-
-//               setCourseImage(imageUrl);
-//               setValue("image", imageUrl);
-//               toast.success("Image uploaded successfully");
-//             } catch (err) {
-//               console.error("Upload error:", err);
-//               toast.error("Image upload failed");
-//             }
-//           }}
-//         />
-//         {courseImage && (
-//           <p className="text-sm text-green-600 mt-1">
-//             Uploaded{" "}
-//             <a href={courseImage} target="_blank">
-//               View
-//             </a>
-//           </p>
-//         )}
-//       </div>
-//       <input
-//         placeholder="Language"
-//         {...register("language")}
-//         className="input"
-//       />
-//       {errors.language && (
-//         <p className="text-red-500">{errors.language.message}</p>
-//       )}
-
-//       <input
-//         type="number"
-//         step="0.1"
-//         placeholder="Rating"
-//         {...register("rating", { valueAsNumber: true })}
-//         className="input"
-//       />
-//       {errors.rating && <p className="text-red-500">{errors.rating.message}</p>}
-
-//       <input
-//         type="number"
-//         placeholder="Rating Count"
-//         {...register("ratingCount", { valueAsNumber: true })}
-//         className="input"
-//       />
-//       {errors.ratingCount && (
-//         <p className="text-red-500">{errors.ratingCount.message}</p>
-//       )}
-
-//       <input
-//         placeholder="Instructor Name"
-//         {...register("instructorName")}
-//         className="input"
-//       />
-//       {errors.instructorName && (
-//         <p className="text-red-500">{errors.instructorName.message}</p>
-//       )}
-
-//       <div className="input">
-//         <label className="block font-medium mb-1">Instructor Image</label>
-//         <input
-//           type="file"
-//           accept="image/*"
-//           onChange={async (e) => {
-//             const file = e.target.files?.[0];
-//             if (!file) return;
-
-//             const formData = new FormData();
-//             formData.append("file", file);
-
-//             try {
-//               const res = await axios.post("/api/upload", formData);
-//               const imageUrl = res.data.data.url;
-//               setInstructorImage(imageUrl);
-//               setValue("instructorImage", imageUrl);
-//               toast.success("Image uploaded successfully");
-//             } catch (err) {
-//               console.error("Upload error:", err);
-//               toast.error("Image upload failed");
-//             }
-//           }}
-//         />
-//         {instructorImage && (
-//           <p className="text-sm text-green-600 mt-1">
-//             Uploaded{" "}
-//             <a
-//               href={instructorImage}
-//               target="_blank"
-//               className="bg-green-200 rounded-2xl px-1.5 text-sm"
-//             >
-//               View
-//             </a>
-//           </p>
-//         )}
-//       </div>
-//       {errors.instructorImage && (
-//         <p className="text-red-500">{errors.instructorImage.message}</p>
-//       )}
-
-//       <button type="submit" disabled={loading} className="btn-primary">
-//         {loading ? "Creating..." : "Create Course"}
-//       </button>
-//     </form>
-//   );
-// }
+      <button type="submit" disabled={loading} className="btn-primary">
+        {loading ? "Submitting..." : "Create Course Detail"}
+      </button>
+    </form>
+  );
+}

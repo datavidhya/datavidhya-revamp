@@ -27,9 +27,9 @@ const DataStackSection = () => {
           {" "}
           <motion.div
             initial={{ x: 0 }}
-            animate={{ x: "-50%" }}
+            animate={{ x: "-40%" }}
             transition={{
-              duration: 15,
+              duration: 10,
               repeat: Infinity,
               repeatType: "reverse",
               ease: "linear",
@@ -48,10 +48,10 @@ const DataStackSection = () => {
         <div className="scrollBar overflow-x-auto ">
           {" "}
           <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-50%" }}
+            initial={{ x: "-40%" }}
+            animate={{ x: "0%" }}
             transition={{
-              duration: 15,
+              duration: 10,
               repeat: Infinity,
               repeatType: "reverse",
               ease: "linear",

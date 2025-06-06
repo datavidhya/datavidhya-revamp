@@ -85,17 +85,17 @@ model CourseDetail {
   id String @id @default(uuid())
   title    String
   content  String
-  content2 String
-  content3 String
-  content4 String
-  content5 String
-  content6 String
+  content2 String?
+  content3 String?
+  content4 String?
+  content5 String?
+  content6 String?
   time     String
-  time2    String
-  time3    String
-  time4    String
-  time5    String
-  time6    String
+  time2    String?
+  time3    String?
+  time4    String?
+  time5    String?
+  time6    String?
   mins     Int
   Sections Int
 }
