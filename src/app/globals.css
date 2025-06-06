@@ -342,3 +342,6 @@
   background-size: 200% 200%;
   animation: bubble-shimmer 4s ease-in-out infinite;
 }
+.scrollBar::-webkit-scrollbar {
+  display: none;
+}

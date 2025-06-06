@@ -78,7 +78,7 @@ const DetailAccordion: React.FC<AccordionProps> = ({
         </span>
         <div className="flex flex-row gap-2">
           <p className="text-xs md:text-lg">{Sections} Sections</p>
-          <p className="text-xs md:text-lg">{mins} Mins</p>
+          <p className="text-xs md:text-lg hidden md:block">{mins} Minutes</p>
         </div>
       </div>
       <AnimatePresence>

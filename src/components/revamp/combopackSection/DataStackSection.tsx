@@ -1,5 +1,7 @@
+"use client";
 import { Inter } from "next/font/google";
 import React from "react";
+import { motion } from "framer-motion";
 import DataStackCard from "./DataStackCard";
 const inter = Inter({
   subsets: ["latin"],
@@ -18,20 +20,52 @@ const DataStackSection = () => {
         Gain proficiency with 14+ extensive projects designed to provide
         practical, real-world data engineering experience
       </p>
-      <div className="relative w-[70%] flex flex-col gap-7 flex-nowrap">
-        <div className="absolute w-1/8 h-full bg-gradient-to-r from-[#040404]/15 to-transparent"></div>
-        <div className="absolute right-0 w-1/8 h-full bg-gradient-to-l from-[#040404]/15 to-transparent"></div>
-        <div className="flex flex-nowrap gap-7 justify-between">
-          <DataStackCard />
-          <DataStackCard />
-          <DataStackCard />
-          <DataStackCard />
+      <div className="relative w-full md:w-[70%] flex flex-col gap-7  overflow-hidden">
+        <div className="absolute z-10 w-1/8 h-full bg-gradient-to-r from-[#040404]/15 to-transparent"></div>
+        <div className="absolute z-10 right-0 w-1/8 h-full bg-gradient-to-l from-[#040404]/15 to-transparent"></div>
+        <div className="scrollBar overflow-x-auto ">
+          {" "}
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className=" w-max flex gap-2 md:gap-7 justify-between"
+          >
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+          </motion.div>
         </div>
-        <div className="flex gap-7 justify-between">
-          <DataStackCard />
-          <DataStackCard />
-          <DataStackCard />
-          <DataStackCard />
+        <div className="scrollBar overflow-x-auto ">
+          {" "}
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className=" w-max flex gap-2 md:gap-7 justify-between"
+          >
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+            <DataStackCard />
+          </motion.div>
         </div>
       </div>
     </div>
