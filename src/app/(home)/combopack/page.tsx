@@ -11,10 +11,15 @@ const combopack = () => {
   return (
     <div>
       <NavigationBar />
-      <CombeHeroSection />
+      <img src="/combopack/heroImage.png" className="mx-auto mt-12" alt="" />
+      {/* <CombeHeroSection /> */}
+      <img
+        src={"/combopack/techStack.png"}
+        className="hidden md:block mx-auto scale-[1.25] md:scale-100 my-36"
+      ></img>
       <DataStackSection />
       <ComboProjectReview />
-      <img src={"/combopack/techStack.png"} className="hidden md:block mx-auto scale-[1.25] md:scale-100 my-36"></img>
+
       <CourseDetailSection />
       <FAQsSection />
       <Footer />
