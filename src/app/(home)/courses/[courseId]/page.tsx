@@ -1,12 +1,18 @@
-// import { useParams } from 'next/navigation';
+import { NextPage } from 'next';
 
-const CourseIdPage = ({params}:{params: {courseId:string}}) => {
-   //  const { courseId } = useParams(); // Get the courseId from the URL
+
+interface CourseIdPageProps {
+    params: {
+        courseId: string;
+    };
+}
+
+const CourseIdPage: NextPage<CourseIdPageProps> = async ({ params }) => {
+    const { courseId } = await params; 
 
     return (
         <div>
-            <h1>Course ID: {params.courseId}</h1>
-            {/* Add more details about the course here */}
+            <h1>Course ID: {courseId}</h1>
         </div>
     );
 };
