@@ -6,6 +6,7 @@ import { z } from "zod";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const courseSchema = z.object({
   title: z.string().min(1),
@@ -24,6 +25,8 @@ const courseSchema = z.object({
 type CourseFormData = z.infer<typeof courseSchema>;
 
 export default function CourseForm() {
+
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [courseImage, setCourseImage] = useState("");
   const [instructorImage, setInstructorImage] = useState("");
@@ -46,6 +49,8 @@ export default function CourseForm() {
     setLoading(true);
     try {
       const res = await axios.post("/api/v1/admin/courses", data);
+      console.log('API Response:', res);
+      router.push(`/admin/courses/${res?.data?.course?.slug}`);
       toast.success("Course created!");
       reset();
     } catch (err: any) {
