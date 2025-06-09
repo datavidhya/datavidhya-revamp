@@ -30,7 +30,7 @@ export const WhiteBox = ({ text, num }: prop) => {
 };
 export const TickText = ({ text }: prop) => {
   return (
-    <div className="w-2/5 flex gap-4 items-center">
+    <div className="w-full md:w-2/5 flex gap-4 items-center">
       <HiCheckCircle className="text-white size-[20px]" />
       <p
         className={`text-white text-[20px] leading-[24px] font-semibold ${inter.className}`}
@@ -43,17 +43,17 @@ export const TickText = ({ text }: prop) => {
 
 const CombeHeroSection = () => {
   return (
-    <div className=" relative w-full max-w-[1260px] mx-auto border border-[#d7d7d7d] rounded-2xl flex gap-3 justify-around bg-gradient-to-r from-[#7154f2] to-[#9b49ed] px-6 p-10 mt-16">
+    <div className=" relative w-full max-w-[1260px] mx-auto border border-[#d7d7d7d] rounded-2xl flex flex-col md:flex-row gap-3 justify-around bg-gradient-to-r from-[#7154f2] to-[#9b49ed] px-6 p-10 mt-6 md:mt-16">
       <div className=" absolute top-0 left-0 h-full w-full bg-[url('/combopack/background.png')] 	bg-[length:90px_90px] bg-repeat">
         <div className="shine w-[100%] h-[100%]"></div>
       </div>
-      <div className="w-[30%] flex flex-col z-10 items-center bg-white p-5 border rounded-2xl">
+      <div className="w-full md:w-[30%] flex flex-col z-10 items-center bg-white p-5 border rounded-2xl">
         <img src="/combopack/fileIcon.png" alt="" />
         <h1 className={`${lily.className} text-4xl text-[#5A31C3] mt-2`}>
           Zero to Hero
         </h1>
         <h1
-          className={`${Roboto.className} font-medium text-4xl text-[#441B65]`}
+          className={`${Roboto.className} font-medium text-3xl md:text-4xl text-[#441B65]`}
         >
           Data Engineering
         </h1>
@@ -66,8 +66,8 @@ const CombeHeroSection = () => {
           <p className="text-sm font-semibold leading-[16px]"> Buy Now</p>
         </button>
       </div>
-      <div className=" w-[65%] flex flex-col justify-between gap-8 ">
-        <div className="h-4/5 flex flex-row gap-6 flex-wrap">
+      <div className="w-full md:w-[65%] flex flex-col justify-between gap-8 ">
+        <div className="h-4/5 flex flex-col  md:flex-row gap-6 flex-wrap mt-6">
           <TickText text="6 Courses" />
           <TickText text="Free Resources" />
           <TickText text="Coding Exercises" />
@@ -77,7 +77,7 @@ const CombeHeroSection = () => {
           <TickText text="Coding Exercises" />
           <TickText text="Certificate After Completion" />
         </div>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-8">
           <WhiteBox num={12} text="adfgba" />
           <WhiteBox num={12} text="adfgba" />
           <WhiteBox num={12} text="adfgba" />
