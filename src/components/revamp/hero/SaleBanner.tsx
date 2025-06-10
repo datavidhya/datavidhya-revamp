@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { X, Copy, Check } from "lucide-react";
+import { LuX } from "react-icons/lu";
 
 const SaleBanner = () => {
   const targetDate = new Date("2025-06-30T00:00:00"); // Target date
@@ -10,7 +10,7 @@ const SaleBanner = () => {
     minutes: 0,
     seconds: 0,
   });
-  const [copied, setCopied] = useState(false);
+  const [cross, setCross] = useState(false);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -25,7 +25,6 @@ const SaleBanner = () => {
 
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
-        // Timer expired
         setTimeLeft({
           days: 0,
           hours: 0,
@@ -39,60 +38,53 @@ const SaleBanner = () => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText("COMBO50");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <div className=" inset-x-0 top-0 z-50 w-full bg-neutral-100 ">
+    <div
+      className={`${
+        cross ? "hidden" : "block"
+      } inset-x-0 top-0 w-full bg-purple-200 `}
+    >
       <div className="mx-auto max-w-8xl p-2">
-        <div className="relative flex flex-col items-center justify-between gap-4 sm:flex-row">
-          {/* Left section with penguin and main message */}
-          <span className="flex gap-6   justify-evenly px-4">
-            {" "}
-            <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
-              <div className="animate-bounce text-2xl hidden md:flex">🐧</div>
+        <div className="relative flex flex-col items-center justify-center gap-2 md:gap-12 sm:flex-row">
+          <span className="flex gap-2 md:gap-6   justify-evenly px-4">
+            <div className="flex w-full flex-row md:flex-co items-center gap-3 sm:w-auto ">
+              <img
+                src="/combopack/icon.gif"
+                className="size-6 md:size-10"
+                alt=""
+              />
               <div className="text-center sm:text-left">
-                <p className="font-medium text-black ">Save 50%</p>
-                <p className="text-sm text-neutral-400 hidden md:flex">
-                  Ends in:
+                <p className="font-medium text-sm md:text-2xl mr-8 text-black ">
+                  Don’t Miss Out!
+                </p>
+                <p className="text-xs md:text-lg text-neutral-900">
+                  Use code <strong className="mx-2">COMBO50</strong> at checkout
+                  to unlock your special discount!
                 </p>
               </div>
             </div>
-            {/* Timer */}
-            <div className=" hidden md:flex w-full items-center justify-center space-x-3 sm:w-auto ">
-              <TimeUnit value={timeLeft.days} label="Day" />
-              <TimeUnit value={timeLeft.hours} label="Hours" />
-              <TimeUnit value={timeLeft.minutes} label="Mins" />
-              <TimeUnit value={timeLeft.seconds} label="Sec" />
+            <div className="hidden md:flex w-full items-center justify-center gap-2 sm:w-auto mx-12">
+              <TimeUnit value={timeLeft.days} label="DAYS" />:
+              <TimeUnit value={timeLeft.hours} label="HOURS" />:
+              <TimeUnit value={timeLeft.minutes} label="MINS" />:
+              <TimeUnit value={timeLeft.seconds} label="SECS" />
             </div>
           </span>
 
-          {/* Coupon section */}
-          <div className="flex w-full flex-col items-center gap-1 md:gap-3 sm:w-auto sm:flex-row">
-            <div
-              onClick={handleCopyCode}
-              className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-[8px] bg-purple-400 px-4 py-1.5 transition-colors hover:bg-purple-500/85 sm:w-auto"
-            >
-              <span className="text-sm text-black">Use code:</span>
-              <span className="font-mono font-light md:font-medium text-neutral-900">
-                COMBO50
-              </span>
-              {copied ? (
-                <Check className="size-4 text-green-400" />
-              ) : (
-                <Copy className="size-4 text-neutral-700 transition-colors group-hover:text-white" />
-              )}
-            </div>
-
+          <div className="flex w-full flex-col items-center gap-1 sm:w-auto sm:flex-row md:gap-8">
             <a
               href="https://com.rpy.club/pdp/combo6?code=COMBO50"
-              className="w-full rounded-[8px] bg-neutral-800 px-6 py-1.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center"
+              className="w-full rounded-[8px] bg-neutral-800 px-8 py-2.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center text-sm md:text-xl"
             >
-              Shop Now
+              Buy Now
             </a>
+            <span
+              onClick={() => {
+                setCross(true);
+              }}
+            >
+              <LuX className="size-5 md:size-7" />
+            </span>
           </div>
         </div>
       </div>
@@ -102,11 +94,11 @@ const SaleBanner = () => {
 
 const TimeUnit = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
-    <div className="min-w-[40px] rounded bg-neutral-300 px-2 py-1 text-center">
-      <div className="font-semibold text-black">
+    <div className="min-w-[40px] rounded bg-neutral-00 px-2 py-1 text-center">
+      <div className="font-bold text-[#282828] text-2xl">
         {value.toString().padStart(2, "0")}
       </div>
-      <div className="text-xs text-neutral-900">{label}</div>
+      <div className="text-[16px] text-neutral-900">{label}</div>
     </div>
   </div>
 );

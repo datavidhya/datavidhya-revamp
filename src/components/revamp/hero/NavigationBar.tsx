@@ -112,7 +112,7 @@ const NavigationBar = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2 }}
-            className={`w-full mt-4 bg-gradient-to-br from-white to-purple-200 shadow-sm mx-auto border border-neutral-400 rounded-xl py-2  md:hidden z-40 ${inter.className}`}
+            className={`w-full mt-4 bg-gradient-to-br from-white to-purple-200 shadow-sm mx-auto border border-neutral-400 rounded-xl py-2  md:hidden z-50 ${inter.className}`}
           >
             <Link
               href="/"

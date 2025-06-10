@@ -37,11 +37,11 @@ const combopack = () => {
     <>
       <NavigationBar />
       <CombeHeroSection />
-      <div className="flex flex-col items-center mt-20">
-        <h1 className="text-4xl text-black font-semibold mb-12">
+      <div className="flex flex-col items-center mt-10 md:mt-20">
+        <h1 className="text-2xl md:text-4xl text-center text-black font-semibold mb-12">
           Master the High-Demand Data Engineering Tech Stack
         </h1>
-        <IconGrid icons={iconList} />;
+        <IconGrid icons={iconList} />
       </div>
       <DataStackSection />
       <ComboProjectReview />
