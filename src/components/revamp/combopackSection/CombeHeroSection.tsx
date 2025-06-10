@@ -4,6 +4,7 @@ import { Lily_Script_One } from "next/font/google";
 import { Roboto_Slab } from "next/font/google";
 import { Gantari } from "next/font/google";
 import { Inter } from "next/font/google";
+import { RippleButton } from "@/components/magicui/ripple-button";
 
 const gantari = Gantari({ subsets: ["latin"], weight: "400" });
 const lily = Lily_Script_One({ subsets: ["latin"], weight: "400" });
@@ -16,7 +17,7 @@ interface prop {
 }
 export const WhiteBox = ({ text, num }: prop) => {
   return (
-    <div className="w-[100px] h-[60px] flex flex-col items-center justify-center bg-[#f4f0fc] rounded-[6px]">
+    <div className="w-[100px]  h-[60px] flex flex-col items-center justify-center bg-[#f4f0fc] rounded-[6px] hover:scale-103 transition-all">
       <p
         className={`font-semibold text-[20px] leading-[140%] text-[#5a31c3] ${inter.className}`}
       >
@@ -44,10 +45,10 @@ export const TickText = ({ text }: prop) => {
 const CombeHeroSection = () => {
   return (
     <div className=" relative w-full max-w-[1260px] mx-auto border border-[#d7d7d7d] rounded-2xl flex flex-col md:flex-row gap-3 justify-around bg-gradient-to-r from-[#7154f2] to-[#9b49ed] px-6 p-10 mt-6 md:mt-16">
-      <div className=" absolute top-0 left-0 h-full w-full bg-[url('/combopack/background.png')] 	bg-[length:90px_90px] bg-repeat">
+      <div className=" absolute top-0 left-0 h-full w-full bg-[url('/combopack/background.png')] 	bg-[length:50px_50px] bg-repeat">
         <div className="shine w-[100%] h-[100%]"></div>
       </div>
-      <div className="w-full md:w-[30%] flex flex-col z-10 items-center bg-white p-5 border rounded-2xl">
+      <div className="w-full md:w-[30%] flex flex-col z-10 items-center bg-white p-5 border rounded-2xl hover:scale-103 transition-all">
         <img src="/combopack/fileIcon.png" alt="" />
         <h1 className={`${lily.className} text-4xl text-[#5A31C3] mt-2`}>
           Zero to Hero
@@ -62,9 +63,10 @@ const CombeHeroSection = () => {
         >
           Designed for Data Engineering
         </p>
-        <button className="w-full bg-[#282828] rounded-[12px] py-[14px] px-[26px] mt-6 text-white">
+        <button className="w-full bg-[#282828] rounded-[12px] py-[14px] px-[26px] mt-6 text-white hover:bg-[#000]">
           <p className="text-sm font-semibold leading-[16px]"> Buy Now</p>
         </button>
+        {/* <RippleButton>Buy Now</RippleButton> */}
       </div>
       <div className="w-full md:w-[65%] flex flex-col justify-between gap-8 ">
         <div className="h-4/5 flex flex-col  md:flex-row gap-6 flex-wrap mt-6">
@@ -77,7 +79,7 @@ const CombeHeroSection = () => {
           <TickText text="Coding Exercises" />
           <TickText text="Certificate After Completion" />
         </div>
-        <div className="flex flex-wrap justify-center gap-3 md:gap-8">
+        <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-8">
           <WhiteBox num={12} text="adfgba" />
           <WhiteBox num={12} text="adfgba" />
           <WhiteBox num={12} text="adfgba" />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <div className="flex gap-3 mx-auto justify-center">
+    <div className="flex gap-3 mx-auto justify-center mt-6 md:mt-16">
       <div className="shimmer-wrapper  ">
         <div className="shimmer"></div>
       </div>{" "}
