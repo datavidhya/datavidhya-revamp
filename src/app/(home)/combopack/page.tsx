@@ -3,6 +3,7 @@ import ComboProjectReview from "@/components/revamp/combopackSection/ComboProjec
 import CourseDetailSection from "@/components/revamp/combopackSection/CourseDetailSection";
 import DataStackSection from "@/components/revamp/combopackSection/DataStackSection";
 import { IconGrid } from "@/components/revamp/combopackSection/TechStack";
+import YoutubeSection from "@/components/revamp/combopackSection/YoutubeSection";
 import FAQsSection from "@/components/revamp/FaqSection/FaqsSection";
 import Footer from "@/components/revamp/Footer/Footer";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
@@ -44,6 +45,7 @@ const combopack = () => {
         <IconGrid icons={iconList} />
       </div>
       <DataStackSection />
+      <YoutubeSection />
       <ComboProjectReview />
       <CourseDetailSection />
       <FAQsSection />

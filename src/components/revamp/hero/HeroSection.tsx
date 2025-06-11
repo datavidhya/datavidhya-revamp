@@ -1,9 +1,9 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
-import { Inter } from "next/font/google";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import Link from "next/link";
 import Hero from "./Hero";
+import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
   return (
@@ -25,8 +25,8 @@ const HeroSection = () => {
       <h1
         className={`font-bold text-3xl md:text-[61px]  text-center leading-[120%] tracking-[-2%] text-[#333] mb-10 md:mb-4 ${inter.className}`}
       >
-        The #1 Platform to <br className="flex md:hidden" />become a{" "}
-        <br className="" />
+        The #1 Platform to <br className="flex md:hidden" />
+        become a <br className="" />
         <AuroraText className="mx-0 md:mx- leading-[120%]">
           Data Engineer.{" "}
         </AuroraText>
