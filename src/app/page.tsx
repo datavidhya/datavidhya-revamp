@@ -24,6 +24,7 @@ const Page = () => {
       <Notification />
       <NavigationBar />
       <HeroSection />
+      
       <UltimateCourse />
       <ProjectSection />
       <LeetcodeProblem />

@@ -54,7 +54,7 @@ const HeroSection = () => {
         </Link>
       </div>
       <p
-        className={`w-[95%]  md:w-3/6 bg-white text-center font-semimedium text-[14px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
+        className={`w-[95%]  md:w-3/6 text-center font-semimedium text-[14px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
       >
         Trusted by 25,000+ Aspiring & Working Data Engineers Engineers from top
         companies use DataVidhya to upskill & switch careers
