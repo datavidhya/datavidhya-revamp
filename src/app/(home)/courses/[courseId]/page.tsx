@@ -34,25 +34,23 @@ const prisma = new PrismaClient();
 //     );
 // };
 
-const CourseIdPage= async({params}:{params: {courseId: string}})=>{
-
-    const {courseId} = await params
+const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
+    const { courseId } = await params;
     const course = await prisma.course.findUnique({
-        where:{
+        where: {
             slug: courseId
         }
-    })
+    });
 
-    if(!course){
+    if (!course) {
         return redirect('/');
     }
-    return(
+    return (
         <div>
             CourseId: {courseId}
         </div>
-    )
-} 
-
+    );
+};
 
 export default CourseIdPage;
 

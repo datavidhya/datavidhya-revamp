@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { TitleForm } from './_components/titleForm';
 import { DescriptionForm } from './_components/descriptionForm';
 import { PricingForm } from './_components/pricingForm';
+import { ChapterForm } from './_components/chapterForm';
 const prisma = new PrismaClient();
 
 const CourseIdPage= async({params}:{params: {courseId: string}})=>{
@@ -14,6 +15,13 @@ const CourseIdPage= async({params}:{params: {courseId: string}})=>{
     const course = await prisma.course.findUnique({
         where:{
             slug: courseId
+        },
+        include:{
+            chapters: {
+                orderBy: {
+                    position: "asc"
+                }
+            }
         }
     })
 
@@ -48,6 +56,10 @@ const CourseIdPage= async({params}:{params: {courseId: string}})=>{
                             Course Chapters
                         </h2>
                     </div>
+                    <ChapterForm
+                        initialData={course}
+                        courseId={course.slug}
+                    />
                 </div>
                     <div>
                         <div className='flex items-center gap-x-2'>
