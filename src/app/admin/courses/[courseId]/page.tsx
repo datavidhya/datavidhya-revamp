@@ -1,8 +1,10 @@
 import { IconBadge } from '@/components/ui/icon-badge';
 import {  PrismaClient } from '@prisma/client';
-import { LayoutDashboard } from 'lucide-react';
+import { CircleDollarSign, LayoutDashboard, ListChecks } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import { TitleForm } from './_components/titleForm';
+import { DescriptionForm } from './_components/descriptionForm';
+import { PricingForm } from './_components/pricingForm';
 const prisma = new PrismaClient();
 
 const CourseIdPage= async({params}:{params: {courseId: string}})=>{
@@ -33,6 +35,30 @@ const CourseIdPage= async({params}:{params: {courseId: string}})=>{
                     initialData={course}
                     courseId={course.slug}
                   />
+                  <DescriptionForm
+                    initialData={course}
+                    courseId={course.slug}
+                  />
+               </div>
+               <div className='space-y-6'>
+                <div>
+                    <div className='flex items-center gap-x-2'>
+                        <IconBadge icon={ListChecks}/>
+                        <h2 className='text-xl'>
+                            Course Chapters
+                        </h2>
+                    </div>
+                </div>
+                    <div>
+                        <div className='flex items-center gap-x-2'>
+                            <IconBadge icon={CircleDollarSign}/>
+                            <h2 className='text-xl'>Course Pricing</h2>
+                        </div>
+                            <PricingForm
+                                initialData={course}
+                                courseId={course.slug}
+                            />
+                    </div>
                </div>
             </div>
         </div>
