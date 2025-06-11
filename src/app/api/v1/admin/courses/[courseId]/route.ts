@@ -41,3 +41,32 @@ export async function DELETE(
     );
   }
 }
+
+
+export async function PATCH(
+  req: Request,
+  {params} : {params:Promise<{courseId: string}>}
+){
+  try {
+    const {courseId} = await params
+
+    const values = await req.json();
+
+    console.log('Update the course with slug:', courseId)
+
+    const course = await prisma.course.update({
+      where:{
+        slug: courseId,
+      },
+      data:{
+        ...values,
+      }
+    });
+
+    return NextResponse.json(course);
+    
+  } catch (error) {
+    console.log("[COURSE_ID]", error);
+    return new NextResponse("Internal Error",{status: 500})
+  }
+}
