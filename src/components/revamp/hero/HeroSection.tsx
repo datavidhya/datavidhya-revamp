@@ -37,16 +37,21 @@ const HeroSection = () => {
         Courses, Projects & Interview Practice — All in One Place.
       </p>
       <div className="w-full px-4 flex flex-col md:flex-row justify-center gap-1.5 md:gap-4 mb-12 md:mb-12 mt-4">
-        <button
-          className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
-        >
-          Explore Courses
-        </button>
-        <button
-          className={`rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105  sm:py-3 ${inter.className}`}
-        >
-          Solve Questions
-        </button>
+        <Link href={"/combopack"}>
+          <button
+            className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
+          >
+            Explore Courses
+          </button>
+        </Link>
+        <Link href={"https://code.datavidhya.com/"}>
+          {" "}
+          <button
+            className={`rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105  sm:py-3 ${inter.className}`}
+          >
+            Solve Questions
+          </button>
+        </Link>
       </div>
       <p
         className={`w-[95%]  md:w-3/6 bg-white text-center font-semimedium text-[14px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}

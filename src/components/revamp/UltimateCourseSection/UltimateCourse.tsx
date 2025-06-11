@@ -87,7 +87,8 @@ const UltimateCourse = () => {
             </div>
             <div className=" flex flex-col  justify-between items-center py-[5px]">
               <h2 className="w-full text-[24px] text-center md:text-[29px] leading-[24px] md:leading-[30px] font-semibold tracking-[-1.5%] text-[#333333]">
-                Zero to Hero <br className="hidden md:block"/> Data Engineering.
+                Zero to Hero <br className="hidden md:block" /> Data
+                Engineering.
               </h2>{" "}
               <div className="w-full my-3 md:my-0 flex justify-between items-center">
                 <span className="flex items-center">
@@ -120,7 +121,7 @@ const UltimateCourse = () => {
                 </span>
               </div>
               <div className="w-full flex justify-between md:justify-start gap-4">
-                <Link href={"/"}>
+                <Link href={"https://learn.datavidhya.com/l/b2b9839f3e"}>
                   {" "}
                   <button
                     className={`block w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}
@@ -128,7 +129,7 @@ const UltimateCourse = () => {
                     Buy Now
                   </button>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"/combopack"}>
                   <button
                     className={`block w-[144px] rounded-[12px] bg-neutral-300 px-4 py-3 text-center text-sm font-semibold text-black ${inter.className}`}
                   >

@@ -1,10 +1,9 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import PlatformCarousel from "./PlatformCarousel";
-// import Carousel from "../hero/Carousel";
+import Link from "next/link";
 
 const platformCards = [
   {
@@ -104,7 +103,7 @@ const PlatformSection = () => {
             </>
           );
         })}
-         {/* bg-[#Fbfaff] */}
+        {/* bg-[#Fbfaff] */}
       </div>{" "}
       <div className="mt-6 w-[92%] mx-auto md:mt-20 flex flex-wrap md:flex-nowrap gap-8 justify-between items-center bg-[#ffffff] border border-[#d7d7d7] rounded-[8px] p-3">
         <div className="p-2 border border-[#000]/6 rounded-[8px]  flex flex-wrap items-center md:flex-nowrap">
@@ -180,9 +179,11 @@ const PlatformSection = () => {
         </div>
       </div>
       <div className="my-6 md:my-28 flex justify-center">
-        <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-6 md:mb-28">
-          Try Platform
-        </button>
+        <Link href={"https://code.datavidhya.com/coding-problems"}>
+          <button className="px-6 py-3 bg-gradient-to-r from-[#573efa] to-[#B832E9] text-white rounded-xl font-medium transition-all hover:bg-violet-700 mb-6 md:mb-28">
+            Try Platform
+          </button>
+        </Link>
       </div>
     </section>
   );
