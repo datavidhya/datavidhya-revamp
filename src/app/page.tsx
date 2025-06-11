@@ -1,7 +1,6 @@
 import FAQsSection from "@/components/revamp/FaqSection/FaqsSection";
 import Footer from "@/components/revamp/Footer/Footer";
 import HeroSection from "@/components/revamp/hero/HeroSection";
-// import HeroSection from "@/components/revamp/hero/HeroSectionOld";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
 import LeetcodeProblem from "@/components/revamp/LeetcodeSection/LeetcodeProblem";
 import TopicCovered from "@/components/revamp/marquee/TopicCovered";
@@ -24,7 +23,6 @@ const Page = () => {
       <Notification />
       <NavigationBar />
       <HeroSection />
-      
       <UltimateCourse />
       <ProjectSection />
       <LeetcodeProblem />

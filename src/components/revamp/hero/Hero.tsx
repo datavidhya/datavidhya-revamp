@@ -16,8 +16,7 @@ function Bubble({
   delay,
   keyframeId,
 }: BubbleProps) {
-  const opacity = Math.random() * 0.2 + 0.6; // Slightly more transparent for depth effect
-
+  const opacity = Math.random() * 0.2 + 0.6; 
   const bubbleStyle = {
     position: "absolute" as const,
     width: `${size}px`,
@@ -25,11 +24,11 @@ function Bubble({
     borderRadius: "50%",
     background: `url(${image}) center/cover`,
     opacity: opacity,
-    animation: `planetary-orbit-${keyframeId} ${animationDuration}s ease-in-out infinite ${delay}s, fade-in 3s ease-out`,
-    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+    animation: `planetary-orbit-${keyframeId} ${animationDuration}s ease-in-out infinite ${delay}s, fade-in 12s ease-out`,
+    boxShadow: "0 8px 12px rgba(0, 0, 0, 0.3)",
     backdropFilter: "blur(2px)",
     zIndex: 1,
-    filter: "brightness(1.1) saturate(1.2)",
+    // filter: "brightness(1.1) saturate(1.2)",
   };
 
   // Create dynamic planetary orbit keyframes
@@ -74,8 +73,8 @@ function Bubble({
           bottom: ${point1.bottom};
           transform: translateX(-50%) translateY(50%) scale(1.2);
           opacity: ${opacity * 1.0};
-          filter: brightness(1.3) saturate(1.4) blur(0px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+          filter: brightness(1) saturate(1) blur(0px);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
         }
         
         25% {
@@ -92,8 +91,8 @@ function Bubble({
           bottom: ${point3.bottom};
           transform: translateX(-50%) translateY(50%) scale(1.2);
           opacity: ${opacity * 1.0};
-          filter: brightness(1.3) saturate(1.4) blur(0px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+          filter: brightness(1) saturate(1) blur(0px);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
         }
         
         75% {
@@ -110,8 +109,8 @@ function Bubble({
           bottom: ${point5.bottom};
           transform: translateX(-50%) translateY(50%) scale(1.2);
           opacity: ${opacity * 1.0};
-          filter: brightness(1.3) saturate(1.4) blur(0px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+          filter: brightness(1) saturate(1) blur(0px);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
         }
       }
       
@@ -165,7 +164,7 @@ export default function Hero() {
 
         // Slower, more calm planetary motion (15-18 seconds per orbit)
         const baseDuration = 16; // 16 seconds base
-        const animationDuration = baseDuration + (Math.random() - 0.5) * 4; // 14-18 seconds
+        const animationDuration = baseDuration + (Math.random() - 0.5) * 10; // 14-18 seconds
 
         // Planets follow each other in the same orbit with spacing
         // Each planet starts 2.5 seconds after the previous one for smooth spacing
@@ -178,7 +177,7 @@ export default function Hero() {
             key={`planet-${i}-${Date.now()}`}
             size={baseSize}
             image={image}
-            animationDuration={animationDuration}
+            animationDuration={animationDuration + 15}
             delay={delay}
             keyframeId={keyframeId}
           />
@@ -203,7 +202,7 @@ export default function Hero() {
 
   return (
     <div
-      className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none"
+      className="hidden md:block absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
       style={{ zIndex: -20 }}
     >
       {/* Highly curved elliptical orbital path visualization */}
@@ -222,10 +221,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Cosmic background effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-purple-950/5"></div>
-
-      {/* Planets following the orbital path */}
+     
       <div className="relative w-full h-full">{bubbles}</div>
     </div>
   );
