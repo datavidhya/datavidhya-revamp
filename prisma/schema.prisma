@@ -37,8 +37,63 @@ model course {
   ratingCount     Int
   instructorName  String
   instructorImage String
+
+  chapters        Chapter[]
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+
+//  Course Chapter Model 
+model Chapter{
+  id String @id @default(uuid())
+  title String
+  description String? @db.Text
+  videoUrl String @db.Text
+  position Int
+  isPublished Boolean @default(false)
+  isFree Boolean @default(false)
+
+  muxData MuxData?
+
+  courseId Int
+  course course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  userProgress UserProgress[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+}
+
+//  Mux model for processing video data
+
+model MuxData{
+  id String @id @default(uuid())
+  assetId String
+  playbackId String?
+
+  chapterId String @unique
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+}
+
+// UserProgress model
+
+model UserProgress{
+  id String
+  userId String
+
+  chapterId String
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  isCompleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([chapterId])
+  @@unique([userId, chapterId])
 }
 
 model projectFeedback {
