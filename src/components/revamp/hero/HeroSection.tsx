@@ -32,7 +32,7 @@ const HeroSection = () => {
         </AuroraText>
       </h1>
       <p
-        className={`hidden md:flex font-normal text-[22px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10  md:z-10 ${inter.className}`}
+        className={`hidden md:flex font-normal text-[24px] leading-[100%] tracking-[-2%] text-[#000]/60 mb-10  md:z-10 ${inter.className}`}
       >
         Courses, Projects & Interview Practice — All in One Place.
       </p>
@@ -51,7 +51,7 @@ const HeroSection = () => {
         </a>
       </div>
       <p
-        className={`w-[95%]  md:w-3/6 text-center font-semimedium text-[14px] md:text-xl leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
+        className={`w-[95%]  md:w-3/6 text-center font-semimedium text-[14px] md:text-[18px] leading-[28px] tracking-[-3%] text-[#929292] z-10 mb-16 ${inter.className}`}
       >
         Trusted by 25,000+ Aspiring & Working Data Engineers Engineers from top
         companies use DataVidhya to upskill & switch careers
