@@ -8,9 +8,7 @@ import FAQsSection from "@/components/revamp/FaqSection/FaqsSection";
 import Footer from "@/components/revamp/Footer/Footer";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
 import React from "react";
-export const metadata = {
-  title: "DataVidhya Combo Pack",
-};
+
 const combopack = () => {
   const iconList = [
     "/combopack/iconlist/avro.png",

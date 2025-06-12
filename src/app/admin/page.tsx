@@ -1,8 +1,6 @@
 import Box from "@/components/revamp/Box";
 import React from "react";
-export const metadata = {
-  title: "DataVidhya Admin Panel",
-};
+
 function page() {
   return (
     <div className="w-full p-8 ">

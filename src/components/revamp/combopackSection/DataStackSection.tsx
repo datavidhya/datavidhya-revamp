@@ -21,7 +21,8 @@ const DataStackSection = () => {
         practical, real-world data engineering experience
       </p>
       <div className="relative w-full md:w-[70%] flex flex-col gap-7  overflow-hidden">
-        <div className="absolute z-10 w-1/8 h-full bg-gradient-to-r from-[#040404]/15 to-transparent"></div>
+        <div></div>
+        {/* <div className="absolute z-10 w-1/8 h-full bg-gradient-to-r from-[#040404]/15 to-transparent"></div>
         <div className="absolute z-10 right-0 w-1/8 h-full bg-gradient-to-l from-[#040404]/15 to-transparent"></div>
         <div className="scrollBar overflow-x-auto ">
           {" "}
@@ -66,7 +67,7 @@ const DataStackSection = () => {
             <DataStackCard />
             <DataStackCard />
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

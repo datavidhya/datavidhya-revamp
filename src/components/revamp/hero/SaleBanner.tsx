@@ -54,10 +54,10 @@ const SaleBanner = () => {
                 alt=""
               />
               <div className="text-center sm:text-left">
-                <p className="font-medium text-sm md:text-2xl mr-8 text-black ">
+                <p className="font-medium text-sm max-md:text-xl lg:text-2xl mr-8 text-black ">
                   Don’t Miss Out!
                 </p>
-                <p className="text-xs md:text-lg text-neutral-900">
+                <p className="text-xs max-md:text-[15px] lg:text-lg text-neutral-900">
                   Use code <strong className="mx-2">COMBO50</strong> at checkout
                   to unlock your special discount!
                 </p>
@@ -74,7 +74,7 @@ const SaleBanner = () => {
           <div className="flex w-full flex-col items-center gap-1 sm:w-auto sm:flex-row md:gap-8">
             <a
               href="https://com.rpy.club/pdp/combo6?code=COMBO50"
-              className="w-full rounded-[8px] bg-neutral-800 px-8 py-2.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center text-sm md:text-xl"
+              className="w-full rounded-[8px] bg-neutral-800 max-md:px-8 px-8 py-2.5 text-white transition-colors hover:bg-neutral-700 hover:scale-[1.05] sm:w-auto text-center text-sm max-md:text-lg xl:text-xl"
             >
               Buy Now
             </a>

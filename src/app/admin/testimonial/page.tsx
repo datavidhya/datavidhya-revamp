@@ -1,9 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Trash2, Edit, Star, Upload, X, Plus } from "lucide-react";
-export const metadata = {
-  title: "Testimonials",
-};
+
 interface Testimonial {
   id: number;
   name: string;

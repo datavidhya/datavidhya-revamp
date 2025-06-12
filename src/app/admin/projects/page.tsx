@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ProjectForm from "@/components/revamp/ProjectSection/projectsForm";
-export const metadata = {
-  title: "Add Projects",
-};
+
 interface Project {
   id: number;
   title: string;

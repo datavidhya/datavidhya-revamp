@@ -64,7 +64,7 @@ const ProjectSection = () => {
 
   const [activeTab, setActiveTab] = useState("projects");
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
   const projectArray =
     pathName === "/projects" ? projects : projects.slice(0, 3);
 

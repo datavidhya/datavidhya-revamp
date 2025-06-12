@@ -4,9 +4,7 @@ import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
-export const metadata = {
-  title: "Rcently Purchased",
-};
+
 interface Purchase {
   id: string;
   studentName: string;

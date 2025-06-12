@@ -43,9 +43,12 @@ const TestimonyCard = ({ testimony }: testimony) => {
             alt="star"
           />
         </span>
-        <p className="text-[16px] md:text-lg lg:text-xl font-400 leading-[150%]">
-          "{testimony.description}"
-        </p>
+        <blockquote>
+          {" "}
+          <p className="text-[16px] italic md:text-lg lg:text-xl font-400 leading-[150%]">
+            "{testimony.description}"
+          </p>
+        </blockquote>
       </div>
       <div className="mt-5 flex justify-between">
         <Image

@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import CourseDetailForm from "@/components/revamp/combopackSection/CourseDetailForm";
-export const metadata = {
-  title: "Course Details",
-};
+
 interface CourseDetail {
   id: string;
   title: string;
