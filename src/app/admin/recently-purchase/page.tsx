@@ -3,9 +3,10 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import { Trash } from "lucide-react";
-// import { convertToISO8601 } from "@/helper/convertToISO8601";
 import { useRouter } from "next/navigation";
-
+export const metadata = {
+  title: "Rcently Purchased",
+};
 interface Purchase {
   id: string;
   studentName: string;
@@ -19,13 +20,10 @@ interface PurchaseFormData {
   date: string;
 }
 
-// Backup date conversion function in case yours isn't working
 const convertToISO8601 = (dateString: string): string => {
   try {
-    // Handle different date formats
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {
-      // Try parsing DD-MM-YYYY HH:mm format
       const [datePart, timePart] = dateString.split(' ');
       const [day, month, year] = datePart.split('-');
       const formattedDate = `${year}-${month}-${day}`;
@@ -70,8 +68,7 @@ const PurchaseCard: React.FC<Purchase & { onDelete: (id: string) => void }> = ({
 }) => {
   const deletePurchasedCard = async () => {
     try {
-      // Removed token requirement for testing
-      // const token = localStorage.getItem("token");
+    
       console.log('Deleting purchase with ID:', id);
       
       const res = await axios.post(
@@ -137,12 +134,7 @@ const AddRecentlyPurchased = () => {
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
-  // Removed authentication check for testing
-  // useEffect(() => {
-  //   if (!localStorage.getItem("token")) {
-  //     router.push("/admin-logIn");
-  //   }
-  // }, [router]);
+
 
   useEffect(() => {
     const fetchAllPurchasedData = async () => {
@@ -185,11 +177,9 @@ const AddRecentlyPurchased = () => {
     setSubmitting(true);
 
     try {
-      // Removed token requirement for testing
-      // const token = localStorage.getItem("token");
+  
       console.log('Form data before conversion:', formData);
-      
-      // Convert date with better error handling
+
       let formattedDate;
       try {
         formattedDate = convertToISO8601(formData.date);
@@ -208,8 +198,6 @@ const AddRecentlyPurchased = () => {
       };
 
       console.log('Sending payload:', payload);
-      // console.log('Token:', token ? 'Present' : 'Missing'); // Removed token logging
-
       const res = await axios.post(
         "/api/v1/admin/recently-purchased",
         payload,
@@ -263,15 +251,8 @@ const AddRecentlyPurchased = () => {
         Manage Recent Purchases
       </h1>
 
-      {/* Debug Info */}
-      {/* <div className="mb-4 p-4 bg-blue-100 rounded text-sm">
-        <p><strong>Debug Info:</strong></p>
-        <p>Token: {localStorage.getItem("token") ? "✓ Present (not used)" : "✗ Not required"}</p>
-        <p>API Base URL: /api/v1/admin/recently-purchased</p>
-        <p>Current purchases count: {purchaseData.length}</p>
-      </div> */}
+    
 
-      {/* Form Section */}
       <div className="mb-8 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
         <h2 className="text-xl font-semibold mb-4 text-black dark:text-white">
           Add New Purchase
@@ -312,7 +293,6 @@ const AddRecentlyPurchased = () => {
         </form>
       </div>
 
-      {/* Data Display Section */}
       <div className="mb-4">
         <h2 className="text-xl font-semibold text-black dark:text-black">
           Recent Purchases ({purchaseData.length})

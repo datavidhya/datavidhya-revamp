@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ProjectFeedbackForm from "@/components/revamp/ProjectSection/ProjectFeedbackForm";
-
+export const metadata = {
+  title: "Projects Feedback",
+};
 interface projectFeedback {
   id: number;
   name: string;

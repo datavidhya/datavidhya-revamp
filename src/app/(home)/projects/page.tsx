@@ -3,7 +3,9 @@ import ProjectSection from "@/components/revamp/ProjectSection/projectSection";
 import Link from "next/link";
 import React from "react";
 import { SlArrowLeft } from "react-icons/sl";
-
+export const metadata = {
+  title: "DataVidhya Projects",
+};
 const page = () => {
   return (
     <div className="bg-white p-4">
