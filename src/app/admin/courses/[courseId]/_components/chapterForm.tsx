@@ -64,6 +64,10 @@ export const ChapterForm=({initialData, courseId}: ChapterFormProps)=>{
          toast.error("Something went wrong!")
       }
    }
+
+   const onEdit =(id:string)=>{
+      router.push(`/admin/courses/${courseId}/chapters/${id}`)
+   }
    return(
       <div className='mt-6 border bg-slate-100 rounded-md p-4'>
          <div className='font-medium flex items-center justify-between'>
@@ -120,7 +124,7 @@ export const ChapterForm=({initialData, courseId}: ChapterFormProps)=>{
             )}>
                {!initialData.chapters.length && "No chapters"}
                <ChaptersList
-                  onEdit={()=>{}}
+                  onEdit={onEdit}
                   onReorder={()=>{}}
                   items={initialData.chapters || []}
                />
