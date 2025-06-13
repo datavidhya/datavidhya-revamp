@@ -6,7 +6,7 @@ export const metadata = {
 };
 const page = () => {
   return (
-    <div className="bg-white ">
+    <div className="bg-white mb-32 ">
       <div className="">
         {/* <Link href={"/"}>
           <SlArrowLeft

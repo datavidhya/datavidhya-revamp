@@ -153,7 +153,7 @@ const ProjectSection = () => {
       ) : (
         <div className="mx-auto my-10 max-w-7xl px-4">
           {activeTab === "projects" ? (
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-6">
               {projectArray.map((project, index) => (
                 <motion.div
                   initial={{ y: 100, opacity: 0 }}
@@ -172,7 +172,7 @@ const ProjectSection = () => {
               ))}
             </div>
           ) : (
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-6">
               {projectReview.map((feedback, index) => (
                 <motion.div
                   initial={{ y: 100, opacity: 0 }}
