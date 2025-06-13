@@ -126,7 +126,7 @@ const UltimateCourse = () => {
                 </span>
               </div> */}
               <div className="w-full flex justify-between md:justify-start gap-4">
-                <Link href={"https://learn.datavidhya.com/l/b2b9839f3e"}>
+                <Link href={"https://learn.datavidhya.com/l/b2b9839f3e"} target="_blank">
                   {" "}
                   <button
                     className={`block w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}

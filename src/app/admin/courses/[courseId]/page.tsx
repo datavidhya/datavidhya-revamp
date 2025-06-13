@@ -8,7 +8,8 @@ import { PricingForm } from './_components/pricingForm';
 import { ChapterForm } from './_components/chapterForm';
 const prisma = new PrismaClient();
 
-const CourseIdPage= async({params}:{params: {courseId: string}})=>{
+// const CourseIdPage= async({params}:{params: {courseId: string}})=>{
+    const CourseIdPage= async({params}:{params: Promise<{courseId: string}>})=>{
 
    const {courseId} = await params;
 

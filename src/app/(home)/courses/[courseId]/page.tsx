@@ -1,9 +1,8 @@
-import {  PrismaClient } from '@prisma/client';
-import { redirect } from 'next/navigation';
+import { PrismaClient } from "@prisma/client";
+import { redirect } from "next/navigation";
 // import { NextPage } from 'next';
 
 // import { Prisma } from "@prisma/client";
-
 
 // interface CourseIdPageProps {
 //     params: {
@@ -34,23 +33,22 @@ const prisma = new PrismaClient();
 //     );
 // };
 
-const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
-    const { courseId } = await params;
-    const course = await prisma.course.findUnique({
-        where: {
-            slug: courseId
-        }
-    });
+const CourseIdPage = async ({
+  params,
+}: {
+  params: Promise<{ courseId: string }>;
+}) => {
+  const { courseId } = await params;
+  const course = await prisma.course.findUnique({
+    where: {
+      slug: courseId,
+    },
+  });
 
-    if (!course) {
-        return redirect('/');
-    }
-    return (
-        <div>
-            CourseId: {courseId}
-        </div>
-    );
+  if (!course) {
+    return redirect("/");
+  }
+  return <div>CourseId: {courseId}</div>;
 };
 
 export default CourseIdPage;
-

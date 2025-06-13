@@ -7,12 +7,12 @@ const prisma = new PrismaClient();
 
 export async function POST(
    req: Request,
-   {params}: {params: {courseId: string}}
+   {params}: {params: Promise<{courseId: string}>}
 ){
-   const { courseId: courseSlug } = params;
+   const { courseId: courseSlug } = await params;
 
    try {
-      
+
       const {title, videoUrl} = await req.json();
 
       console.log("Course ID:", courseSlug);
