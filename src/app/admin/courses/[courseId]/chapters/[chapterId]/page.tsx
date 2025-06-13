@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import { ArrowLeft, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { ChapterTitleForm } from "./_components/ChapterTitleForm";
+import { ChapterDescriptionForm } from "./_components/chapterDescriptionForm";
 
 const prisma = new PrismaClient();
 
@@ -53,6 +54,11 @@ const ChapterIdPage = async ({params}: {params: Promise<{courseId: string; chapt
                      </div>
                      <ChapterTitleForm
                         initialData={{title: chapter?.title || ""}}
+                        courseId={newParams.courseId}
+                        chapterId={newParams.chapterId}
+                     />
+                     <ChapterDescriptionForm
+                        initialData={{description: chapter?.description || ""}}
                         courseId={newParams.courseId}
                         chapterId={newParams.chapterId}
                      />
