@@ -40,7 +40,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               {course.language}
             </p>
           </div>
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             <span
               className={`text-[14px] text-[#7F7E97] line-through ${inter.className}`}
             >
@@ -51,7 +51,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             >
               {`$ ${course.price.toFixed(2)}`}
             </span>
-          </div>
+          </div> */}
         </div>
 
         <h3

@@ -63,7 +63,7 @@ const SaleBanner = () => {
                 </p>
               </div>
             </div>
-            <div className="hidden md:flex w-full items-center justify-center gap-2 sm:w-auto mx-12">
+            <div className="hidden md:flex w-full items-center justify-center gap-2 sm:w-auto md:mx-4 xl:mx-12">
               <TimeUnit value={timeLeft.days} label="DAYS" />:
               <TimeUnit value={timeLeft.hours} label="HOURS" />:
               <TimeUnit value={timeLeft.minutes} label="MINS" />:
@@ -95,7 +95,7 @@ const SaleBanner = () => {
 const TimeUnit = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
     <div className="min-w-[40px] rounded bg-neutral-00 px-2 py-1 text-center">
-      <div className="font-bold text-[#282828] text-2xl">
+      <div className="font-bold text-[#282828] md:text-xl xl:text-2xl">
         {value.toString().padStart(2, "0")}
       </div>
       <div className="text-[16px] text-neutral-900">{label}</div>

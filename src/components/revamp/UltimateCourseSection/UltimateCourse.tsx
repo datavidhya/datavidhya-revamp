@@ -90,7 +90,12 @@ const UltimateCourse = () => {
                 Zero to Hero <br className="hidden md:block" /> Data
                 Engineering.
               </h2>{" "}
-              <div className="w-full my-3 md:my-0 flex justify-between items-center">
+              <div>
+                <h3 className="text-[16px] w-[90%] mx-auto text-center font-medium text-neutral-500">
+                 Go from zero to job-ready in data engineering - build pipelines, manage big data, succeed.
+                </h3>
+              </div>
+              <div className="w-full my-3 md:my-0 flex gap-4 justify-evenly items-center">
                 <span className="flex items-center">
                   <img
                     src={"/revamp/author.svg"}
@@ -108,7 +113,7 @@ const UltimateCourse = () => {
                   <span className="text-black">5</span> (800+ Reviews)
                 </span>
               </div>{" "}
-              <div className="w-full flex items-center justify-start gap-2 mb-3">
+              {/* <div className="w-full flex items-center justify-start gap-2 mb-3">
                 <span
                   className={` font-bold text-[26px] md:text-[35px] text-[#5751E1] ${inter.className}`}
                 >
@@ -119,7 +124,7 @@ const UltimateCourse = () => {
                 >
                   ${299.0}
                 </span>
-              </div>
+              </div> */}
               <div className="w-full flex justify-between md:justify-start gap-4">
                 <Link href={"https://learn.datavidhya.com/l/b2b9839f3e"}>
                   {" "}
@@ -141,13 +146,13 @@ const UltimateCourse = () => {
           </div>
           <hr className="my-[14px]" />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0">
-            <Linkitems text="230+ Videos" href="/" />
+            <Linkitems text="230+ Videos" href="#" />
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="15+ Project" href="/" />{" "}
+            <Linkitems text="15+ Project" href="#" />{" "}
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="Downloadable Resources" href="/" />{" "}
+            <Linkitems text="Downloadable Resources" href="#" />{" "}
             <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
-            <Linkitems text="Resume + Interview Prep EBooks" href="/" />
+            <Linkitems text="Resume + Interview Prep EBooks" href="#" />
           </div>
         </div>
       </motion.div>

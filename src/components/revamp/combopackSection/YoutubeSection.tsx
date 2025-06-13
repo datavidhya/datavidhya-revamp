@@ -1,5 +1,6 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import ContactForm from "@/components/ui/ContactForm";
 const inter = Inter({ subsets: ["latin"] });
 
 const YoutubeSection = () => {
@@ -33,6 +34,7 @@ const YoutubeSection = () => {
         >
           Have a Question ? Contact US
         </a>
+        <ContactForm />
       </div>
     </div>
   );
