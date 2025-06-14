@@ -1,8 +1,8 @@
+import CourseDetailPage from "@/components/revamp/CourseSection/courseDetails";
 import { PrismaClient } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 const prisma = new PrismaClient();
-
 
 const CourseIdPage = async ({
   params,
@@ -19,7 +19,11 @@ const CourseIdPage = async ({
   if (!course) {
     return redirect("/");
   }
-  return <div>CourseId: {courseId}</div>;
+  return (
+    <div>
+      <CourseDetailPage courseInfo={course} />
+    </div>
+  );
 };
 
 export default CourseIdPage;

@@ -54,5 +54,6 @@ export interface Course {
   ratingCount: number;
   instructorName: string;
   instructorImage: string;
-  createdAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
