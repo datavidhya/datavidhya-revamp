@@ -17,7 +17,7 @@ const Items = ({ text }: prop) => {
 const WhatWillYouLearn = () => {
   return (
     <div>
-      <p className={`text-4xl mt-12 mb-8 font-bold ${inter.className}`}>
+      <p className={`text-5xl mt-12 mb-8 font-bold ${inter.className}`}>
         What Will You Learn ?
       </p>
       <div className="grid grid-cols-2 gap-6 mt-3">

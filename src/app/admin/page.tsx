@@ -3,7 +3,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="w-full p-8 ">
+    <div className="w-full h-screen p-8 ">
       {" "}
       <p className=" text-4xl text-black font-bold text-center ">
         Welcome Admin!!

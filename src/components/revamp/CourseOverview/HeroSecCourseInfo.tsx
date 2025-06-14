@@ -14,23 +14,23 @@ const HeroSecCourseInfo = ({ course }: prop) => {
   return (
     <div className=" my-6">
       <h1
-        className={`sticky top-0 my-6 bg-white text-5xl text-[#222] font-black leading-[130%]  ${poppins.className}`}
+        className={`md:sticky top-0 my-6 bg-white text-2xl max-sm:ml-4 md:text-5xl text-[#222] font-black leading-[130%]  ${poppins.className}`}
       >
         {course.title}
       </h1>
       <p
-        className={`${inter.className} w-[85%] my-6 text-[16px] text-neutral-800 font-light  leading-[140%]`}
+        className={`${inter.className} w-[85%] my-6 text-[16px] max-sm:mx-auto  max-sm:ml-4 text-neutral-800 font-light  leading-[140%]`}
       >
         {course.description}
       </p>
-      <div className="flex gap-3 mt-2 items-center ">
+      <div className="hidden md:flex gap-3 mt-2 items-center ">
         <img src="/revamp/author.svg" className="rounded-full size-12" alt="" />
         <span className="flex flex-col justify-center">
           <h1 className={`text-[18px] font-bold `}>Darshil Parmar</h1>
           <h2 className="text-neutral-700">Data Engineer</h2>
         </span>
       </div>
-      <span className="flex text-md gap-6 my-b mt-8 text-neutral-700 font-medium">
+      <span className="flex text-md gap-6 max-sm:ml-4 my-b mt-8 text-neutral-700 font-medium">
         <p>
           ⭐ {course.rating} ({course.ratingCount}+)
         </p>

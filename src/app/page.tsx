@@ -21,7 +21,6 @@ const Page = () => {
         <img src="/revamp/fadedCircle2.png" alt="" />
       </div> */}
       <Notification />
-      <NavigationBar />
       <HeroSection />
       <UltimateCourse />
       <ProjectSection />

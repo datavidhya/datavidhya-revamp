@@ -17,7 +17,7 @@ const Includes = ({ text }: prop) => {
 };
 const HeroSectionCard = () => {
   return (
-    <div className=" w-full p-4 bg-neutral-200 rounded-2xl">
+    <div className=" w-full p-4 bg-white md:bg-neutral-200 rounded-2xl">
       <div className="relative w-full h-0 pb-[56.25%] max-h-[400px] overflow-hidden rounded-xl">
         <iframe
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"

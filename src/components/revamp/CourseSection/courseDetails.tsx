@@ -10,6 +10,7 @@ import NavigationBar from "@/components/revamp/hero/NavigationBar";
 import Testimony from "@/components/revamp/Testimony/Testimony";
 import { Course } from "@/types";
 import React from "react";
+import OverviewDetailSection from "../CourseOverview/OverviewDetailSection";
 
 interface courseDetailInterface {
   courseInfo: Course;
@@ -20,15 +21,15 @@ const CourseDetailPage = ({ courseInfo }: courseDetailInterface) => {
   return (
     <div>
       {" "}
-      <div className=" max-w-[1360px] mx-auto my-10 flex justify-between">
-        <div className="relative w-[67%] ">
+      <div className=" max-w-[1360px] mx-auto my-10 flex flex-col-reverse md:flex-row justify-between">
+        <div className="relative w-full md:w-[67%] ">
           <HeroSecCourseInfo course={courseInfo} />
           <hr className="my-16" />
           <WhatWillYouLearn />
-          <CourseDetailSection />
+          <OverviewDetailSection />
           <YourInstructor />
         </div>
-        <div className="w-[28%] sticky top-6 h-fit self-start">
+        <div className="w-full md:w-[28%] md:sticky md:top-6 h-fit self-start">
           <HeroSectionCard />
         </div>
       </div>
