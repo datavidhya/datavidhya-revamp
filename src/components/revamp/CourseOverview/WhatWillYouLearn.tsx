@@ -8,7 +8,7 @@ interface prop {
 const Items = ({ text }: prop) => {
   return (
     <div className="w-full flex items-center gap-2">
-      <SlCheck color="purple-400" className="size-5" /> <p className="w-[90%] font-medium tracking-wide">{text}</p>
+      <SlCheck color="purple-400" className="size-5 font-bold" /> <p className="w-[90%] font-medium leading-[120%] tracking-wide">{text}</p>
     </div>
   );
 };

@@ -1,15 +1,19 @@
 import React from "react";
-
-const DataStackCard = () => {
+import { motion } from "framer-motion";
+interface prop {
+  icon: string;
+}
+const DataStackCard = ({ icon }: prop) => {
   return (
-    <div className="h-52 w-80 rounded-xl border border-[#bfbfbf] ">
-      <div className="h-5/6 w-full bg-red-00 overflow-hidden">
-        <img src="/combopack/sampleimage.png" alt="" />
+    <motion.div
+      whileHover={{ y: -6 }}
+      className="w-[90%] md:w-[40%] lg:w-[30%] mx-auto rounded-[6px] border border-[#bfbfbf]/60 p-2  hover:shadow-xl"
+    >
+      <div className="h-6/6 w-full bg-red-00 overflow-hidden">
+        <img src={icon} alt="" className="rounded-[6px]" />
       </div>
-      <div className="h-1/6 bg-red-00  flex items-center pl-2">
-        Sample Text
-      </div>
-    </div>
+      {/* <div className="h-1/6 bg-red-00  flex items-center pl-2">Sample Text</div> */}
+    </motion.div>
   );
 };
 

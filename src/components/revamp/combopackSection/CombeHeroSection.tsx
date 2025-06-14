@@ -31,10 +31,10 @@ export const WhiteBox = ({ text, num }: prop) => {
 };
 export const TickText = ({ text }: prop) => {
   return (
-    <div className="w-full md:w-2/5 flex gap-4 items-center">
-      <HiCheckCircle className="text-white size-[20px]" />
+    <div className="w-full md:w-2/5 flex gap-2  items-center">
+      <HiCheckCircle className="w-[6%]  text-white " />
       <p
-        className={`text-white text-[20px] leading-[24px] font-semibold ${inter.className}`}
+        className={`text-white text-[20px] leading-[24px] font-medium lg:font-semibold ${inter.className}`}
       >
         {text}
       </p>
@@ -54,12 +54,12 @@ const CombeHeroSection = () => {
           Zero to Hero
         </h1>
         <h1
-          className={`${Roboto.className} font-medium text-3xl md:text-4xl text-[#441B65]`}
+          className={`${Roboto.className} font-medium text-center text-3xl md:text-4xl text-[#441B65]`}
         >
           Data Engineering
         </h1>
         <p
-          className={`${gantari.className} text-[16px] leading-[24px] mt-2 text-[#441B65]`}
+          className={`${gantari.className} text-[16px] text-center leading-[24px] mt-2 text-[#441B65]`}
         >
           Designed for Data Engineering
         </p>
@@ -68,7 +68,7 @@ const CombeHeroSection = () => {
         </button>
         {/* <RippleButton>Buy Now</RippleButton> */}
       </div>
-      <div className="w-full md:w-[65%] flex flex-col justify-between gap-8 ">
+      <div className="w-full md:w-[65%] flex flex-col md:flex-row lg:flex-col justify-between gap-8 ">
         <div className="h-4/5 flex flex-col  md:flex-row gap-6 flex-wrap mt-6">
           <TickText text="6 Courses" />
           <TickText text="Free Resources" />
