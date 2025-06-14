@@ -20,7 +20,6 @@ const CourseDetailPage = ({ courseInfo }: courseDetailInterface) => {
   return (
     <div>
       {" "}
-      <NavigationBar />
       <div className=" max-w-[1360px] mx-auto my-10 flex justify-between">
         <div className="relative w-[67%] ">
           <HeroSecCourseInfo course={courseInfo} />
@@ -35,7 +34,6 @@ const CourseDetailPage = ({ courseInfo }: courseDetailInterface) => {
       </div>
       <Testimony />
       <FAQsSection />
-      <Footer />
     </div>
   );
 };

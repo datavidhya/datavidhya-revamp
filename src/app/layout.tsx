@@ -1,8 +1,9 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DynamicTitleSetter from "@/components/revamp/DynamicTitleSetter";
+import Footer from "@/components/revamp/Footer/Footer";
+import NavigationBar from "@/components/revamp/hero/NavigationBar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,8 +19,6 @@ export const metadata: Metadata = {
   description: "best webite for Data Engineering courses",
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,8 +29,10 @@ export default function RootLayout({
       <body
         className={`body ${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
+        <NavigationBar />
         <DynamicTitleSetter />
         {children}
+        <Footer />
       </body>
     </html>
   );

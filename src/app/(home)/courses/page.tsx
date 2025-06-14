@@ -5,7 +5,6 @@ import React from "react";
 const page = () => {
   return (
     <div className="mb-24">
-      <NavigationBar />
       <CoursesSection />
     </div>
   );

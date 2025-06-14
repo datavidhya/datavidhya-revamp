@@ -7,15 +7,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className="bg-white mb-32 ">
-      <div className="">
-        {/* <Link href={"/"}>
-          <SlArrowLeft
-            className=" hidden md:block absolute top-6 left-10 text-black"
-            size={28}
-          />
-        </Link> */}
-        <NavigationBar />
-      </div>
+      <NavigationBar />
       <ProjectSection />
     </div>
   );

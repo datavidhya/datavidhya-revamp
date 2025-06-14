@@ -36,7 +36,6 @@ const combopack = () => {
   ];
   return (
     <>
-      <NavigationBar />
       <CombeHeroSection />
       <div className="flex flex-col items-center mt-10 md:mt-20">
         <h1 className="text-2xl md:text-4xl text-center text-black font-semibold mb-12">
@@ -50,7 +49,6 @@ const combopack = () => {
       <ComboProjectReview />
       <CourseDetailSection />
       <FAQsSection />
-      <Footer />
     </>
   );
 };

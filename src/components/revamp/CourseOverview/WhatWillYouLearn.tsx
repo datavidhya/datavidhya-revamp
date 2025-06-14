@@ -1,5 +1,6 @@
 import React from "react";
-import { SlCheck } from "react-icons/sl";
+import { MdCheckCircle } from "react-icons/md";
+
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 interface prop {
@@ -8,7 +9,8 @@ interface prop {
 const Items = ({ text }: prop) => {
   return (
     <div className="w-full flex items-center gap-2">
-      <SlCheck color="purple-400" className="size-5 font-bold" /> <p className="w-[90%] font-medium leading-[120%] tracking-wide">{text}</p>
+      <MdCheckCircle color="#282828" className="size-6 font-bold" />{" "}
+      <p className="w-[90%] font-medium leading-[120%] tracking-wide">{text}</p>
     </div>
   );
 };

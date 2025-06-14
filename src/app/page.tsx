@@ -42,7 +42,6 @@ const Page = () => {
           className="block md:hidden mx-2"
         />
       </div>
-      <Footer />
     </div>
   );
 };
