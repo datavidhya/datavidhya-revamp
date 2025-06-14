@@ -40,3 +40,19 @@ export interface ApiError {
   error: string;
   details?: any;
 }
+
+export interface Course {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  originalPrice: number;
+  discountPrice: number;
+  image: string;
+  language: string;
+  rating: number;
+  ratingCount: number;
+  instructorName: string;
+  instructorImage: string;
+  createdAt: string;
+}

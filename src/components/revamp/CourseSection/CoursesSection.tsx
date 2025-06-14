@@ -1,44 +1,45 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import CourseCard from "./courseCard";
 import axios from "axios";
-import Shimmer from "@/components/ui/Shimmer";
-
-interface Course {
-  id: number;
-  title: string;
-  slug: string;
-  description: string;
-  originalPrice: number;
-  discountPrice: number;
-  image: string;
-  language: string;
-  rating: number;
-  ratingCount: number;
-  instructorName: string;
-  instructorImage: string;
-  createdAt: string;
-}
+import CourseShimmer from "@/components/ui/Shimmer";
+import { Course } from "@/types";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const CoursesSection = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
-  const fetchCourses = async () => {
+  const [error, setError] = useState("");
+
+  const fetchCourses = useCallback(async () => {
     try {
       const res = await axios.get("/api/v1/admin/courses");
       setCourses(res.data.courses);
     } catch (err) {
       console.error("Error fetching courses:", err);
+      setError("Failed to load courses. Please try again later.");
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
   useEffect(() => {
     fetchCourses();
   }, []);
+
+  if (loading) {
+    return (
+      <div>
+        <CourseShimmer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="text-red-500 text-center">{error}</p>;
+  }
+
   return (
     <div className="bg-[#fff] py-3 md:py-12 text-center">
       <div className="mx-auto max-w-7xl px-4">
@@ -78,7 +79,9 @@ const CoursesSection = () => {
           </p>
         </div>
         {courses.length === 0 ? (
-          <Shimmer />
+          <p className="text-gray-600 mt-4">
+            No courses available at the moment. Please check back later.
+          </p>
         ) : (
           <div className="flex flex-wrap items-center justify-center xl:justify-start gap-x-5 gap-y-5 mx-auto">
             {courses.map((course) => (
@@ -101,7 +104,6 @@ const CoursesSection = () => {
           </div>
         )}
       </div>
-      <div className="w-full text-center mt-9 md:mt-12"></div>
     </div>
   );
 };
