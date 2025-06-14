@@ -14,8 +14,9 @@ const CourseIdPage = async ({
     where: {
       slug: courseId,
     },
+    
   });
-
+console.log(course)
   if (!course) {
     return redirect("/");
   }

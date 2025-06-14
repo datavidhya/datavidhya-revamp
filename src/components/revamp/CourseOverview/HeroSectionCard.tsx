@@ -1,4 +1,6 @@
 import React from "react";
+import { TiChevronRight } from "react-icons/ti";
+
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -7,15 +9,15 @@ interface prop {
 }
 const Includes = ({ text }: prop) => {
   return (
-    <div>
-      <div></div>
+    <div className="flex gap-2 items-center">
+      <TiChevronRight />
       <p className={`font-medium ${inter.className}`}>{text}</p>
     </div>
   );
 };
 const HeroSectionCard = () => {
   return (
-    <div className=" w-full p-4 bg-neutral-300 rounded-2xl">
+    <div className=" w-full p-4 bg-neutral-200 rounded-2xl">
       <div className="relative w-full h-0 pb-[56.25%] max-h-[400px] overflow-hidden rounded-xl">
         <iframe
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -50,7 +52,7 @@ const HeroSectionCard = () => {
         </button>
       </div>
       <hr />
-      <div className="my-4">
+      <div className="my-4 px-4">
         <p className="text-xl font-normal mb-2">This Course Includes : </p>
         <span className="gap-1.5">
           <Includes text="qweqeqwqwe" />
@@ -60,6 +62,16 @@ const HeroSectionCard = () => {
           <Includes text="sdvbsdfgb" />
           <Includes text="s bsfgb bs" />
         </span>
+      </div>
+      <div className="flex flex-col mt-6 px-4">
+        <p className="text-xl font-normal mb-3 ">
+          Not sure if this course is for you?
+        </p>
+        <button
+          className={`rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105  sm:py-3 ${inter.className}`}
+        >
+          Contact Us
+        </button>
       </div>
     </div>
   );

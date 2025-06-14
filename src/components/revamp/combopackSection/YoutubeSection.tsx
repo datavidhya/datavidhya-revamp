@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Inter } from "next/font/google";
 import ContactForm from "@/components/ui/ContactForm";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const YoutubeSection = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="my-16 mt-40">
       <h1 className="text-2xl md:text-5xl font-semibold md:font-bold text-center text-black">
@@ -21,21 +26,24 @@ const YoutubeSection = () => {
           />
         </div>
       </div>
-         <div className="w-full px-4 flex flex-col md:flex-row justify-center gap-1.5 md:gap-4 mb-12 md:mb-12 mt-4 items-center">
+
+      <div className="w-full px-4 flex flex-col md:flex-row justify-center gap-1.5 md:gap-4 mb-12 md:mb-12 mt-4 items-center">
         <a
           href={"/combopack"}
           className={`w-full md:w-auto text-center rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
         >
           Buy Now
-        </a>{" "}
-        <a
-          href={"https://code.datavidhya.com/"}
-          className={`w-full md:w-auto text-center rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105  sm:py-3 ${inter.className}`}
-        >
-          Have a Question ? Contact US
         </a>
-        <ContactForm />
+
+        <button
+          onClick={() => setShowForm(true)}
+          className={`w-full md:w-auto text-center rounded-[12px] bg-[#2E2E2E] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
+        >
+          Have a Question ? Contact Us
+        </button>
       </div>
+
+      {showForm && <ContactForm showForm={showForm} setShowForm={setShowForm} />}
     </div>
   );
 };

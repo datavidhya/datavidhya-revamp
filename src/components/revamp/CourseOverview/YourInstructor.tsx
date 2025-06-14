@@ -16,7 +16,7 @@ const YourInstructor = () => {
           <h3 className="text-lg font-normal text-neutral-700 ">
             Data Engineer{" "}
           </h3>
-          <p className="leading-[125%] mt-1 text-neutral-700">
+          <p className="leading-[125%] my-3 text-neutral-700">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
             non placeat amet esse quaerat temporibus ab saepe dolores iure in,
             Blanditiis inventore facere corporis totam veniam. Asperiores nulla
