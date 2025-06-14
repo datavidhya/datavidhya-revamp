@@ -16,7 +16,7 @@ const CourseIdPage = async ({
     },
     
   });
-console.log(course)
+// console.log(course)
   if (!course) {
     return redirect("/");
   }

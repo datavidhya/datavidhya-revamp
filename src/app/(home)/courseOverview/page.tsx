@@ -12,7 +12,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <NavigationBar />
+      {/* <NavigationBar />
       <div className=" max-w-[1360px] mx-auto my-10 flex justify-between">
         <div className="w-[67%] ">
           <HeroSecCourseInfo />
@@ -27,7 +27,7 @@ const page = () => {
       </div>
       <Testimony />
       <FAQsSection />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

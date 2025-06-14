@@ -38,18 +38,18 @@ const CourseDetailSection = () => {
     }
   };
 
-  const deleteCourseDetail = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this course detail?")) return;
+  // const deleteCourseDetail = async (id: string) => {
+  //   if (!confirm("Are you sure you want to delete this course detail?")) return;
 
-    try {
-      await axios.delete(`/api/v1/admin/courseDetail/${id}`);
-      toast.success("Course detail deleted");
-      setCourseDetails((prev) => prev.filter((detail) => detail.id !== id));
-    } catch (err) {
-      console.error("Error deleting course detail:", err);
-      toast.error("Failed to delete course detail");
-    }
-  };
+  //   try {
+  //     await axios.delete(`/api/v1/admin/courseDetail/${id}`);
+  //     toast.success("Course detail deleted");
+  //     setCourseDetails((prev) => prev.filter((detail) => detail.id !== id));
+  //   } catch (err) {
+  //     console.error("Error deleting course detail:", err);
+  //     toast.error("Failed to delete course detail");
+  //   }
+  // };
 
   useEffect(() => {
     fetchCourseDetails();
@@ -58,14 +58,14 @@ const CourseDetailSection = () => {
     setOpenAccordion(openAccordion === title ? null : title);
   };
   return (
-    <div className="mx-auto px-2 md:px-28 my-16">
+    <div className="mx-auto px-2 md:px-28 mb-16 mt-20">
       <h1
         className={`w-full text-3xl md:text-5xl text-black font-semibold md:font-bold leading-[120%] text-center mb-6 md:mb-10 ${inter.className}`}
       >
         Course Details
       </h1>
       <div>
-        <div className="flex  justify-left">
+        <div className="flex mx-auto max-md:w-[98%] max-lg:w-3/4 lg:w-4/5">
           <span className="flex flex-col md:flex-row ml-6 gap-2 md:gap-5 items-start md:items-center">
             <SumUpText text="10 Lessons" />
             <SumUpText text="20 Videos" />
@@ -73,9 +73,8 @@ const CourseDetailSection = () => {
             <SumUpText text="18 Assignments" />
             <SumUpText text="24h 32min Completion Time" />
           </span>
-         
         </div>{" "}
-        <div className="mx-auto mt-8 md:mt-[65px] max-md:w-[98%] max-lg:w-3/4 lg:w-4/5">
+        <div className="mx-auto mt-4 md:mt-[65px] max-md:w-[98%] max-lg:w-3/4 lg:w-4/5">
           <div className="mx-auto flex w-full max-lg:flex-col">
             <div className="mt-0 md:mt-2 size-full max-lg:w-full mb-16 border-b">
               {courseDetails.map((item: any, index: any) => (
