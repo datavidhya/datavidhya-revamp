@@ -13,15 +13,18 @@ const inter = Inter({ subsets: ["latin"] });
 interface prop {
   text: string;
 }
+interface HeroSectionCardProps {
+  youtubeUrl: string;
+}
 const Includes = ({ text }: prop) => {
   return <p className={`font-medium ${inter.className}`}>{text}</p>;
 };
-const HeroSectionCard = () => {
+const HeroSectionCard = ({ youtubeUrl }: HeroSectionCardProps) => {
   return (
     <div className=" w-full p-4 bg-white md:bg-neutral-200 rounded-2xl">
       <div className="relative w-full h-0 pb-[56.25%] max-h-[400px] overflow-hidden rounded-xl">
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src={youtubeUrl}
           title="YouTube video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
