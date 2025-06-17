@@ -1,5 +1,11 @@
 import React from "react";
 import { TiChevronRight } from "react-icons/ti";
+import { FaRegCirclePlay } from "react-icons/fa6";
+import { LuFileCode2 } from "react-icons/lu";
+import { MdQuiz } from "react-icons/md";
+import { MdDevices } from "react-icons/md";
+import { IoTime } from "react-icons/io5";
+import { GiTrophy } from "react-icons/gi";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -38,14 +44,34 @@ const HeroSectionCard = () => {
       <hr />
       <div className="my-4 px-4">
         <p className="text-xl font-normal mb-2">This Course Includes : </p>
-        <span className="gap-1.5">
-          <Includes text="65+ Video Tutorials" />
-          <Includes text="Coding Exercises" />
-          <Includes text="Quiz" />
-          <Includes text="Multiple Device Access" />
-          <Includes text="Lifetime Access" />
-          <Includes text="Completion Certificate" />
-        </span>
+        <div className="gap-1.5">
+          <span className="flex gap-2 items-center">
+            {" "}
+            <FaRegCirclePlay />
+            <Includes text="65+ Video Tutorials" />
+          </span>
+          <span className="flex  gap-2 items-center">
+            {" "}
+            <LuFileCode2 />
+            <Includes text="Coding Exercises" />
+          </span>
+          <span className="flex  gap-2 items-center">
+            {" "}
+            <MdQuiz />
+            <Includes text="Quiz" />
+          </span>
+          <span className="flex  gap-2 items-center">
+            <MdDevices /> <Includes text="Multiple Device Access" />
+          </span>
+          <span className="flex  gap-2 items-center">
+            <IoTime /> <Includes text="Lifetime Access" />
+          </span>
+          <span className="flex gap-2  items-center">
+            {" "}
+            <GiTrophy />
+            <Includes text="Completion Certificate" />
+          </span>
+        </div>
       </div>
       <div className="flex flex-col mt-6 px-4">
         <p className="text-xl font-normal mb-3 ">

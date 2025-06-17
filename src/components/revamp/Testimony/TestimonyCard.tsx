@@ -51,20 +51,20 @@ const TestimonyCard = ({ testimony }: testimony) => {
         </blockquote>
       </div>
       <div className="mt-5 flex justify-between">
-        <Image
-          alt="pfp"
-          src={testimony.image}
-          height={56}
-          width={56}
-          className="rounded-full size-10 md:size-12"
-        ></Image>
-        <span className="text-left -ml-7 md:-ml-10 flex flex-col justify-center">
-          <h2 className="text-[16px] md:text-lg font-semibold leading-[150%] text-black">
-            {testimony.name}
-          </h2>
-          {/* <h4 className="font-normal leading-[150%] text-[14px] md:text-[1rem] text-black">
-            {position}, {companyName}
-          </h4> */}
+        <span className="flex gap-4 items-center">
+          {" "}
+          <Image
+            alt="pfp"
+            src={testimony.image}
+            height={56}
+            width={56}
+            className="rounded-full size-10 md:size-12"
+          ></Image>
+          <span className="text-left flex flex-col justify-center">
+            <h2 className="text-[16px] md:text-lg font-semibold leading-[150%] text-black">
+              {testimony.name}
+            </h2>
+          </span>
         </span>
         <Image
           alt="linkedIn"

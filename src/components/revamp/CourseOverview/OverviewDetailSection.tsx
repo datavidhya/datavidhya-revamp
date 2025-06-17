@@ -36,7 +36,6 @@ export const SumUpText = ({ text }: prop) => {
   );
 };
 
-
 const ChapterItem = ({
   chapter,
   courseSlug,
@@ -247,7 +246,7 @@ const OverviewDetailSection = ({ course }: OverviewDetailSectionProps) => {
   return (
     <div className="mx-auto px-2 mb-16 mt-20">
       <h2
-        className={`w-full text-2xl md:text-3xl text-black font-semibold leading-[120%] mb-6 ${inter.className}`}
+        className={`w-full text-2xl md:text-3xl lg:text-5xl text-black font-semibold md:font-bold leading-[120%] mb-6 ${inter.className}`}
       >
         Course Content
       </h2>
