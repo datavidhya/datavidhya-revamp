@@ -34,9 +34,9 @@ const HeroSecCourseInfo = ({ course }: prop) => {
         <p>
           ⭐ {course.rating} ({course.ratingCount}+)
         </p>
-        <p className="flex items-center gap-2">
-          <FaPeopleGroup color="black" /> 25000+ Students
-        </p>
+        <div className="flex flex-col md:flex-row md:justify-center items-center gap-2">
+          <FaPeopleGroup color="black" /> <p>25000+ Students</p>
+        </div>
         <p className="flex items-center gap-2">
           <IoIosInformationCircle />
           Last Updated on 06/2025

@@ -7,7 +7,6 @@ export const metadata = {
 const page = () => {
   return (
     <div className="bg-white mb-32 ">
-      <NavigationBar />
       <ProjectSection />
     </div>
   );

@@ -10,19 +10,15 @@ const ProjectCard = ({
   description,
   image,
   topic,
-  slug
+  slug,
 }: ProjectCardProps) => {
   return (
-    <div className="rounded-[28px] shadow-[0_15px_30px_-12px_rgba(0,0,0,0.25)] transition-transform duration-600 ease-in-out hover:[transform:perspective(1500px)_rotateY(18deg)] [transform:perspective(3000px)_rotateY(0deg)] ">
-      <div className="w-[20rem] md:w-[25rem] rounded-[28px] border border-[#d7d7d7] p-4 md:p-6 ">
+    <div className=" rounded-[28px] shadow-[0_15px_30px_-12px_rgba(0,0,0,0.25)] transition-transform duration-600 ease-in-out hover:[transform:perspective(1500px)_rotateY(18deg)] [transform:perspective(3000px)_rotateY(0deg)] ">
+      <div className="w-[20rem] md:w-[25rem] h-auto rounded-[28px] border border-[#d7d7d7] p-4 md:p-3 ">
         <div className="mb-3 overflow-hidden rounded-[13px] border border-[#D7D7D7]">
-          <img
-            src={image}
-            alt={slug}
-            className="h-48 w-full object-cover"
-          />
+          <img src={image} alt={slug} className="h-auto w-full object-cover" />
         </div>
-        <div className="space-y-3">
+        {/* <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className={` font-medium text-[#6D6C80] ${inter.className}`}>
               {title}
@@ -38,7 +34,7 @@ const ProjectCard = ({
           >
             {description}
           </p>
-        </div>{" "}
+        </div>{" "} */}
       </div>
     </div>
   );
