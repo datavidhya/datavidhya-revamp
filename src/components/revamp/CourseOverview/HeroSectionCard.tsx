@@ -8,12 +8,7 @@ interface prop {
   text: string;
 }
 const Includes = ({ text }: prop) => {
-  return (
-    <div className="flex gap-2 items-center">
-      <TiChevronRight />
-      <p className={`font-medium ${inter.className}`}>{text}</p>
-    </div>
-  );
+  return <p className={`font-medium ${inter.className}`}>{text}</p>;
 };
 const HeroSectionCard = () => {
   return (
@@ -27,18 +22,7 @@ const HeroSectionCard = () => {
           className="absolute top-0 left-0 w-full h-full rounded-xl"
         />
       </div>
-      {/* <div className="flex items-center gap-2">
-        <span
-          className={`text-[26px] font-bold text-[#5751E1] ${inter.className}`}
-        >
-          6000
-        </span>
-        <span
-          className={`text-[20px] text-[#7F7E97] line-through ${inter.className}`}
-        >
-          11000
-        </span>
-      </div> */}
+
       <div className="w-full px-4 flex flex-col justify-center gap-1.5 md:gap-2 mb-12 md:mb-6 mt-6">
         <button
           className={`rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-6 py-2.5 font-normal md:font-semibold text-white transition-transform hover:scale-105 sm:py-3 ${inter.className}`}
@@ -55,12 +39,12 @@ const HeroSectionCard = () => {
       <div className="my-4 px-4">
         <p className="text-xl font-normal mb-2">This Course Includes : </p>
         <span className="gap-1.5">
-          <Includes text="qweqeqwqwe" />
-          <Includes text="wrwfwerfwf" />
-          <Includes text="edawdfc" />
-          <Includes text="sdffvsdfgvb" />
-          <Includes text="sdvbsdfgb" />
-          <Includes text="s bsfgb bs" />
+          <Includes text="65+ Video Tutorials" />
+          <Includes text="Coding Exercises" />
+          <Includes text="Quiz" />
+          <Includes text="Multiple Device Access" />
+          <Includes text="Lifetime Access" />
+          <Includes text="Completion Certificate" />
         </span>
       </div>
       <div className="flex flex-col mt-6 px-4">
