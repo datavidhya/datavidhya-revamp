@@ -40,12 +40,12 @@ const TestimonyCard2 = ({ testimony }: testimony) => {
             className=" size-12 md:size-9"
           ></Image>
         </div>
-        <div className="h-22.1 overflow-hidden">
+        <div className="h-22 overflow-hidden ">
           {" "}
           <blockquote>
             {" "}
             <p className="text-[17px] text-white tracking-tight font-light leading-[130%]">
-              "{testimony.description}"
+              {testimony.description}
             </p>
           </blockquote>
         </div>

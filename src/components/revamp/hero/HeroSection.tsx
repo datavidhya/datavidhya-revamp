@@ -1,8 +1,10 @@
+"use client"
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import Link from "next/link";
 import Hero from "./Hero";
+import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 const HeroSection = () => {
@@ -56,11 +58,52 @@ const HeroSection = () => {
         Trusted by 25,000+ Aspiring & Working Data Engineers Engineers from top
         companies use DataVidhya to upskill & switch careers
       </p>
-      <img
+      {/* <img
         className="p-3 mb-10 md:mb-32  "
         src="/revamp/brand.svg"
         alt="brands"
-      />
+      /> */}
+      <div className="w-full md:w-4/5 max-w-[1240px] overflow-hidden">
+        <motion.div
+          className="flex gap-8 p-3 mb-10 md:mb-32"
+          animate={{ x: "-50%" }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          }}
+        >
+          {[...Array(2)].flatMap((_, i) => [
+            <img
+              key={`oracle-${i}`}
+              src="/revamp/hero/oracle.svg"
+              alt="oracle"
+            />,
+            <img key={`proto-${i}`} src="/revamp/hero/proto.svg" alt="proto" />,
+            <img
+              key={`samsung-${i}`}
+              src="/revamp/hero/samsung.svg"
+              alt="samsung"
+            />,
+            <img
+              key={`segment-${i}`}
+              src="/revamp/hero/segment.svg"
+              alt="segment"
+            />,
+            <img
+              key={`zeppline-${i}`}
+              src="/revamp/hero/zeppline.svg"
+              alt="zepline"
+            />,
+            <img
+              key={`monday-${i}`}
+              src="/revamp/hero/monday.svg"
+              alt="monday"
+            />,
+          ])}
+        </motion.div>
+      </div>
 
       <div className="p-1.5 md:p-4 mx-2 rounded-[8px] bg-[#A434EA]/10 border border-[#000]/20  md:z-10">
         <img src="/revamp/heroScreenshot.svg" alt="background" />
