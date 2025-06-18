@@ -8,6 +8,7 @@ import { Notification } from "@/components/revamp/notification/notification";
 import ProjectSection from "@/components/revamp/ProjectSection/projectSection";
 import ViewCounter from "@/components/revamp/socialMediaCounter/ViewCounter";
 import Testimony from "@/components/revamp/Testimony/Testimony";
+import Testimony2 from "@/components/revamp/Testimony/Testimony2";
 import UltimateCourse from "@/components/revamp/UltimateCourseSection/UltimateCourse";
 import React from "react";
 
@@ -26,6 +27,7 @@ const Page = () => {
       <ProjectSection />
       <LeetcodeProblem />
       <Testimony />
+      <Testimony2 />
       <FAQsSection />
       <TopicCovered />
       <ViewCounter />

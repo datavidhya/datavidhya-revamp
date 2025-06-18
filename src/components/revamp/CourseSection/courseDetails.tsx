@@ -48,7 +48,7 @@ const CourseDetailPage = ({ courseInfo }: courseDetailInterface) => {
           <HeroSecCourseInfo course={courseInfo} />
           <hr className="my-16" />
           <WhatWillYouLearn />
-          <OverviewDetailSection course={courseInfo} />
+          <OverviewDetailSection />
           <YourInstructor />
         </div>
         <div className="w-full md:w-[28%] md:sticky md:top-6 h-fit self-start">
