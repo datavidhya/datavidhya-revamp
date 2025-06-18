@@ -25,9 +25,9 @@ model testimonial {
 }
 
 model course {
-  id              Int      @id @default(autoincrement())
+  id              Int    @id @default(autoincrement())
   title           String
-  slug            String   @unique
+  slug            String @unique
   description     String
   originalPrice   Float
   discountPrice   Float
@@ -38,26 +38,26 @@ model course {
   instructorName  String
   instructorImage String
 
-  chapters        Chapter[]
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  chapters  Chapter[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
-
 //  Course Chapter Model 
-model Chapter{
-  id String @id @default(uuid())
-  title String
+
+model Chapter {
+  id          String  @id @default(uuid())
+  title       String
   description String? @db.Text
-  videoUrl String @db.Text
-  position Int
+  videoUrl    String  @db.Text
+  position    Int
   isPublished Boolean @default(false)
-  isFree Boolean @default(false)
+  isFree      Boolean @default(false)
 
   muxData MuxData?
 
   courseId Int
-  course course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  course   course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   userProgress UserProgress[]
 
@@ -69,23 +69,23 @@ model Chapter{
 
 //  Mux model for processing video data
 
-model MuxData{
-  id String @id @default(uuid())
-  assetId String
+model MuxData {
+  id         String  @id @default(uuid())
+  assetId    String
   playbackId String?
 
-  chapterId String @unique
-  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  chapterId String  @unique
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
 }
 
 // UserProgress model
 
-model UserProgress{
-  id String
+model UserProgress {
+  id     String
   userId String
 
   chapterId String
-  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
 
   isCompleted Boolean @default(false)
 
@@ -118,16 +118,16 @@ model project {
   updatedAt   DateTime @updatedAt
 }
 
-model user {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  image     String
-  password  String
-  role      String   @default("user")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
+// model user {
+//   id        Int      @id @default(autoincrement())
+//   name      String
+//   email     String   @unique
+//   image     String
+//   password  String
+//   role      String   @default("user")
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
 
 model purchase {
   id          String   @id @default(uuid())
@@ -137,7 +137,7 @@ model purchase {
 }
 
 model CourseDetail {
-  id String @id @default(uuid())
+  id       String  @id @default(uuid())
   title    String
   content  String
   content2 String?
@@ -153,4 +153,64 @@ model CourseDetail {
   time6    String?
   mins     Int
   Sections Int
+}
+
+model User {
+  id            String    @id
+  name          String
+  email         String
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime
+  updatedAt     DateTime
+  sessions      Session[]
+  accounts      Account[]
+
+  @@unique([email])
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
 }
