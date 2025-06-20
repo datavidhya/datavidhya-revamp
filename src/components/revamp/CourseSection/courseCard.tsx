@@ -22,7 +22,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   return (
-    <div className="w-[20rem] lg:w-[25rem]  overflow-hidden rounded-3xl border border-[#D7D7D7]  bg-white p-4 md:p-6">
+    <div className="w-[20rem] lg:w-[25rem]  overflow-hidden rounded-3xl border border-neutral-800  bg-neutral-900 p-4 md:p-6">
       <div className="relative">
         <img
           src={course.img || "/api/placeholder/400/250"}
@@ -33,29 +33,17 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
 
       <div className="mt-3">
         <div className="mb-2 flex items-center justify-between">
-          <div className="rounded-[50px] bg-[#EFEFF2] px-3  py-1">
+          <div className="rounded-[50px] bg-neutral-800 px-3  py-1">
             <p
-              className={`bg-transparent text-[13px] font-medium text-[#161439] ${inter.className}`}
+              className={`bg-transparent text-[13px] font-medium text-neutral-400 ${inter.className}`}
             >
               {course.language}
             </p>
           </div>
-          {/* <div className="flex gap-2">
-            <span
-              className={`text-[14px] text-[#7F7E97] line-through ${inter.className}`}
-            >
-              ${course.originalPrice.toFixed(2)}
-            </span>
-            <span
-              className={`text-[16px] font-bold text-[#5751E1] ${inter.className}`}
-            >
-              {`$ ${course.price.toFixed(2)}`}
-            </span>
-          </div> */}
         </div>
 
         <h3
-          className={`my-4 text-start line-clamp-2 text-lg font-semibold leading-6 text-[#333333] ${inter.className}`}
+          className={`my-4 text-start line-clamp-2 text-lg font-semibold leading-6 text-white ${inter.className}`}
         >
           {course.name}
         </h3>
@@ -67,7 +55,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               alt={course.instructor}
               className="size-8 rounded-full border"
             />
-            <span className="ml-2 text-[15px] font-medium text-[#6D6C80]">
+            <span className="ml-2 text-[15px] font-medium text-neutral-400">
               {course.instructor}
             </span>
           </div>
@@ -88,7 +76,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               ))}
             </div>
             <span
-              className={`text-sm font-medium text-[#9EA1AE] ${inter.className}`}
+              className={`text-sm font-medium text-neutral-400 ${inter.className}`}
             >
               ({course.reviews}+ Reviews)
             </span>
@@ -98,7 +86,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         <div className="flex w-full justify-end">
           <a
             href={course.courseLink}
-            className={`block w-[124px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-2 text-center text-sm font-semibold text-white ${inter.className}`}
+            className={`block w-[124px] rounded-[10px] bg-blue-600 px-4 py-2 text-center text-sm font-semibold text-white ${inter.className}`}
           >
             Enroll Now
           </a>

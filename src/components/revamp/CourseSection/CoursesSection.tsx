@@ -41,40 +41,17 @@ const CoursesSection = () => {
   }
 
   return (
-    <div className="bg-[#fff] py-3 md:py-12 text-center">
+    <div className=" py-3 md:py-14 text-center">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-2 md:mb-12 text-center">
           <h2
-            className={`mb-2 text-3xl md:text-5xl font-bold leading-[120%] text-[#000000] ${inter.className}`}
+            className={`mb-2 text-3xl md:text-5xl text-white font-bold leading-[120%]  ${inter.className}`}
           >
             Explore Our Data Engineering
             <br className="hidden md:block" />
-            <span className="ml-2 relative inline-block">
-              Courses
-              <svg
-                className="absolute -bottom-5 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
-                width="200"
-                height="35"
-                viewBox="0 0 200 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10,25 Q100,10 190,25"
-                  stroke="#a855f7"
-                  strokeWidth="3"
-                  fill="transparent"
-                />
-                <path
-                  d="M10,30 Q100,15 190,30"
-                  stroke="#a855f7"
-                  strokeWidth="3"
-                  fill="transparent"
-                />
-              </svg>
-            </span>
+            <span className="ml-2 relative inline-block">Courses</span>
           </h2>
-          <p className={`mt-5 text-[18px] text-[#000000] ${inter.className}`}>
+          <p className={`mt-5 text-[18px] text-neutral-400 ${inter.className}`}>
             Unlock your potential with our expert-led courses.
           </p>
         </div>
