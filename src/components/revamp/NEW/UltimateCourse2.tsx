@@ -64,7 +64,7 @@ const UltimateCourse2 = () => {
         </div>
         <div className="mx-auto mt-[30px] flex w-full justify-center">
           <p
-            className={`text-center text-[18px] text-[#fff] ${inter.className}`}
+            className={`text-center text-[18px] text-neutral-400 ${inter.className}`}
           >
             Go from data novice to engineering pro, faster than{" "}
             <br className="hidden md:block" /> you thought possible.
