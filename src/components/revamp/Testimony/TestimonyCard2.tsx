@@ -28,8 +28,8 @@ const TestimonyCard2 = ({ testimony }: testimony) => {
               <h2 className="text-lg md:text-xl font-normal  text-white">
                 {testimony.name}
               </h2>
-              <p className="text-sm text-neutral-400">Frontend Engineer</p>
-              <p className="text-sm text-[#2db6ec]">amazon</p>
+              <p className="text-sm text-neutral-400">Data Engineer</p>
+              {/* <p className="text-sm text-[#2db6ec]">amazon</p> */}
             </div>
           </div>
           <Image

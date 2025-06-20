@@ -14,28 +14,37 @@ interface CoveredImage {
   projectImgUrl: string;
   userProjectUrl: string;
 }
+interface projectFeedback {
+  topic: string;
+  slug: string;
+  title: string;  
+  id: number;
+  name: string;
+  description: string;
+  linkedInUrl: string;
+  image: string;
+  projectImage: string;
+  createdAt: string;
+}
 
 // Main component to fetch and display project reviews
 export const ProjectFeedBack = () => {
-  const [projectReviews, setProjectReviews] = useState<CoveredImage[]>([]);
-  const hasFetchedData = useRef(false);
+  const [loading, setLoading] = useState(true);
 
-  // Fetch project reviews when component mounts
-  useEffect(() => {
-    const fetchAllProjectReviews = async () => {
-      try {
-        const res = await axios.get(`/api/v1/admin/projectFeedback`);
-        setProjectReviews(res.data.data);
-      } catch (error) {
-        console.error("Error fetching project reviews:", error);
-      }
-    };
-
-    // Ensure the data is fetched only once
-    if (!hasFetchedData.current) {
-      fetchAllProjectReviews();
-      hasFetchedData.current = true;
+  const [projectFeedback, setProjectFeedback] = useState<projectFeedback[]>([]);
+  const fetchProjectFeedback = async () => {
+    try {
+      const res = await axios.get("/api/v1/admin/projectFeedback");
+      setProjectFeedback(res.data.projectFeedbacks);
+    } catch (err) {
+      console.error("Error fetching courses:", err);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchProjectFeedback();
   }, []);
 
   return (
@@ -49,14 +58,14 @@ export const ProjectFeedBack = () => {
           their career in data engineering.
         </p>
       </div>
-      <ProjectFeedCard projectReviews={projectReviews} />
+      <ProjectFeedCard projectReviews={projectFeedback} />
       <div className="mt-1.5 flex w-full justify-end  pr-36 max-md:text-center">
-        <Link
+        {/* <Link
           href={"/students-projects"}
           className="cursor-pointer text-white dark:text-black "
         >
           Show more
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
