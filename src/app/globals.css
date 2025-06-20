@@ -85,14 +85,17 @@
       transform: rotate(-5deg) scale(0.9);
     }
   }
-  --animate-rippling: rippling var(--duration) ease-out
-;
+  --animate-rippling: rippling var(--duration) ease-out;
   @keyframes rippling {
-  0% {
-    opacity: 1;}
-  100% {
-    transform: scale(2);
-    opacity: 0;}}}
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}
 
 :root {
   --radius: 0.625rem;
@@ -357,4 +360,151 @@
 }
 .scrollBar::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 1650px) {
+  .sliderBg {
+    border: 1px solid white;
+  }
+  .textRevealBg {
+    height: 130vh;
+  }
+  .textRevealText {
+    font-size: 48px;
+  }
+  .sliderCard {
+    width: 460px;
+    height: 320px;
+  }
+  .courseCardCovered {
+    width: 420px;
+    height: 280px;
+  }
+  .sliderText {
+    width: 60%;
+  }
+  .sliderCard {
+    width: 510.67px;
+    height: 280.61px;
+  }
+  .testimonialCards {
+    width: 426px;
+    height: 477px;
+  }
+  .testimonialText {
+    font-size: 22px;
+  }
+  .courseForWhoCard {
+    width: 400px;
+    height: 400px;
+  }
+  .courseForWhoCardHeading {
+    font-size: 32px;
+  }
+  .courseForWhoCardtext {
+    font-size: 21px;
+  }
+  .courseForWhoSubCard {
+    width: 300px;
+    height: 250px;
+  }
+  .techStackSize {
+    width: 8rem;
+    height: 8rem;
+  }
+  .techStackHeading {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1650px) {
+  .title {
+    font-size: 80px;
+    width: 83%;
+    line-height: 96px;
+  }
+  .subTitle {
+    font-size: 26px;
+  }
+  .subInstructorImage {
+    width: 53px;
+    height: 56px;
+  }
+  .subInstructorTitle {
+    font-size: 21px;
+  }
+  .mainImage {
+    width: 803px;
+    height: 500px;
+  }
+  .comboPackBtn {
+    width: 213px;
+    height: 64px;
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 1.2rem; /* Adjust paragraph font size */
+  }
+}
+
+.monileNavbarBg {
+  background: rgba(43, 43, 43, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(43, 43, 43, 0.25);
+}
+
+.ProjectSliderBg {
+  background: rgb(12, 12, 12);
+  background: linear-gradient(
+    0deg,
+    rgba(12, 12, 12, 1) 0%,
+    rgba(27, 27, 27, 1) 100%
+  );
+}
+.Sliderborder {
+  border-image: linear-gradient(to bottom, #707070 0%, #000000 100%) 1;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2rem;
+  border-radius: 0;
+}
+
+.shadow-inner {
+  box-shadow: inset 0 0 13px white;
+}
+.Blue_shadow-inner {
+  box-shadow: inset 0 0 18px white;
+}
+.courseCoveredInnerShadow {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.404);
+}
+.Black-shadow-inner {
+  box-shadow: inset 0 0 7px rgba(83, 83, 83, 0.493);
+}
+.comboCourseSubCardBoxShadow {
+  box-shadow: 0 0 5px rgb(82, 81, 81);
+}
+.h4-bold {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dark .h4-bold {
+  color: #01103d;
+}
+
+@media (max-width: 1024px) {
+  .h4-bold {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .h4-bold {
+    font-size: 24px;
+  }
 }

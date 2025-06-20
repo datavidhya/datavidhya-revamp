@@ -42,7 +42,7 @@ const SaleBanner = () => {
     <div
       className={`${
         cross ? "hidden" : "block"
-      } inset-x-0 top-0 w-full bg-purple-200 `}
+      } inset-x-0 top-0 w-full bg-zinc-300 `}
     >
       <div className="mx-auto max-w-8xl p-2">
         <div className="relative flex flex-col items-center justify-center gap-2 md:gap-12 sm:flex-row">

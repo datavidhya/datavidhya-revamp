@@ -4,6 +4,8 @@ import "./globals.css";
 import DynamicTitleSetter from "@/components/revamp/DynamicTitleSetter";
 import Footer from "@/components/revamp/Footer/Footer";
 import NavigationBar from "@/components/revamp/hero/NavigationBar";
+import Footer2 from "@/components/revamp/NEW/Footer2";
+import NavigationBar2 from "@/components/revamp/NEW/Navigationbar2";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`body ${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`body ${geistSans.variable} ${geistMono.variable} bg-black antialiased overflow-x-hidden`}
       >
-        <NavigationBar />
+        <NavigationBar2 />
         <DynamicTitleSetter />
         {children}
-        <Footer />
+        <Footer2 />
       </body>
     </html>
   );

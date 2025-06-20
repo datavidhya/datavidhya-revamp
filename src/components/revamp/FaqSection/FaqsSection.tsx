@@ -20,15 +20,15 @@ const FAQsSection = () => {
   };
 
   return (
-    <div className="w-full bg-[#F7F7FB]  py-6 md:py-28">
+    <div className="w-full bg-[#000]  py-6 md:py-28">
       <div className="faqWidht z-40 mx-auto max-md:my-4 max-md:w-[90%]">
         <h2
-          className={`faqheading mx-auto   text-center text-[48px] font-bold text-[#000000] ${roboto.className}`}
+          className={`faqheading mx-auto   text-center text-[48px] font-bold text-[#fff] ${roboto.className}`}
         >
           FAQs
         </h2>
         <p
-          className={`mx-auto w-full text-center text-[18px] text-[#000000] ${roboto.className}`}
+          className={`mx-auto w-full text-center text-[18px] text-[#fff] ${roboto.className}`}
         >
           Find answers to your most pressing questions about our data
           engineering courses and platform.
@@ -50,12 +50,12 @@ const FAQsSection = () => {
           </div>
         </div>
         <h2
-          className={`text-center text-[32px] font-bold text-[#000000] ${inter.className} mt-[60px]`}
+          className={`text-center text-[32px] font-bold text-[#fff] ${inter.className} mt-[60px]`}
         >
           Still have questions?
         </h2>
         <p
-          className={`text-center text-[18px] font-normal text-[#000000] ${roboto.className} mt-[10px]`}
+          className={`text-center text-[18px] font-normal text-[#fff] ${roboto.className} mt-[10px]`}
         >
           We&apos;re here to help you!
         </p>
