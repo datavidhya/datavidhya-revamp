@@ -31,7 +31,7 @@ const NavigationBar2 = () => {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative max-w-[1262px] bg-black mx-auto mt-3 px-4 h-[68px] "
+        className="relative max-w-6xl border rounded-lg border-neutral-900 mx-auto mt-3 px-6 h-[68px] "
       >
         {" "}
         <div className="flex items-center justify-between z-50">
@@ -41,7 +41,7 @@ const NavigationBar2 = () => {
               alt="Data Vidhya"
               width={36}
               height={36}
-              className="-mt-0.5 size-[80px]"
+              className="size-[80px]"
             />
             <span
               className={`-ml-[16px] text-2xl font-bold text-[#eee] leading-6 ${manrope.className}`}

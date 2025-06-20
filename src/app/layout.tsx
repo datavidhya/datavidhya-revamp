@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`body ${geistSans.variable} ${geistMono.variable} bg-black antialiased overflow-x-hidden`}
+        className={`body ${geistSans.variable} ${geistMono.variable} bg-[#0A0A0A] antialiased overflow-x-hidden`}
       >
         <NavigationBar2 />
         <DynamicTitleSetter />

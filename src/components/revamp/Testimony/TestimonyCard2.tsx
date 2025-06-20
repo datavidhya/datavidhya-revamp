@@ -12,7 +12,7 @@ interface testimony {
 }
 const TestimonyCard2 = ({ testimony }: testimony) => {
   return (
-    <div className="w-full  p-8 rounded-lg bg-[#171717]/95 border border-[#444] flex flex-col justify-between hover:shadow-lg ">
+    <div className="w-full  p-6 rounded-lg bg-neutral-900 border border-neutral-800 flex flex-col justify-between hover:shadow-lg ">
       <div className="flex flex-col gap-6">
         <div className="flex justify-between">
           <div className="flex gap-4">
@@ -20,12 +20,12 @@ const TestimonyCard2 = ({ testimony }: testimony) => {
             <Image
               alt="pfp"
               src={testimony.image}
-              height={56}
-              width={56}
-              className="rounded-full size-10 md:size-20"
+              height={50}
+              width={50}
+              className="rounded-full size-9 md:size-16 border-2 border-blue-500"
             ></Image>
             <div className="flex flex-col">
-              <h2 className="text-[20px] md:text-2xl font-normal leading-[150%] text-white">
+              <h2 className="text-lg md:text-xl font-normal  text-white">
                 {testimony.name}
               </h2>
               <p className="text-sm text-neutral-400">Frontend Engineer</p>
@@ -44,7 +44,7 @@ const TestimonyCard2 = ({ testimony }: testimony) => {
           {" "}
           <blockquote>
             {" "}
-            <p className="text-[16px] text-white tracking-tight font-light leading-[130%]">
+            <p className="text-sm line-clamp-5 text-neutral-400 font-light ">
               {testimony.description}
             </p>
           </blockquote>

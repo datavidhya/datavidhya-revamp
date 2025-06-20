@@ -3,6 +3,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TestimonyCard2 from "./TestimonyCard2";
 
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 interface Testimony {
   id?: number;
   name: string;
@@ -81,35 +87,13 @@ const Testimony2 = () => {
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center my-6 md:my-28">
-      <h1 className="text-4xl md:text-5xl text-white text-center font-bold leading-[120%]">
-        Customer <br className="block md:hidden" />{" "}
-        <span className="relative inline-block">
-          Testimonials
-          <svg
-            className="absolute mt-2 -bottom-15 left-1/2 w-full max-w-[120px] -translate-x-1/2 sm:-bottom-6 md:-bottom-3 sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]"
-            height="35"
-            viewBox="0 0 200 35"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <path
-              d="M10,25 Q100,10 190,25"
-              stroke="#a855f7"
-              strokeWidth="3"
-              fill="transparent"
-            />
-            <path
-              d="M10,30 Q100,15 190,30"
-              stroke="#a855f7"
-              strokeWidth="3"
-              fill="transparent"
-            />
-          </svg>
-        </span>
+    <div
+      className={`w-full flex flex-col items-center justify-center my-14 md:my-28 ${poppins.className}`}
+    >
+      <h1 className="text-3xl md:text-4xl text-white text-center mt-10 font-bold leading-[120%]">
+        Trusted by 1000s of Data Engineers
       </h1>
-      <p className="text-lg md:text-xl font-normal leading-[150%] text-center text-white my-6 md:mb-20">
+      <p className="text-lg md:text-xl font-normal leading-[150%] text-center text-neutral-500 my-2 md:mb-10">
         What our customers say about us!
       </p>
 

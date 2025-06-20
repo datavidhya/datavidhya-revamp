@@ -415,6 +415,10 @@
   .techStackHeading {
     font-size: 56px;
   }
+  .herotext {
+    font-size: 80px;
+    line-height: 84px;
+  }
 }
 
 @media (min-width: 1650px) {

@@ -19,7 +19,7 @@ const poppins = Poppins({
 
 export default function Footer2() {
   return (
-    <footer className="w-full border-t bg-black px-4 py-8 md:py-12">
+    <footer className="w-full border-t border-neutral-800  px-4 py-8 md:py-12">
       <div className="flex flex-col ">
         {" "}
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -114,20 +114,18 @@ export default function Footer2() {
                 LEGAL
               </h2>
 
-              <Link href="/privacy-policy" className="text-[#333333] ">
+              <Link href="/privacy-policy" className="text-neutral-400">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className="text-[#333333] ">
+              <Link href="/terms-of-service" className="text-neutral-400">
                 Terms of Service
               </Link>
-              {/* <button className="text-[#333333] ">Cookies Settings</button> */}
             </div>
           </div>
         </div>
-        <hr className="h-1 w-full my-8 " />
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mt-16">
           {" "}
-          <span className="text-[#eee]">
+          <span className="text-neutral-400">
             © 2025 Data Vidhya. All rights reserved.
           </span>
         </div>

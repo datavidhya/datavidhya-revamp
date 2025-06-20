@@ -18,7 +18,7 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
           className="block md:hidden h-5 w-auto mr-1"
         ></img>
         <p
-          className={`text-[16px] leading-[1.5rem] font-medium text-[#938fd4] hover:text-purple-400 ${inter.className}`}
+          className={`text-[16px] leading-[1.5rem] font-medium text-blue-400 ${inter.className}`}
         >
           {text}
         </p>
@@ -29,7 +29,7 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
 const UltimateCourse2 = () => {
   // console.log(Linkitems);
   return (
-    <div className="flex flex-col items-center py-[40px] md:py-28 bg-[#000] mx-1">
+    <div className="flex flex-col items-center mx-1">
       <div>
         <div className="flex justify-center">
           <h2
@@ -71,12 +71,7 @@ const UltimateCourse2 = () => {
           </p>
         </div>
       </div>
-      <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
-        className="relative max-w-[845px] p-6 bg-black flex flex-col rounded-[28px]  mt-[46px]"
-      >
+      <motion.div className="relative max-w-[845px] p-6 bg-neutral-900 flex flex-col rounded-[28px]  mt-[46px]">
         {" "}
         <ShineBorder shineColor={"#AB47BC"} borderWidth={3} />{" "}
         <div className="flex flex-col">
@@ -86,12 +81,12 @@ const UltimateCourse2 = () => {
               <img src="/latest/ultimate2.png" className="rounded-xl" alt="" />
             </div>
             <div className=" flex flex-col  justify-between items-center py-[5px]">
-              <h2 className="w-full text-[24px] text-center md:text-[29px] leading-[24px] md:leading-[30px] font-semibold tracking-[-1.5%] text-[#eee]">
+              <h2 className="w-full text-[24px] md:text-[29px] leading-[24px] md:leading-[30px] font-semibold tracking-[-1.5%] text-[#eee]">
                 Zero to Hero <br className="hidden md:block" /> Data
                 Engineering.
               </h2>{" "}
               <div>
-                <h3 className="text-[16px] w-[90%] mx-auto text-center font-medium text-neutral-100">
+                <h3 className="text-sm w-[90%] text-medium text-neutral-400">
                   Go from zero to job-ready in data engineering - build
                   pipelines, manage big data, succeed.
                 </h3>
@@ -103,12 +98,12 @@ const UltimateCourse2 = () => {
                     alt={"course instructor"}
                     className="size-8 rounded-full border"
                   />
-                  <p className="ml-2 text-[15px] font-medium text-[#51515b]">
+                  <p className="ml-2 text-[15px] font-medium text-neutral-400">
                     Darshil Parmar
                   </p>
                 </span>{" "}
                 <span
-                  className={`flex items-center gap-1 text-sm leading-5 font-medium text-[#9EA1AE] ${inter.className}`}
+                  className={`flex items-center gap-1 text-sm leading-5 font-medium text-neutral-400 ${inter.className}`}
                 >
                   <img src={"/revamp/star.svg"} className="size-4" />
                   <span className="text-white">5</span> (800+ Reviews)
@@ -133,14 +128,14 @@ const UltimateCourse2 = () => {
                 >
                   {" "}
                   <button
-                    className={`block w-[144px] rounded-[12px] bg-gradient-to-r from-[#4044ED] to-[#B832E9] px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}
+                    className={`block w-[144px] rounded-[12px] bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}
                   >
                     Buy Now
                   </button>
                 </Link>
                 <Link href={"/combopack"}>
                   <button
-                    className={`block w-[144px] rounded-[12px] bg-neutral-900 px-4 py-3 text-center text-sm font-semibold text-white ${inter.className}`}
+                    className={`block bg-neutral-800 w-[144px]  rounded-[12px] px-4 py-3 text-center text-sm font-semibold text-neutral-300 ${inter.className}`}
                   >
                     Learn More
                   </button>
@@ -148,14 +143,14 @@ const UltimateCourse2 = () => {
               </div>
             </div>
           </div>
-          <hr className="my-[14px]" />
+          <hr className="my-[14px] border border-neutral-700 " />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0">
             <Linkitems text="230+ Videos" href="#" />
-            <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
             <Linkitems text="15+ Project" href="#" />{" "}
-            <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
             <Linkitems text="Downloadable Resources" href="#" />{" "}
-            <hr className="hidden md:flex rotate-90 bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
             <Linkitems text="Resume + Interview Prep EBooks" href="#" />
           </div>
         </div>

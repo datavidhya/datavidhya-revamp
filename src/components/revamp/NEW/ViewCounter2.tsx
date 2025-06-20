@@ -2,7 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Counter from "../socialMediaCounter/MediaCounter";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 interface SocialMediaLinkProps {
   name: string;
   number: number;
@@ -16,10 +21,10 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   link,
   icon,
 }) => (
-  <div className="flex flex-row md:flex-col justify-center max-sm:gap-4 items-center text-black">
+  <div className="flex flex-row md:flex-col justify-center max-sm:gap-4 items-center text-white">
     <Counter number={number} />
     <div className="flex items-center gap-2">
-      <p className="text-center text-[1rem] font-semibold text-black ">
+      <p className="text-center text-[1rem] font-semibold text-neutral-500 ">
         {name}
       </p>
       <Link href={link}>
@@ -31,7 +36,9 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
 
 const ViewCounter2: React.FC = () => {
   return (
-    <div className="mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full  max-sm:rounded-none text-white">
+    <div
+      className={`mx-auto mb-10 w-4/5 rounded-[20px] py-4 bg- max-md:w-full  max-sm:rounded-none text-white ${poppins.className}`}
+    >
       <h3 className="mb-2 text-center text-[40px] font-bold text-white max-md:text-[30px]">
         Join our community...
       </h3>
