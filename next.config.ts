@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   },
   images: {
     domains: ["datavidhya-code-frontend.s3.ap-south-1.amazonaws.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "datavidhya-static-content.s3.ap-south-1.amazonaws.com",
+      },
+    ],
   },
 };
 

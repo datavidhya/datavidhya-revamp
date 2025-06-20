@@ -12,7 +12,6 @@ const DataStackCard = ({ icon }: prop) => {
       <div className="h-6/6 w-full bg-red-00 overflow-hidden">
         <img src={icon} alt="" className="rounded-[6px]" />
       </div>
-      {/* <div className="h-1/6 bg-red-00  flex items-center pl-2">Sample Text</div> */}
     </motion.div>
   );
 };

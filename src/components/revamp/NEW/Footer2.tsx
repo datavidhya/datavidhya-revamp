@@ -25,12 +25,12 @@ export default function Footer2() {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <div className="relative h-12 w-12">
+              <div className="relative h-20 w-20">
                 <Image
                   src="/revamp/logo.svg"
                   alt="Data Vidhya Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain size-[52px]"
                   priority
                 />
               </div>
@@ -50,7 +50,7 @@ export default function Footer2() {
                 aria-label="Facebook"
                 className="hover:text-blue-600"
               >
-                <FaFacebookF className="h-5 w-5 text-[#333333]" />
+                <FaFacebookF className="h-5 w-5 text-[#ddd]" />
               </Link>
               <Link
                 target="_blank"
@@ -58,7 +58,7 @@ export default function Footer2() {
                 aria-label="Instagram"
                 className="hover:text-pink-600"
               >
-                <FaInstagram className="h-5 w-5 text-[#333333]" />
+                <FaInstagram className="h-5 w-5 text-[#ddd]" />
               </Link>
               <Link
                 target="_blank"
@@ -66,7 +66,7 @@ export default function Footer2() {
                 aria-label="Twitter"
                 className="hover:text-blue-400"
               >
-                <FaTwitter className="h-5 w-5 text-[#333333]" />
+                <FaTwitter className="h-5 w-5 text-[#ddd]" />
               </Link>
               <Link
                 target="_blank"
@@ -74,7 +74,7 @@ export default function Footer2() {
                 aria-label="LinkedIn"
                 className="hover:text-blue-700"
               >
-                <FaLinkedinIn className="h-5 w-5 text-[#333333]" />
+                <FaLinkedinIn className="h-5 w-5 text-[#ddd]" />
               </Link>
               <Link
                 target="_blank"
@@ -82,7 +82,7 @@ export default function Footer2() {
                 aria-label="YouTube"
                 className="hover:text-red-600"
               >
-                <FaYoutube className="h-5 w-5 text-[#333333]" />
+                <FaYoutube className="h-5 w-5 text-[#ddd]" />
               </Link>
             </div>
           </div>
@@ -114,10 +114,10 @@ export default function Footer2() {
                 LEGAL
               </h2>
 
-              <Link href="/privacy-policy" className="text-neutral-400">
+              <Link href="/privacy-policy" className="text-neutral-100">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className="text-neutral-400">
+              <Link href="/terms-of-service" className="text-neutral-100">
                 Terms of Service
               </Link>
             </div>

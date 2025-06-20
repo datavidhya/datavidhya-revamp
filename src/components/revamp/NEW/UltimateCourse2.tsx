@@ -18,7 +18,7 @@ export const Linkitems = ({ text, href }: LinkitemProp) => {
           className="block md:hidden h-5 w-auto mr-1"
         ></img>
         <p
-          className={`text-[16px] leading-[1.5rem] font-medium text-blue-400 ${inter.className}`}
+          className={`text-[12px] leading-[1.5rem] font-normal text-gray-300 ${inter.className}`}
         >
           {text}
         </p>
@@ -73,7 +73,7 @@ const UltimateCourse2 = () => {
       </div>
       <motion.div className="relative max-w-[845px] p-6 bg-neutral-900 flex flex-col rounded-[28px]  mt-[46px]">
         {" "}
-        <ShineBorder shineColor={"#AB47BC"} borderWidth={3} />{" "}
+        <ShineBorder shineColor={"#a0a0ff"} borderWidth={3} />{" "}
         <div className="flex flex-col">
           <div className="flex flex-col md:flex-row gap-[24px]">
             {" "}
@@ -146,11 +146,11 @@ const UltimateCourse2 = () => {
           <hr className="my-[14px] border border-neutral-700 " />
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0">
             <Linkitems text="230+ Videos" href="#" />
-            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[30px]" />
             <Linkitems text="15+ Project" href="#" />{" "}
-            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[30px]" />
             <Linkitems text="Downloadable Resources" href="#" />{" "}
-            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[25px]" />
+            <hr className="hidden md:flex rotate-90 border border-neutral-700  bg-neutral-300 w-[30px]" />
             <Linkitems text="Resume + Interview Prep EBooks" href="#" />
           </div>
         </div>

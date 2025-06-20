@@ -10,10 +10,9 @@ export const IconGrid = ({ icons }: prop) => {
           key={index}
           src={icon}
           alt={`icon-${index}`}
-          className="h-6 md:h-auto object-contain"
+          className="h-6 md:h-auto object-contain bg-[#fff] hover:scale-[1.08] transition-all rounded-full px-6 py-2"
         />
       ))}
     </div>
   );
 };
-
